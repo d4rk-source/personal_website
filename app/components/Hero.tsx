@@ -35,45 +35,6 @@ export default function Hero() {
       <p className="text-gray-400 mb-12">
         We respond within 24 hours
       </p>
-
-      {/* Trusted By Section */}
-      <div className="mt-32 pt-20 border-t border-gray-800">
-        <p className="text-gray-400 mb-8 text-center">Trusted by leading Web3 companies</p>
-        <div className="relative overflow-hidden">
-          <style>{`
-            @keyframes scroll {
-              0% { transform: translateX(0); }
-              100% { transform: translateX(-50%); }
-            }
-            .marquee {
-              display: flex;
-              animation: scroll 20s linear infinite;
-            }
-            .marquee:hover {
-              animation-play-state: paused;
-            }
-            .marquee-item {
-              min-width: 200px;
-              padding: 0 40px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-            }
-          `}</style>
-          <div className="marquee">
-            {["Uniswap", "Aave", "OpenZeppelin", "Curve", "Lido", "MakerDAO", "Compound", "Yearn"].map((firm, i) => (
-              <div key={i} className="marquee-item">
-                <span className="text-gray-300 font-semibold whitespace-nowrap">{firm}</span>
-              </div>
-            ))}
-            {["Uniswap", "Aave", "OpenZeppelin", "Curve", "Lido", "MakerDAO", "Compound", "Yearn"].map((firm, i) => (
-              <div key={`repeat-${i}`} className="marquee-item">
-                <span className="text-gray-300 font-semibold whitespace-nowrap">{firm}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
     </section>
   );
 }
