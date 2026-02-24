@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Iceberg&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -23,4 +24,160 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo-wrap {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+.logo-anim {
+  --logo-color: #7dd3fc;
+  color: #00e5ff;
+  -webkit-text-fill-color: #00e5ff;
+  font-family: "Iceberg", "Trebuchet MS", Arial, sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: baseline;
+  white-space: nowrap;
+  position: relative;
+  animation: logo-shift 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation-delay: 2.2s;
+  text-shadow: 0 0 6px rgba(125, 211, 252, 0.25);
+}
+
+.logo-name {
+  font-family: "Iceberg", "Trebuchet MS", Arial, sans-serif;
+  color: #00e5ff;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  font-size: 1.4em;
+}
+
+.logo-wrap .logo-name {
+  margin-left: 0.9rem;
+}
+
+.logo-anim::after {
+  content: "";
+  position: absolute;
+  /* Tweak inset/radius to change the box size/roundness. */
+  inset: -0.22em -0.36em;
+  border-radius: 0.55em;
+  padding: 2px;
+  background: linear-gradient(135deg, #0f2950 0%, #3b82f6 55%, #7dd3fc 100%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transform: scale(0.96);
+  animation: logo-box 0.6s ease-out forwards;
+  animation-delay: 3.6s;
+  pointer-events: none;
+}
+
+.logo-static {
+  animation: none;
+}
+
+.logo-static::after {
+  opacity: 1;
+  transform: scale(1);
+  animation: none;
+}
+
+.logo-static .logo-lex,
+.logo-static .logo-ipher,
+.logo-static .logo-space {
+  max-width: 0;
+  opacity: 0;
+  transform: translateY(-0.08em);
+  animation: none;
+}
+
+.logo-static .logo-c {
+  transform: rotate(-18deg) translateX(0.03em) translateY(0.08em);
+  animation: none;
+}
+
+.logo-anim span {
+  display: inline-block;
+}
+
+.logo-c {
+  transform-origin: left 65%;
+  transform: rotate(0deg) translateX(0);
+  animation-name: logo-c-lean;
+  animation-duration: 0.7s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  animation-delay: 3s;
+  will-change: transform;
+}
+
+.logo-lex,
+.logo-ipher,
+.logo-space {
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 5em;
+  animation: logo-collapse 0.7s ease forwards;
+  animation-delay: 1.4s;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0.6px rgba(125, 211, 252, 0.7);
+}
+
+.logo-space {
+  max-width: 0.6em;
+}
+
+@keyframes logo-collapse {
+  to {
+    max-width: 0;
+    opacity: 0;
+    transform: translateY(-0.08em);
+  }
+}
+
+@keyframes logo-shift {
+  to {
+    transform: translateX(1.4rem);
+  }
+}
+
+@keyframes logo-c-lean {
+  0% {
+    transform: rotate(0deg) translateX(0);
+  }
+  100% {
+    /* Tweak angle/offsets here to adjust the lean and nudge.
+       Angle: rotate(-18deg)
+       X offset: translateX(0.04em)  |  Y offset: translateY(0.06em) */
+    transform: rotate(-18deg) translateX(0.03em) translateY(0.08em);
+  }
+}
+
+@keyframes logo-box {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-anim,
+  .logo-lex,
+  .logo-ipher,
+  .logo-space,
+  .logo-c {
+    animation: none;
+  }
+
+  .logo-anim::after {
+    animation: none;
+    opacity: 1;
+  }
 }

@@ -1,3 +1,5 @@
+import Logo from "./Logo";
+
 interface NavigationProps {
   onScrollToSection: (sectionId: string) => void;
 }
@@ -7,11 +9,8 @@ export default function Navigation({ onScrollToSection }: NavigationProps) {
     <nav className="border-b border-gray-800 sticky top-0 z-50 bg-black/95 backdrop-blur">
       <div className="px-4 py-4 md:py-6 max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-lg flex items-center justify-center">
-            <span className="text-black font-bold text-lg">A</span>
-          </div>
-          <span className="font-bold text-xl">Alex Cipher</span>
+        <div className="flex items-center">
+          <Logo />
         </div>
 
         {/* Navigation Links */}

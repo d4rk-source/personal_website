@@ -1,3 +1,5 @@
+import Logo from "./Logo";
+
 export default function Footer() {
   return (
     <footer className="border-t border-gray-800 bg-gray-950 mt-20">
@@ -6,11 +8,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* About */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-lg flex items-center justify-center">
-                <span className="text-black font-bold text-lg">A</span>
-              </div>
-              <span className="font-bold text-lg">Alex Cipher</span>
+            <div className="flex items-center mb-4">
+              <Logo variant="static" showName />
             </div>
             <p className="text-gray-400 text-sm">
               Defending Web3 with expert smart contract security audits and consultations.
