@@ -10,7 +10,7 @@ export default function Navigation({ onScrollToSection }: NavigationProps) {
       <div className="px-4 py-4 md:py-6 max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center">
-          <Logo />
+          <Logo filled />
         </div>
 
         {/* Navigation Links */}

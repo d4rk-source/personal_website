@@ -3,10 +3,21 @@ type LogoVariant = "animated" | "static";
 interface LogoProps {
   variant?: LogoVariant;
   showName?: boolean;
+  filled?: boolean;
 }
 
-export default function Logo({ variant = "animated", showName = false }: LogoProps) {
-  const logoClassName = variant === "static" ? "logo-anim logo-static" : "logo-anim";
+export default function Logo({
+  variant = "animated",
+  showName = false,
+  filled = false,
+}: LogoProps) {
+  const logoClassName = [
+    "logo-anim",
+    variant === "static" ? "logo-static" : null,
+    filled ? "logo-filled" : null,
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   return (
     <div className="logo-wrap" aria-label="Alex Cipher">
