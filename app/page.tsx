@@ -4,6 +4,7 @@ import Navigation from "./components/Navigation";
 import Hero from "./components/Hero";
 import Services from "./components/Services";
 import Audits from "./components/Audits";
+import Vouches from "./components/Vouches";
 import About from "./components/About";
 import Footer from "./components/Footer";
 
@@ -19,6 +20,7 @@ export default function Home() {
     <div className="min-h-screen bg-black text-white">
       <Navigation onScrollToSection={scrollToSection} />
       <Hero />
+      <Vouches />
       <Services />
       <Audits />
       <About />

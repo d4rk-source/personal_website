@@ -9,12 +9,21 @@ export default function Navigation({ onScrollToSection }: NavigationProps) {
     <nav className="border-b border-gray-800 sticky top-0 z-50 bg-black/95 backdrop-blur">
       <div className="px-4 py-4 md:py-6 max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center">
+        <button 
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="flex items-center cursor-pointer hover:opacity-80 transition-opacity"
+        >
           <Logo filled />
-        </div>
+        </button>
 
         {/* Navigation Links */}
         <div className="hidden md:flex items-center gap-8">
+          <button
+            onClick={() => onScrollToSection("vouches")}
+            className="text-gray-300 hover:text-white transition-colors cursor-pointer"
+          >
+            Testimonials
+          </button>
           <button
             onClick={() => onScrollToSection("services")}
             className="text-gray-300 hover:text-white transition-colors cursor-pointer"
