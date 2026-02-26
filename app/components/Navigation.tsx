@@ -1,4 +1,5 @@
 import Logo from "./Logo";
+import Link from "next/link";
 
 interface NavigationProps {
   onScrollToSection: (sectionId: string) => void;
@@ -46,6 +47,12 @@ export default function Navigation({
           >
             About
           </button>
+          <Link
+            href="/blogs"
+            className="text-gray-300 hover:text-white transition-colors"
+          >
+            Blogs
+          </Link>
         </div>
 
         {/* CTA Button */}

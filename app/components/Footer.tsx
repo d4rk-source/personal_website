@@ -12,7 +12,8 @@ export default function Footer() {
               <Logo variant="static" showName />
             </div>
             <p className="text-gray-400 text-sm">
-              Defending Web3 with expert smart contract security audits and consultations.
+              Defending Web3 with expert smart contract security audits and
+              consultations.
             </p>
           </div>
 
@@ -43,7 +44,7 @@ export default function Footer() {
             <h3 className="font-semibold text-lg mb-4">Resources</h3>
             <ul className="space-y-2 text-gray-400 text-sm">
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="/blogs" className="hover:text-white transition-colors">
                   Blog
                 </a>
               </li>
@@ -76,13 +77,22 @@ export default function Footer() {
                 Email
               </a>
               <div className="flex gap-4 pt-2">
-                <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-blue-400 transition-colors"
+                >
                   Twitter
                 </a>
-                <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-blue-400 transition-colors"
+                >
                   GitHub
                 </a>
-                <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-400 hover:text-blue-400 transition-colors"
+                >
                   LinkedIn
                 </a>
               </div>
