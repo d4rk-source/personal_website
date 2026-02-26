@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import PricingPopup from "./pricing_methodology_popups/PricingPopup";
+import MethodologyPopup from "./pricing_methodology_popups/MethodologyPopup";
 
 interface SmartContractAuditPopupProps {
   isOpen: boolean;
@@ -12,6 +14,8 @@ export default function SmartContractAuditPopup({
   onClose,
 }: SmartContractAuditPopupProps) {
   const [isClosing, setIsClosing] = useState(false);
+  const [isPricingOpen, setIsPricingOpen] = useState(false);
+  const [isMethodologyOpen, setIsMethodologyOpen] = useState(false);
 
   useEffect(() => {
     if (!isOpen) {
@@ -20,6 +24,10 @@ export default function SmartContractAuditPopup({
   }, [isOpen]);
 
   const handleClose = () => {
+    // Close side panels first
+    setIsPricingOpen(false);
+    setIsMethodologyOpen(false);
+    // Then close main popup after side panels animate out
     setIsClosing(true);
     setTimeout(onClose, 300);
   };
@@ -178,23 +186,23 @@ export default function SmartContractAuditPopup({
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-6 border-t border-gray-700">
               <button
-                onClick={() => {
-                  // Handle pricing click
-                  onClose();
-                  // You can add navigation or scroll to pricing section here
-                }}
-                className="flex-1 px-6 py-3 bg-gray-800 text-white border border-gray-700 rounded-lg hover:bg-gray-700 hover:border-gray-600 transition-all font-semibold"
+                onClick={() => setIsPricingOpen(!isPricingOpen)}
+                className={`flex-1 px-6 py-3 text-white border rounded-lg transition-all font-semibold ${
+                  isPricingOpen
+                    ? "bg-gray-700 border-cyan-500"
+                    : "bg-gray-800 border-gray-700 hover:bg-gray-700 hover:border-gray-600"
+                }`}
               >
                 Pricing
               </button>
 
               <button
-                onClick={() => {
-                  // Handle methodology click
-                  onClose();
-                  // You can add navigation or scroll to methodology section here
-                }}
-                className="flex-1 px-6 py-3 bg-gray-800 text-white border border-gray-700 rounded-lg hover:bg-gray-700 hover:border-gray-600 transition-all font-semibold"
+                onClick={() => setIsMethodologyOpen(!isMethodologyOpen)}
+                className={`flex-1 px-6 py-3 text-white border rounded-lg transition-all font-semibold ${
+                  isMethodologyOpen
+                    ? "bg-gray-700 border-cyan-500"
+                    : "bg-gray-800 border-gray-700 hover:bg-gray-700 hover:border-gray-600"
+                }`}
               >
                 Methodology
               </button>
@@ -213,6 +221,17 @@ export default function SmartContractAuditPopup({
           </div>
         </div>
       </div>
+
+      <PricingPopup
+        isOpen={isPricingOpen}
+        onClose={() => setIsPricingOpen(false)}
+        serviceType="Smart Contract Auditing"
+      />
+      <MethodologyPopup
+        isOpen={isMethodologyOpen}
+        onClose={() => setIsMethodologyOpen(false)}
+        serviceType="Smart Contract Auditing"
+      />
     </>
   );
 }
