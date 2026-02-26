@@ -1,0 +1,244 @@
+"use client";
+
+import React, { useEffect, useState } from "react";
+
+interface RequestQuotePopupProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+export default function RequestQuotePopup({
+  isOpen,
+  onClose,
+}: RequestQuotePopupProps) {
+  const [isClosing, setIsClosing] = useState(false);
+
+  useEffect(() => {
+    if (!isOpen) {
+      setIsClosing(false);
+    }
+  }, [isOpen]);
+
+  const handleClose = () => {
+    setIsClosing(true);
+    setTimeout(onClose, 300);
+  };
+
+  if (!isOpen && !isClosing) return null;
+
+  return (
+    <>
+      <style jsx>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+
+        @keyframes fadeOut {
+          from {
+            opacity: 1;
+          }
+          to {
+            opacity: 0;
+          }
+        }
+
+        @keyframes zoomIn {
+          from {
+            opacity: 0;
+            transform: scale(0.95);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+
+        @keyframes zoomOut {
+          from {
+            opacity: 1;
+            transform: scale(1);
+          }
+          to {
+            opacity: 0;
+            transform: scale(0.95);
+          }
+        }
+
+        .backdrop {
+          animation: ${isClosing ? "fadeOut" : "fadeIn"} 0.3s ease-out;
+          animation-fill-mode: both;
+        }
+
+        .modal {
+          animation: ${isClosing ? "zoomOut" : "zoomIn"} 0.3s ease-out;
+          animation-fill-mode: both;
+        }
+      `}</style>
+
+      {/* Backdrop */}
+      <div
+        className="backdrop fixed inset-0 bg-black bg-opacity-70 z-40"
+        onClick={handleClose}
+      />
+
+      {/* Modal */}
+      <div className="fixed inset-0 flex items-center justify-center z-50 p-4 pt-24 overflow-y-auto">
+        <div className="modal relative bg-gradient-to-br from-gray-900 to-gray-950 rounded-lg border border-gray-800 max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl my-auto">
+          {/* Close Button */}
+          <button
+            onClick={handleClose}
+            className="absolute top-6 right-6 text-gray-400 hover:text-white transition-colors"
+            aria-label="Close popup"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+
+          {/* Content */}
+          <div className="p-8 md:p-12">
+            <div className="mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
+                Let's secure your users today!
+              </h2>
+              <p className="text-gray-400">
+                Tell me about your project and the help you need.
+              </p>
+            </div>
+
+            <form className="space-y-6">
+              <div className="space-y-2">
+                <label className="text-sm text-gray-300" htmlFor="project-name">
+                  Project name
+                </label>
+                <input
+                  id="project-name"
+                  type="text"
+                  className="w-full rounded-lg bg-gray-900 border border-gray-700 px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                  placeholder="e.g. VaultX Protocol"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <label
+                  className="text-sm text-gray-300"
+                  htmlFor="project-website"
+                >
+                  Website or social handle
+                </label>
+                <input
+                  id="project-website"
+                  type="text"
+                  className="w-full rounded-lg bg-gray-900 border border-gray-700 px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                  placeholder="e.g. vaultx.fi or @vaultx"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <label
+                  className="text-sm text-gray-300"
+                  htmlFor="project-details"
+                >
+                  Project details
+                </label>
+                <textarea
+                  id="project-details"
+                  rows={5}
+                  className="w-full rounded-lg bg-gray-900 border border-gray-700 px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                  placeholder="Briefly describe your protocol, scope, and timeline."
+                />
+              </div>
+
+              <div className="space-y-3">
+                <p className="text-sm text-gray-300">Services needed</p>
+                <div className="space-y-2">
+                  <label className="flex items-start gap-3 text-gray-200">
+                    <input type="checkbox" className="mt-1" />
+                    <span>Smart Contract Auditing</span>
+                  </label>
+                  <label className="flex items-start gap-3 text-gray-200">
+                    <input type="checkbox" className="mt-1" />
+                    <span>Audit Readiness &amp; Competition Prep</span>
+                  </label>
+                  <label className="flex items-start gap-3 text-gray-200">
+                    <input type="checkbox" className="mt-1" />
+                    <span>Smart Contract Security Consultations</span>
+                  </label>
+                </div>
+              </div>
+
+              <div className="space-y-3">
+                <details className="rounded-lg border border-gray-700 bg-gray-900/40 px-4 py-3">
+                  <summary className="cursor-pointer text-sm text-gray-200">
+                    Preferred social platform
+                  </summary>
+                  <div className="mt-3 space-y-2">
+                    <label className="flex items-center gap-3 text-gray-200">
+                      <input type="radio" name="platform" value="x" />
+                      <span>X (Twitter)</span>
+                    </label>
+                    <label className="flex items-center gap-3 text-gray-200">
+                      <input type="radio" name="platform" value="discord" />
+                      <span>Discord</span>
+                    </label>
+                    <label className="flex items-center gap-3 text-gray-200">
+                      <input type="radio" name="platform" value="telegram" />
+                      <span>Telegram</span>
+                    </label>
+                    <label className="flex items-center gap-3 text-gray-200">
+                      <input type="radio" name="platform" value="email" />
+                      <span>Email</span>
+                    </label>
+                    <label className="flex items-center gap-3 text-gray-200">
+                      <input type="radio" name="platform" value="other" />
+                      <span>Other</span>
+                    </label>
+                  </div>
+                </details>
+
+                <div className="space-y-2">
+                  <label
+                    className="text-sm text-gray-300"
+                    htmlFor="contact-handle"
+                  >
+                    Handle or contact info
+                  </label>
+                  <input
+                    id="contact-handle"
+                    type="text"
+                    className="w-full rounded-lg bg-gray-900 border border-gray-700 px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                    placeholder="e.g. @vaultx or hello@vaultx.fi"
+                  />
+                </div>
+              </div>
+
+              <div className="pt-2">
+                <button
+                  type="submit"
+                  className="w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg hover:from-cyan-400 hover:to-blue-400 transition-all font-semibold"
+                >
+                  Send Request
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
