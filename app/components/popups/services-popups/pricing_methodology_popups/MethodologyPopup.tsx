@@ -101,68 +101,183 @@ export default function MethodologyPopup({
               {serviceType}
             </p>
 
-            <div className="space-y-4">
-              <div>
-                <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
-                  <span className="text-cyan-400">1.</span> Initial Review
-                </h4>
-                <p className="text-sm text-gray-400 ml-6">
-                  We begin with a comprehensive code walkthrough, understanding
-                  architecture, business logic, and identifying critical areas.
-                </p>
-              </div>
+            {serviceType === "Smart Contract Auditing" && (
+              <div className="space-y-4">
+                <div>
+                  <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
+                    <span className="text-cyan-400">1.</span> Initial Review
+                  </h4>
+                  <p className="text-sm text-gray-400 ml-6">
+                    We begin with a comprehensive code walkthrough,
+                    understanding architecture, business logic, and identifying
+                    critical areas.
+                  </p>
+                </div>
 
-              <div>
-                <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
-                  <span className="text-cyan-400">2.</span> Automated Analysis
-                </h4>
-                <p className="text-sm text-gray-400 ml-6">
-                  Run industry-standard tools like Slither, Mythril, and custom
-                  scripts to detect common vulnerabilities.
-                </p>
-              </div>
+                <div>
+                  <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
+                    <span className="text-cyan-400">2.</span> Automated Analysis
+                  </h4>
+                  <p className="text-sm text-gray-400 ml-6">
+                    Run industry-standard tools like Slither, Mythril, and
+                    custom scripts to detect common vulnerabilities.
+                  </p>
+                </div>
 
-              <div>
-                <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
-                  <span className="text-cyan-400">3.</span> Manual Testing
-                </h4>
-                <p className="text-sm text-gray-400 ml-6">
-                  Deep dive into code logic, access control, state management,
-                  and edge cases that automated tools miss.
-                </p>
-              </div>
+                <div>
+                  <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
+                    <span className="text-cyan-400">3.</span> Manual Testing
+                  </h4>
+                  <p className="text-sm text-gray-400 ml-6">
+                    Deep dive into code logic, access control, state management,
+                    and edge cases that automated tools miss.
+                  </p>
+                </div>
 
-              <div>
-                <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
-                  <span className="text-cyan-400">4.</span> Exploitation
-                  Attempts
-                </h4>
-                <p className="text-sm text-gray-400 ml-6">
-                  Actively attempt to exploit identified vulnerabilities in test
-                  environments to validate severity.
-                </p>
-              </div>
+                <div>
+                  <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
+                    <span className="text-cyan-400">4.</span> Exploitation
+                    Attempts
+                  </h4>
+                  <p className="text-sm text-gray-400 ml-6">
+                    Actively attempt to exploit identified vulnerabilities in
+                    test environments to validate severity.
+                  </p>
+                </div>
 
-              <div>
-                <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
-                  <span className="text-cyan-400">5.</span> Report Generation
-                </h4>
-                <p className="text-sm text-gray-400 ml-6">
-                  Compile findings with severity ratings, proof of concepts, and
-                  detailed remediation recommendations.
-                </p>
-              </div>
+                <div>
+                  <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
+                    <span className="text-cyan-400">5.</span> Report Generation
+                  </h4>
+                  <p className="text-sm text-gray-400 ml-6">
+                    Compile findings with severity ratings, proof of concepts,
+                    and detailed remediation recommendations.
+                  </p>
+                </div>
 
-              <div>
-                <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
-                  <span className="text-cyan-400">6.</span> Post-Audit Support
-                </h4>
-                <p className="text-sm text-gray-400 ml-6">
-                  Review fixes, answer questions, and provide guidance on
-                  implementing security improvements.
-                </p>
+                <div>
+                  <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
+                    <span className="text-cyan-400">6.</span> Post-Audit Support
+                  </h4>
+                  <p className="text-sm text-gray-400 ml-6">
+                    Review fixes, answer questions, and provide guidance on
+                    implementing security improvements.
+                  </p>
+                </div>
               </div>
-            </div>
+            )}
+
+            {serviceType === "Audit Readiness & Competition Prep" && (
+              <div className="space-y-4">
+                <div>
+                  <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
+                    <span className="text-cyan-400">1.</span> Vulnerability Scan
+                  </h4>
+                  <p className="text-sm text-gray-400 ml-6">
+                    Quick automated scan to identify common issues before
+                    auditors review your code, saving time and money.
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
+                    <span className="text-cyan-400">2.</span> Code Quality Check
+                  </h4>
+                  <p className="text-sm text-gray-400 ml-6">
+                    Review documentation, test coverage, and code organization
+                    to meet professional audit firm expectations.
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
+                    <span className="text-cyan-400">3.</span> Priority Issue
+                    List
+                  </h4>
+                  <p className="text-sm text-gray-400 ml-6">
+                    Ranked findings with impact assessment so you know exactly
+                    what to fix before your official audit begins.
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
+                    <span className="text-cyan-400">4.</span> Competition
+                    Strategy
+                  </h4>
+                  <p className="text-sm text-gray-400 ml-6">
+                    Strategic hardening for audit contests, reward structure
+                    advice, and timing optimization for maximum success.
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
+                    <span className="text-cyan-400">5.</span> Fix Verification
+                  </h4>
+                  <p className="text-sm text-gray-400 ml-6">
+                    Validate that your implemented fixes are complete and don't
+                    introduce new issues before final audit submission.
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {serviceType === "Smart Contract Security Consultations" && (
+              <div className="space-y-4">
+                <div>
+                  <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
+                    <span className="text-cyan-400">1.</span> Discovery Session
+                  </h4>
+                  <p className="text-sm text-gray-400 ml-6">
+                    Understand your project goals, technical challenges, and
+                    security concerns through detailed discussion.
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
+                    <span className="text-cyan-400">2.</span> Architecture
+                    Review
+                  </h4>
+                  <p className="text-sm text-gray-400 ml-6">
+                    Evaluate your smart contract design patterns and suggest
+                    security improvements before implementation.
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
+                    <span className="text-cyan-400">3.</span> Strategic Guidance
+                  </h4>
+                  <p className="text-sm text-gray-400 ml-6">
+                    Provide recommendations on security best practices, upgrade
+                    patterns, and threat modeling strategies.
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
+                    <span className="text-cyan-400">4.</span> Implementation
+                    Support
+                  </h4>
+                  <p className="text-sm text-gray-400 ml-6">
+                    Answer questions during development, review critical code
+                    sections, and validate security decisions.
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
+                    <span className="text-cyan-400">5.</span> Ongoing Advisory
+                  </h4>
+                  <p className="text-sm text-gray-400 ml-6">
+                    Continuous security partnership with regular check-ins and
+                    proactive threat monitoring for your protocol.
+                  </p>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
