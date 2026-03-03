@@ -8,6 +8,7 @@ import Services from "./components/Services";
 import Audits from "./components/Audits";
 import Vouches from "./components/Vouches";
 import About from "./components/About";
+import PastWork from "./components/PastWork";
 import Footer from "./components/Footer";
 
 export default function Home() {
@@ -34,6 +35,7 @@ export default function Home() {
       <Services />
       <Audits />
       <About />
+      <PastWork />
       <Footer />
 
       <RequestQuotePopup
