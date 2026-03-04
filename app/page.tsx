@@ -31,13 +31,12 @@ export default function Home() {
         onScrollToSection={scrollToSection}
         onRequestQuote={() => setIsQuotePopupOpen(true)}
       />
-      <Vouches />
+      {/* <Vouches /> */}
       <Services />
       <Audits />
       <About />
       <PastWork />
       <Footer />
-
       <RequestQuotePopup
         isOpen={isQuotePopupOpen}
         onClose={() => setIsQuotePopupOpen(false)}

@@ -1,21 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import { useForm, ValidationError } from "@formspree/react";
 
 export default function EmailSignupCard() {
-  const [email, setEmail] = useState("");
   const [isDismissed, setIsDismissed] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [state, handleSubmit] = useForm("mdalqkkr");
 
   if (isDismissed) return null;
-
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    if (!email.trim()) return;
-
-    // TODO: Wire this to your email list provider.
-    setIsSubmitted(true);
-  };
 
   return (
     <div className="fixed bottom-6 right-6 z-30 w-[320px] max-w-[calc(100vw-3rem)]">
@@ -58,19 +50,28 @@ export default function EmailSignupCard() {
           <input
             id="email-signup"
             type="email"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
+            name="email"
             placeholder="you@example.com"
             className="w-full rounded-lg bg-gray-900 border border-gray-700 px-4 py-2 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500"
-            disabled={isSubmitted}
+            disabled={state.submitting || state.succeeded}
             required
+          />
+          <ValidationError
+            prefix="Email"
+            field="email"
+            errors={state.errors}
+            className="mt-2 block text-sm text-red-400"
           />
           <button
             type="submit"
             className="mt-3 w-full rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 px-4 py-2 font-semibold text-white hover:from-cyan-400 hover:to-blue-400 transition-all"
-            disabled={isSubmitted}
+            disabled={state.submitting || state.succeeded}
           >
-            {isSubmitted ? "Thanks for subscribing" : "Join the list"}
+            {state.submitting
+              ? "Submitting..."
+              : state.succeeded
+                ? "Thanks for subscribing"
+                : "Join the list"}
           </button>
         </form>
       </div>
