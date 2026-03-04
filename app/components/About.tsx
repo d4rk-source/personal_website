@@ -32,11 +32,17 @@ export default function About() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Image */}
         <div className="flex justify-center md:justify-start">
-          <div className="w-72 h-96 sm:w-80 sm:h-[28rem] md:w-96 md:h-[30rem] rounded-lg border-2 border-gray-800 overflow-hidden bg-gray-900">
+          <div className="w-80 h-[28rem] sm:w-96 sm:h-[32rem] md:w-[28rem] md:h-[36rem] flex items-end justify-center">
             <img
               src="/profile.jpg"
               alt="Alex Cipher"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] drop-shadow-[0_0_24px_rgba(255,255,255,0.5)]"
+              style={{
+                WebkitMaskImage:
+                  "linear-gradient(to bottom, black 0%, black 84%, transparent 100%)",
+                maskImage:
+                  "linear-gradient(to bottom, black 0%, black 84%, transparent 100%)",
+              }}
             />
           </div>
         </div>
