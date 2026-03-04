@@ -23,12 +23,12 @@ export default function Navigation({
 
         {/* Navigation Links */}
         <div className="hidden md:flex items-center gap-8">
-          <button
+          {/* <button
             onClick={() => onScrollToSection("vouches")}
             className="text-gray-300 hover:text-white transition-colors cursor-pointer"
           >
             Testimonials
-          </button>
+          </button> */}
           <button
             onClick={() => onScrollToSection("services")}
             className="text-gray-300 hover:text-white transition-colors cursor-pointer"
