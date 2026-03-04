@@ -22,10 +22,10 @@ export default function Hero({ onScrollToSection, onRequestQuote }: HeroProps) {
 
       {/* Description */}
       <p className="text-lg md:text-xl text-gray-300 max-w-3xl mb-12 leading-relaxed">
-        Secure your projects with proven smart contract audits from an
-        experienced Ethereum bug bounty hunter. I've fortified DeFi protocols
-        and infrastructure for clients worldwide — making them resilient,
-        investor-ready, and fully secure.
+        Secure your DeFi protocols and crypto gambling dApps with proven smart
+        contract audits from an experienced EVM bug bounty hunter. I've
+        fortified high-stakes DeFi and gambling projects for clients worldwide —
+        making them resilient, investor-ready, and fully secure.
       </p>
 
       {/* CTA Buttons */}

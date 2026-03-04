@@ -8,50 +8,13 @@ export default function Audits() {
       status: "Completed",
       issues_found: 12,
     },
-    {
-      name: "DeFi Vaults",
-      pro_bono: true,
-      type: "Smart Contract Audit",
-      date: "December 2025",
-      status: "Completed",
-      issues_found: 8,
-    },
-    {
-      name: "Token Bridge",
-      pro_bono: false,
-      type: "Security Consultation",
-      date: "November 2025",
-      status: "Completed",
-      issues_found: 5,
-    },
-    {
-      name: "Staking Contract",
-      pro_bono: true,
-      type: "Audit Readiness Prep",
-      date: "October 2025",
-      status: "Completed",
-      issues_found: 15,
-    },
-    {
-      name: "Yield Optimizer",
-      pro_bono: false,
-      type: "Audit Contest",
-      date: "September 2025",
-      status: "Completed",
-      issues_found: 7,
-    },
-    {
-      name: "NFT Marketplace",
-      pro_bono: true,
-      type: "Smart Contract Audit",
-      date: "August 2025",
-      status: "Completed",
-      issues_found: 6,
-    },
   ];
 
   return (
-    <section id="audits" className="px-4 py-20 max-w-7xl mx-auto border-t border-gray-800 scroll-mt-20">
+    <section
+      id="audits"
+      className="px-4 py-20 max-w-7xl mx-auto border-t border-gray-800 scroll-mt-20"
+    >
       <h2 className="text-3xl md:text-4xl font-bold mb-16">My Past Audits</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -83,11 +46,15 @@ export default function Audits() {
                 <span className="text-green-400">{audit.status}</span>
               </p>
               <p>
-                <span className="text-gray-500">Issues Found:</span> {audit.issues_found}
+                <span className="text-gray-500">Issues Found:</span>{" "}
+                {audit.issues_found}
               </p>
             </div>
 
-            <a href="#" className="text-blue-400 font-semibold hover:text-blue-300 text-sm">
+            <a
+              href="#"
+              className="text-blue-400 font-semibold hover:text-blue-300 text-sm"
+            >
               View Report →
             </a>
           </div>
