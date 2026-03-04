@@ -1,8 +1,47 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
+import { useForm, ValidationError } from "@formspree/react";
 
 export default function AffiliatesPage() {
+  const [state, handleSubmit] = useForm("xlgwqakv");
+  const [isApplicationSectionVisible, setIsApplicationSectionVisible] =
+    useState(true);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-950 to-black">
+      {/* Navigation */}
+      <nav className="border-b border-gray-800 bg-black/50 backdrop-blur-sm sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+          <Link
+            href="/"
+            className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent hover:from-cyan-300 hover:to-blue-400 transition-all"
+          >
+            Alex Cipher
+          </Link>
+          <Link
+            href="/"
+            className="text-gray-400 hover:text-white transition-colors flex items-center gap-2"
+          >
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M10 19l-7-7m0 0l7-7m-7 7h18"
+              />
+            </svg>
+            Back to Home
+          </Link>
+        </div>
+      </nav>
+
       {/* Hero Section */}
       <section className="px-4 py-20 max-w-5xl mx-auto">
         <div className="text-center mb-16">
@@ -168,117 +207,193 @@ export default function AffiliatesPage() {
             Fill out the form below and we'll get back to you within 48 hours.
           </p>
 
-          <form className="space-y-6">
-            <div className="grid md:grid-cols-2 gap-6">
+          {state.succeeded ? (
+            <div className="text-center py-12">
+              <div className="mb-4 text-cyan-500">
+                <svg
+                  className="w-16 h-16 mx-auto"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-2">
+                Application Received!
+              </h3>
+              <p className="text-gray-400 mb-6">
+                Thank you for applying to our affiliate program. We'll review
+                your application and get back to you within 48 hours.
+              </p>
+              <button
+                onClick={() => window.location.reload()}
+                className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg hover:from-cyan-400 hover:to-blue-400 transition-all font-semibold"
+              >
+                Submit Another Application
+              </button>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-gray-300 mb-2"
+                  >
+                    Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    disabled={state.submitting}
+                    className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 transition-colors disabled:opacity-50"
+                    placeholder="Your full name"
+                  />
+                  <ValidationError
+                    prefix="Name"
+                    field="name"
+                    errors={state.errors}
+                    className="text-sm text-red-400 mt-1"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-300 mb-2"
+                  >
+                    Email *
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    disabled={state.submitting}
+                    className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 transition-colors disabled:opacity-50"
+                    placeholder="your@email.com"
+                  />
+                  <ValidationError
+                    prefix="Email"
+                    field="email"
+                    errors={state.errors}
+                    className="text-sm text-red-400 mt-1"
+                  />
+                </div>
+              </div>
+
               <div>
                 <label
-                  htmlFor="name"
+                  htmlFor="website"
                   className="block text-sm font-medium text-gray-300 mb-2"
                 >
-                  Name *
+                  Website / Social Profile *
+                </label>
+                <input
+                  type="url"
+                  id="website"
+                  name="website"
+                  required
+                  disabled={state.submitting}
+                  className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 transition-colors disabled:opacity-50"
+                  placeholder="https://yourwebsite.com or https://twitter.com/you"
+                />
+                <ValidationError
+                  prefix="Website"
+                  field="website"
+                  errors={state.errors}
+                  className="text-sm text-red-400 mt-1"
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="audience"
+                  className="block text-sm font-medium text-gray-300 mb-2"
+                >
+                  Tell us about your audience *
+                </label>
+                <textarea
+                  id="audience"
+                  name="audience"
+                  required
+                  disabled={state.submitting}
+                  rows={4}
+                  className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 transition-colors resize-none disabled:opacity-50"
+                  placeholder="Who do you reach? (e.g., Web3 developers, DeFi protocols, security researchers, etc.)"
+                />
+                <ValidationError
+                  prefix="Audience"
+                  field="audience"
+                  errors={state.errors}
+                  className="text-sm text-red-400 mt-1"
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="promotion"
+                  className="block text-sm font-medium text-gray-300 mb-2"
+                >
+                  How will you promote our services? *
+                </label>
+                <textarea
+                  id="promotion"
+                  name="promotion"
+                  required
+                  disabled={state.submitting}
+                  rows={4}
+                  className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 transition-colors resize-none disabled:opacity-50"
+                  placeholder="Describe your promotion strategy (e.g., blog posts, social media, direct outreach, etc.)"
+                />
+                <ValidationError
+                  prefix="Promotion strategy"
+                  field="promotion"
+                  errors={state.errors}
+                  className="text-sm text-red-400 mt-1"
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="reach"
+                  className="block text-sm font-medium text-gray-300 mb-2"
+                >
+                  Estimated Reach
                 </label>
                 <input
                   type="text"
-                  id="name"
-                  name="name"
-                  required
-                  className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 transition-colors"
-                  placeholder="Your full name"
+                  id="reach"
+                  name="reach"
+                  disabled={state.submitting}
+                  className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 transition-colors disabled:opacity-50"
+                  placeholder="e.g., 10K Twitter followers, 50K blog views/month"
+                />
+                <ValidationError
+                  prefix="Reach"
+                  field="reach"
+                  errors={state.errors}
+                  className="text-sm text-red-400 mt-1"
                 />
               </div>
 
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-gray-300 mb-2"
-                >
-                  Email *
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 transition-colors"
-                  placeholder="your@email.com"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label
-                htmlFor="website"
-                className="block text-sm font-medium text-gray-300 mb-2"
+              <button
+                type="submit"
+                disabled={state.submitting}
+                className="w-full px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 shadow-lg shadow-cyan-500/25 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Website / Social Profile *
-              </label>
-              <input
-                type="url"
-                id="website"
-                name="website"
-                required
-                className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 transition-colors"
-                placeholder="https://yourwebsite.com or https://twitter.com/you"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="audience"
-                className="block text-sm font-medium text-gray-300 mb-2"
-              >
-                Tell us about your audience *
-              </label>
-              <textarea
-                id="audience"
-                name="audience"
-                required
-                rows={4}
-                className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 transition-colors resize-none"
-                placeholder="Who do you reach? (e.g., Web3 developers, DeFi protocols, security researchers, etc.)"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="promotion"
-                className="block text-sm font-medium text-gray-300 mb-2"
-              >
-                How will you promote our services? *
-              </label>
-              <textarea
-                id="promotion"
-                name="promotion"
-                required
-                rows={4}
-                className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 transition-colors resize-none"
-                placeholder="Describe your promotion strategy (e.g., blog posts, social media, direct outreach, etc.)"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="reach"
-                className="block text-sm font-medium text-gray-300 mb-2"
-              >
-                Estimated Reach
-              </label>
-              <input
-                type="text"
-                id="reach"
-                name="reach"
-                className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 transition-colors"
-                placeholder="e.g., 10K Twitter followers, 50K blog views/month"
-              />
-            </div>
-
-            <button
-              type="submit"
-              className="w-full px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 shadow-lg shadow-cyan-500/25"
-            >
-              Submit Application
-            </button>
-          </form>
+                {state.submitting ? "Submitting..." : "Submit Application"}
+              </button>
+            </form>
+          )}
         </div>
 
         {/* FAQ Section */}

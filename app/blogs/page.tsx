@@ -62,6 +62,37 @@ export default function Blogs() {
 
   return (
     <div className="min-h-screen bg-black text-white">
+      {/* Navigation */}
+      <nav className="border-b border-gray-800 bg-black/50 backdrop-blur-sm sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+          <Link
+            href="/"
+            className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent hover:from-cyan-300 hover:to-blue-400 transition-all"
+          >
+            Alex Cipher
+          </Link>
+          <Link
+            href="/"
+            className="text-gray-400 hover:text-white transition-colors flex items-center gap-2"
+          >
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M10 19l-7-7m0 0l7-7m-7 7h18"
+              />
+            </svg>
+            Back to Home
+          </Link>
+        </div>
+      </nav>
+
       {/* Header */}
       <section className="px-4 py-20 md:py-32 max-w-7xl mx-auto">
         <div className="mb-16">

@@ -1,12 +1,13 @@
 export default function Audits() {
   const audits = [
     {
-      name: "Protocol Alpha",
-      pro_bono: false,
-      type: "Smart Contract Audit",
-      date: "January 2026",
+      name: "BulkSender",
+      pro_bono: true,
+      type: "Smart Contract Audit - high/crit only",
+      date: "February 2026",
       status: "Completed",
-      issues_found: 12,
+      issues_found: 1,
+      report_path: "/reports/BulkSender_Pentest_Report.pdf",
     },
   ];
 
@@ -52,7 +53,9 @@ export default function Audits() {
             </div>
 
             <a
-              href="#"
+              href={audit.report_path}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-blue-400 font-semibold hover:text-blue-300 text-sm"
             >
               View Report →
