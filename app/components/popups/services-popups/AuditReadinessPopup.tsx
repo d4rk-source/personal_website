@@ -7,11 +7,13 @@ import MethodologyPopup from "./pricing_methodology_popups/MethodologyPopup";
 interface AuditReadinessPopupProps {
   isOpen: boolean;
   onClose: () => void;
+  onBookNow?: () => void;
 }
 
 export default function AuditReadinessPopup({
   isOpen,
   onClose,
+  onBookNow,
 }: AuditReadinessPopupProps) {
   const [isClosing, setIsClosing] = useState(false);
   const [isPricingOpen, setIsPricingOpen] = useState(false);
@@ -210,7 +212,8 @@ export default function AuditReadinessPopup({
 
               <button
                 onClick={() => {
-                  onClose();
+                  handleClose();
+                  onBookNow?.();
                 }}
                 className="flex-1 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg hover:from-cyan-400 hover:to-blue-400 transition-all font-semibold"
               >

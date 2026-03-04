@@ -7,11 +7,13 @@ import MethodologyPopup from "./pricing_methodology_popups/MethodologyPopup";
 interface SecurityConsultationsPopupProps {
   isOpen: boolean;
   onClose: () => void;
+  onBookNow?: () => void;
 }
 
 export default function SecurityConsultationsPopup({
   isOpen,
   onClose,
+  onBookNow,
 }: SecurityConsultationsPopupProps) {
   const [isClosing, setIsClosing] = useState(false);
   const [isPricingOpen, setIsPricingOpen] = useState(false);
@@ -210,7 +212,8 @@ export default function SecurityConsultationsPopup({
 
               <button
                 onClick={() => {
-                  onClose();
+                  handleClose();
+                  onBookNow?.();
                 }}
                 className="flex-1 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg hover:from-cyan-400 hover:to-blue-400 transition-all font-semibold"
               >

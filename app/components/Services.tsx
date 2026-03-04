@@ -4,11 +4,14 @@ import { useState } from "react";
 import SmartContractAuditPopup from "./popups/services-popups/SmartContractAuditPopup";
 import AuditReadinessPopup from "./popups/services-popups/AuditReadinessPopup";
 import SecurityConsultationsPopup from "./popups/services-popups/SecurityConsultationsPopup";
+import RequestQuotePopup from "./popups/hero_nav-popups/RequestQuotePopup";
 
 export default function Services() {
   const [isAuditPopupOpen, setIsAuditPopupOpen] = useState(false);
   const [isReadinessPopupOpen, setIsReadinessPopupOpen] = useState(false);
   const [isSecurityPopupOpen, setIsSecurityPopupOpen] = useState(false);
+  const [isQuotePopupOpen, setIsQuotePopupOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState<string>();
 
   const services = [
     {
@@ -27,6 +30,11 @@ export default function Services() {
         "Get expert guidance on security best practices, architecture reviews, and ongoing security strategy for your Web3 project.",
     },
   ];
+
+  const handleBookNow = (serviceTitle: string) => {
+    setSelectedService(serviceTitle);
+    setIsQuotePopupOpen(true);
+  };
 
   return (
     <section
@@ -72,14 +80,22 @@ export default function Services() {
       <SmartContractAuditPopup
         isOpen={isAuditPopupOpen}
         onClose={() => setIsAuditPopupOpen(false)}
+        onBookNow={() => handleBookNow("Smart Contract Auditing")}
       />
       <AuditReadinessPopup
         isOpen={isReadinessPopupOpen}
         onClose={() => setIsReadinessPopupOpen(false)}
+        onBookNow={() => handleBookNow("Audit Readiness & Competition Prep")}
       />
       <SecurityConsultationsPopup
         isOpen={isSecurityPopupOpen}
         onClose={() => setIsSecurityPopupOpen(false)}
+        onBookNow={() => handleBookNow("Smart Contract Security Consultations")}
+      />
+      <RequestQuotePopup
+        isOpen={isQuotePopupOpen}
+        onClose={() => setIsQuotePopupOpen(false)}
+        preselectedService={selectedService}
       />
     </section>
   );

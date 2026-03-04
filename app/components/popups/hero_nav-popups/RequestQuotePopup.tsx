@@ -6,24 +6,42 @@ import { useForm, ValidationError } from "@formspree/react";
 interface RequestQuotePopupProps {
   isOpen: boolean;
   onClose: () => void;
+  preselectedService?: string;
 }
 
 export default function RequestQuotePopup({
   isOpen,
   onClose,
+  preselectedService,
 }: RequestQuotePopupProps) {
   const [isClosing, setIsClosing] = useState(false);
   const [state, handleSubmit] = useForm("mlgwqnql");
+  const [checkedServices, setCheckedServices] = useState<string[]>([]);
 
   useEffect(() => {
     if (!isOpen) {
       setIsClosing(false);
+    } else if (preselectedService) {
+      // Pre-select the service when the popup opens
+      setCheckedServices([preselectedService]);
     }
-  }, [isOpen]);
+  }, [isOpen, preselectedService]);
 
   const handleClose = () => {
     setIsClosing(true);
+    setCheckedServices([]);
     setTimeout(onClose, 300);
+  };
+
+  const handleServiceChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    value: string,
+  ) => {
+    if (e.target.checked) {
+      setCheckedServices((prev) => [...prev, value]);
+    } else {
+      setCheckedServices((prev) => prev.filter((s) => s !== value));
+    }
   };
 
   if (!isOpen && !isClosing) return null;
@@ -235,6 +253,12 @@ export default function RequestQuotePopup({
                           type="checkbox"
                           name="services"
                           value="Smart Contract Auditing"
+                          checked={checkedServices.includes(
+                            "Smart Contract Auditing",
+                          )}
+                          onChange={(e) =>
+                            handleServiceChange(e, "Smart Contract Auditing")
+                          }
                           className="mt-1"
                           disabled={state.submitting}
                         />
@@ -245,6 +269,15 @@ export default function RequestQuotePopup({
                           type="checkbox"
                           name="services"
                           value="Audit Readiness & Competition Prep"
+                          checked={checkedServices.includes(
+                            "Audit Readiness & Competition Prep",
+                          )}
+                          onChange={(e) =>
+                            handleServiceChange(
+                              e,
+                              "Audit Readiness & Competition Prep",
+                            )
+                          }
                           className="mt-1"
                           disabled={state.submitting}
                         />
@@ -255,6 +288,15 @@ export default function RequestQuotePopup({
                           type="checkbox"
                           name="services"
                           value="Smart Contract Security Consultations"
+                          checked={checkedServices.includes(
+                            "Smart Contract Security Consultations",
+                          )}
+                          onChange={(e) =>
+                            handleServiceChange(
+                              e,
+                              "Smart Contract Security Consultations",
+                            )
+                          }
                           className="mt-1"
                           disabled={state.submitting}
                         />

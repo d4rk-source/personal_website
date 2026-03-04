@@ -7,11 +7,13 @@ import MethodologyPopup from "./pricing_methodology_popups/MethodologyPopup";
 interface SmartContractAuditPopupProps {
   isOpen: boolean;
   onClose: () => void;
+  onBookNow?: () => void;
 }
 
 export default function SmartContractAuditPopup({
   isOpen,
   onClose,
+  onBookNow,
 }: SmartContractAuditPopupProps) {
   const [isClosing, setIsClosing] = useState(false);
   const [isPricingOpen, setIsPricingOpen] = useState(false);
@@ -209,9 +211,8 @@ export default function SmartContractAuditPopup({
 
               <button
                 onClick={() => {
-                  // Handle book now click
-                  onClose();
-                  // You can add navigation to booking or contact form here
+                  handleClose();
+                  onBookNow?.();
                 }}
                 className="flex-1 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg hover:from-cyan-400 hover:to-blue-400 transition-all font-semibold"
               >
