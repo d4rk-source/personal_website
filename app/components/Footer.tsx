@@ -1,3 +1,5 @@
+"use client";
+
 import Logo from "./Logo";
 
 export default function Footer() {
@@ -33,7 +35,7 @@ export default function Footer() {
               </li>
               <li>
                 <a href="#" className="hover:text-white transition-colors">
-                  Smart Contract Security Consultations
+                  Protocol Security Strategy & Incident Response
                 </a>
               </li>
             </ul>
@@ -49,12 +51,15 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Case Studies
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a
+                  href="#past-work"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const element = document.getElementById("past-work");
+                    element?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className="hover:text-white transition-colors"
+                >
                   Security Reports
                 </a>
               </li>
@@ -67,7 +72,10 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a
+                  href="/contact"
+                  className="hover:text-white transition-colors"
+                >
                   Contact
                 </a>
               </li>
@@ -77,34 +85,36 @@ export default function Footer() {
           {/* Social & Contact */}
           <div>
             <h3 className="font-semibold text-lg mb-4">Connect</h3>
-            <div className="flex flex-col space-y-3 text-sm">
-              <a
-                href="mailto:hello@alexcipher.com"
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                Email
-              </a>
-              <div className="flex gap-4 pt-2">
+            <ul className="space-y-2 text-gray-400 text-sm">
+              <li>
                 <a
-                  href="#"
-                  className="text-gray-400 hover:text-blue-400 transition-colors"
+                  href="mailto:hello@alexcipher.com"
+                  className="hover:text-white transition-colors"
                 >
-                  Twitter
+                  Email
                 </a>
+              </li>
+              <li>
                 <a
-                  href="#"
-                  className="text-gray-400 hover:text-blue-400 transition-colors"
+                  href="https://x.com/_Alex_Cipher"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  Twitter (X)
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/d4rk-source"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
                 >
                   GitHub
                 </a>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-blue-400 transition-colors"
-                >
-                  LinkedIn
-                </a>
-              </div>
-            </div>
+              </li>
+            </ul>
           </div>
         </div>
 
