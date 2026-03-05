@@ -105,48 +105,46 @@ export default function PricingPopup({
                 <div className="space-y-4">
                   <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
                     <h4 className="font-semibold text-white mb-2">
-                      Basic Audit
+                      Standard Rate
                     </h4>
                     <p className="text-2xl font-bold text-cyan-400 mb-2">
-                      $5,000
+                      €2 per LOC
                     </p>
                     <p className="text-sm text-gray-400">
-                      Up to 500 lines of code, basic vulnerability assessment,
-                      and detailed report.
+                      Pricing based on in-scope lines of code (excluding
+                      comments and empty lines). Includes comprehensive security
+                      review, detailed report, and post-audit support.
                     </p>
                   </div>
 
-                  <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
+                  <div className="bg-gray-800/50 border border-cyan-700/50 rounded-lg p-4 relative overflow-hidden">
+                    <div className="absolute top-2 right-2 bg-cyan-500 text-white text-xs px-2 py-1 rounded-full font-semibold">
+                      DISCOUNT
+                    </div>
                     <h4 className="font-semibold text-white mb-2">
-                      Standard Audit
+                      Repeat Client Rate
                     </h4>
                     <p className="text-2xl font-bold text-cyan-400 mb-2">
-                      $10,000
+                      €1.80 per LOC
                     </p>
                     <p className="text-sm text-gray-400">
-                      Up to 1,500 lines of code, comprehensive security review,
-                      gas optimization, and post-audit support.
-                    </p>
-                  </div>
-
-                  <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
-                    <h4 className="font-semibold text-white mb-2">
-                      Enterprise Audit
-                    </h4>
-                    <p className="text-2xl font-bold text-cyan-400 mb-2">
-                      Custom Quote
-                    </p>
-                    <p className="text-sm text-gray-400">
-                      Complex protocols, multiple contracts, ongoing
-                      consultations, and dedicated support.
+                      Get 10% off for returning clients. Same comprehensive
+                      service with loyalty pricing for continued partnership.
                     </p>
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-gray-700">
+                <div className="pt-4 border-t border-gray-700 space-y-3">
                   <p className="text-sm text-gray-400">
-                    All audit packages include a comprehensive report with
-                    severity ratings and remediation recommendations.
+                    <strong className="text-gray-300">What's included:</strong>{" "}
+                    All audits include static analysis, dynamic testing,
+                    vulnerability assessment, comprehensive report with severity
+                    ratings, and remediation recommendations.
+                  </p>
+                  <p className="text-xs text-gray-500">
+                    * LOC (Lines of Code) count excludes comments, blank lines,
+                    and out-of-scope files. Final count determined during
+                    scoping phase.
                   </p>
                 </div>
               </>
@@ -157,100 +155,108 @@ export default function PricingPopup({
                 <div className="space-y-4">
                   <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
                     <h4 className="font-semibold text-white mb-2">
-                      Pre-Audit Scan
+                      Audit Readiness Review
                     </h4>
                     <p className="text-2xl font-bold text-cyan-400 mb-2">
-                      $2,500
+                      €1 per LOC
                     </p>
                     <p className="text-sm text-gray-400">
-                      Quick vulnerability scan, automated testing, and priority
-                      issue list to fix before official audit.
-                    </p>
-                  </div>
-
-                  <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
-                    <h4 className="font-semibold text-white mb-2">
-                      Competition Ready
-                    </h4>
-                    <p className="text-2xl font-bold text-cyan-400 mb-2">
-                      $4,000
-                    </p>
-                    <p className="text-sm text-gray-400">
-                      Full pre-audit review, contest optimization, strategic
-                      advice, and code hardening for audit competitions.
-                    </p>
-                  </div>
-
-                  <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
-                    <h4 className="font-semibold text-white mb-2">
-                      Complete Prep Package
-                    </h4>
-                    <p className="text-2xl font-bold text-cyan-400 mb-2">
-                      $6,500
-                    </p>
-                    <p className="text-sm text-gray-400">
-                      Comprehensive readiness with bug bounty prep, multiple
-                      review cycles, and ongoing support until audit completion.
+                      Comprehensive pre-audit review to identify and resolve
+                      vulnerabilities before official audit submission. Pricing
+                      based on in-scope lines of code (excluding comments and
+                      empty lines).
                     </p>
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-gray-700">
+                <div className="pt-4 border-t border-gray-700 space-y-3">
                   <p className="text-sm text-gray-400">
-                    All packages include actionable remediation guidance and
-                    timing consultation for your formal audit.
+                    <strong className="text-gray-300">What's included:</strong>{" "}
+                    Pre-audit vulnerability scanning, bug bounty preparation,
+                    contest optimization, code review with fixes, and audit
+                    timing consultation.
+                  </p>
+                  <p className="text-sm text-gray-400">
+                    <strong className="text-gray-300">Benefits:</strong>{" "}
+                    Maximize your chances of success in audit competitions and
+                    bug bounty programs by fixing issues before submission.
+                  </p>
+                  <p className="text-xs text-gray-500">
+                    * LOC (Lines of Code) count excludes comments, blank lines,
+                    and out-of-scope files. Final count determined during
+                    scoping phase.
                   </p>
                 </div>
               </>
             )}
 
-            {serviceType === "Smart Contract Security Consultations" && (
+            {serviceType ===
+              "Protocol Security Strategy & Incident Response" && (
               <>
                 <div className="space-y-4">
                   <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
                     <h4 className="font-semibold text-white mb-2">
-                      Single Session
+                      Security Strategy Report
                     </h4>
                     <p className="text-2xl font-bold text-cyan-400 mb-2">
-                      $500/hr
+                      €2,000
                     </p>
                     <p className="text-sm text-gray-400">
-                      One-time consultation for specific questions, architecture
-                      review, or security advice.
+                      Comprehensive analysis of past audits, full security
+                      roadmap with audit timing, bug bounty recommendations,
+                      audit frequency planning, and a consultation call to
+                      explain everything.
                     </p>
                   </div>
 
                   <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
                     <h4 className="font-semibold text-white mb-2">
-                      Monthly Retainer
+                      Post-Incident Response Strategy
                     </h4>
                     <p className="text-2xl font-bold text-cyan-400 mb-2">
-                      $3,000/mo
+                      €2,000
                     </p>
                     <p className="text-sm text-gray-400">
-                      Up to 8 hours monthly, ongoing security support,
-                      architecture reviews, and strategic guidance.
+                      Complete incident response plan detailing step-by-step
+                      procedures, communication protocols, recovery strategies,
+                      and a consultation call for implementation guidance.
                     </p>
                   </div>
 
-                  <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
+                  <div className="bg-gray-800/50 border border-cyan-700/50 rounded-lg p-4 relative overflow-hidden">
+                    <div className="absolute top-2 right-2 bg-cyan-500 text-white text-xs px-2 py-1 rounded-full font-semibold">
+                      BEST VALUE
+                    </div>
                     <h4 className="font-semibold text-white mb-2">
-                      Dedicated Advisory
+                      Complete Strategy Package
                     </h4>
                     <p className="text-2xl font-bold text-cyan-400 mb-2">
-                      Custom Quote
+                      €3,000
                     </p>
                     <p className="text-sm text-gray-400">
-                      Exclusive partnership with priority support, regular
-                      check-ins, and full-cycle security oversight.
+                      Both comprehensive reports: security strategy and
+                      post-incident response. Includes full analysis of past
+                      audits, strategic roadmap, incident response planning, and
+                      a detailed consultation call.
                     </p>
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-gray-700">
+                <div className="pt-4 border-t border-gray-700 space-y-3">
                   <p className="text-sm text-gray-400">
-                    All consultation packages include strategic security
-                    planning and best practices implementation guidance.
+                    <strong className="text-gray-300">
+                      What's included in all packages:
+                    </strong>{" "}
+                    In-depth research and analysis of your protocol, review of
+                    all past audit reports, detailed written strategy
+                    document(s), and a consultation call to walk through
+                    recommendations and provide ongoing support.
+                  </p>
+                  <p className="text-sm text-gray-400">
+                    <strong className="text-gray-300">Deliverables:</strong>{" "}
+                    Professional strategy reports tailored to your protocol's
+                    specific needs, actionable timelines, and direct access to
+                    discuss implementation.
                   </p>
                 </div>
               </>

@@ -125,7 +125,7 @@ export default function SecurityConsultationsPopup({
             {/* Header */}
             <div className="mb-8">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
-                Smart Contract Security Consultations
+                Protocol Security Strategy & Incident Response
               </h2>
               <div className="h-1 w-16 bg-gradient-to-r from-cyan-400 to-blue-500" />
             </div>
@@ -133,56 +133,63 @@ export default function SecurityConsultationsPopup({
             {/* Description */}
             <div className="mb-8 space-y-4 text-gray-300">
               <p>
-                Get personalized expert guidance to strengthen your Web3
-                project's security posture. Our consultations provide strategic
-                insights and tactical recommendations tailored to your specific
-                needs and project stage.
+                This isn't just a quick consultation—it's a comprehensive
+                security partnership. I dive deep into your protocol, thoroughly
+                analyze all past audit reports, and do my homework to provide
+                actionable, strategic guidance tailored to your specific needs.
               </p>
 
-              <p>Our consultation services cover:</p>
+              <p>What you get:</p>
 
               <ul className="space-y-2 ml-4">
                 <li className="flex items-start">
                   <span className="text-cyan-400 mr-3 mt-1">✓</span>
                   <span>
-                    <strong>Security Planning & Strategy</strong> - Develop
-                    comprehensive security roadmaps for your protocol
+                    <strong>Comprehensive Past Audit Analysis</strong> - I
+                    review all your previous audit reports to understand your
+                    protocol's security history and recurring patterns
                   </span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-cyan-400 mr-3 mt-1">✓</span>
                   <span>
-                    <strong>Architecture Reviews</strong> - Evaluate system
-                    design for potential vulnerabilities and improvements
+                    <strong>Full Security Roadmap</strong> - Strategic timing
+                    for audit competitions, bug bounty program recommendations,
+                    audit frequency planning, and comprehensive security
+                    milestones
                   </span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-cyan-400 mr-3 mt-1">✓</span>
                   <span>
-                    <strong>Best Practices Implementation</strong> - Guidance on
-                    implementing industry security standards
+                    <strong>Optional Post-Incident Response Strategy</strong> -
+                    Step-by-step incident response planning, communication
+                    protocols, and recovery procedures
                   </span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-cyan-400 mr-3 mt-1">✓</span>
                   <span>
-                    <strong>Risk Assessment</strong> - Identify and prioritize
-                    security risks in your project
+                    <strong>Detailed Written Reports</strong> - One or two
+                    comprehensive strategy documents depending on your package
                   </span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-cyan-400 mr-3 mt-1">✓</span>
                   <span>
-                    <strong>Ongoing Security Support</strong> - Continuous
-                    guidance throughout your project lifecycle
+                    <strong>Consultation Call Included</strong> - Get on a call
+                    with me to walk through recommendations, ask questions, and
+                    receive ongoing support
                   </span>
                 </li>
               </ul>
 
               <p className="text-gray-400 pt-2">
-                Whether you're in the early stages of development or scaling an
-                established protocol, our consultants provide the strategic
-                security expertise you need to build with confidence.
+                Choose between a security-focused strategy, a post-incident
+                response plan, or both. Every package includes my full
+                commitment to understanding your protocol and providing the
+                strategic security guidance you need to protect your users and
+                assets.
               </p>
             </div>
 
@@ -227,12 +234,12 @@ export default function SecurityConsultationsPopup({
       <PricingPopup
         isOpen={isPricingOpen}
         onClose={() => setIsPricingOpen(false)}
-        serviceType="Smart Contract Security Consultations"
+        serviceType="Protocol Security Strategy & Incident Response"
       />
       <MethodologyPopup
         isOpen={isMethodologyOpen}
         onClose={() => setIsMethodologyOpen(false)}
-        serviceType="Smart Contract Security Consultations"
+        serviceType="Protocol Security Strategy & Incident Response"
       />
     </>
   );

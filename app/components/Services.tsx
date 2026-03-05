@@ -25,9 +25,9 @@ export default function Services() {
         "Get your protocol audit-ready for bug bounties and audit contests. We help identify and resolve vulnerabilities before submission, maximizing your chances of success.",
     },
     {
-      title: "Smart Contract Security Consultations",
+      title: "Protocol Security Strategy & Incident Response",
       description:
-        "Get expert guidance on security best practices, architecture reviews, and ongoing security strategy for your Web3 project.",
+        "Comprehensive security planning with in-depth analysis of past audits, strategic roadmaps for securing your protocol, and optional post-incident response strategies. Includes detailed reports and consultation calls.",
     },
   ];
 
@@ -90,7 +90,9 @@ export default function Services() {
       <SecurityConsultationsPopup
         isOpen={isSecurityPopupOpen}
         onClose={() => setIsSecurityPopupOpen(false)}
-        onBookNow={() => handleBookNow("Smart Contract Security Consultations")}
+        onBookNow={() =>
+          handleBookNow("Protocol Security Strategy & Incident Response")
+        }
       />
       <RequestQuotePopup
         isOpen={isQuotePopupOpen}

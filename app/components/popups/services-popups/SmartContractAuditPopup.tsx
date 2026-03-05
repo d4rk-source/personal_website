@@ -179,8 +179,9 @@ export default function SmartContractAuditPopup({
               </ul>
 
               <p className="text-gray-400 pt-2">
-                Whether you're launching a new protocol, token, or dApp, our
-                auditing services ensure your smart contracts are secure,
+                Whether you're launching a DeFi protocol (lending, staking,
+                swapping), gambling dApp, token, or any other smart contract
+                project, our auditing services ensure your contracts are secure,
                 efficient, and ready for production.
               </p>
             </div>

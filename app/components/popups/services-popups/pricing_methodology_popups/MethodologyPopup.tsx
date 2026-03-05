@@ -223,57 +223,72 @@ export default function MethodologyPopup({
               </div>
             )}
 
-            {serviceType === "Smart Contract Security Consultations" && (
+            {serviceType ===
+              "Protocol Security Strategy & Incident Response" && (
               <div className="space-y-4">
                 <div>
                   <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
-                    <span className="text-cyan-400">1.</span> Discovery Session
+                    <span className="text-cyan-400">1.</span> Protocol Deep Dive
                   </h4>
                   <p className="text-sm text-gray-400 ml-6">
-                    Understand your project goals, technical challenges, and
-                    security concerns through detailed discussion.
+                    Comprehensive analysis of your protocol architecture,
+                    codebase, and all past audit reports to understand your
+                    security history and identify patterns.
                   </p>
                 </div>
 
                 <div>
                   <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
-                    <span className="text-cyan-400">2.</span> Architecture
-                    Review
+                    <span className="text-cyan-400">2.</span> Risk Assessment
                   </h4>
                   <p className="text-sm text-gray-400 ml-6">
-                    Evaluate your smart contract design patterns and suggest
-                    security improvements before implementation.
+                    Evaluate current vulnerabilities, attack surfaces, and
+                    potential threat vectors based on protocol type and past
+                    findings.
                   </p>
                 </div>
 
                 <div>
                   <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
-                    <span className="text-cyan-400">3.</span> Strategic Guidance
+                    <span className="text-cyan-400">3.</span> Strategy
+                    Development
                   </h4>
                   <p className="text-sm text-gray-400 ml-6">
-                    Provide recommendations on security best practices, upgrade
-                    patterns, and threat modeling strategies.
+                    Create comprehensive security roadmap including audit
+                    timing, bug bounty program structure, audit frequency
+                    recommendations, and milestone planning.
                   </p>
                 </div>
 
                 <div>
                   <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
-                    <span className="text-cyan-400">4.</span> Implementation
-                    Support
+                    <span className="text-cyan-400">4.</span> Incident Response
+                    Planning
                   </h4>
                   <p className="text-sm text-gray-400 ml-6">
-                    Answer questions during development, review critical code
-                    sections, and validate security decisions.
+                    (Optional) Develop step-by-step incident response
+                    procedures, communication protocols, emergency contacts, and
+                    recovery strategies.
                   </p>
                 </div>
 
                 <div>
                   <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
-                    <span className="text-cyan-400">5.</span> Ongoing Advisory
+                    <span className="text-cyan-400">5.</span> Report Delivery
                   </h4>
                   <p className="text-sm text-gray-400 ml-6">
-                    Continuous security partnership with regular check-ins and
-                    proactive threat monitoring for your protocol.
+                    Provide detailed written strategy report(s) with actionable
+                    recommendations, timelines, and implementation guidance.
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
+                    <span className="text-cyan-400">6.</span> Consultation Call
+                  </h4>
+                  <p className="text-sm text-gray-400 ml-6">
+                    Walk through all recommendations, answer questions, clarify
+                    implementation details, and provide ongoing support.
                   </p>
                 </div>
               </div>
