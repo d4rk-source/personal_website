@@ -10,7 +10,7 @@ export default function PastWork() {
     {
       title: "CTF Creator & Participant",
       description:
-        "Created and hosted multiple Capture The Flag (CTF) competitions for the security community. Active participant in CTF competitions, regularly placing in top positions and solving complex security challenges.",
+        "Created an auditor's playground Capture The Flag (CTF) for the security community. I actively participate in CTF competitions, regularly solving complex security challenges.",
       icon: "🚩",
       link: "https://github.com/d4rk-source/Never-Poor-Again", // Add your CTF link here
     },
@@ -20,6 +20,13 @@ export default function PastWork() {
         "Active security researcher on Code4rena, identifying medium-severity vulnerabilities in protocols. Secured payouts through bug hunting and contest participation.",
       icon: "🏆",
       link: "https://code4rena.com/@Alex_Cipher", // Add your Code4rena profile link here
+    },
+    {
+      title: "DiceFate (Local Gambling dApp)",
+      description:
+        "Built DiceFate, a local-only gambling dApp, to deepen my understanding of gambling protocol development and strengthen my knowledge of gambling-specific risks and vulnerabilities.",
+      icon: "🎲",
+      link: "https://github.com/d4rk-source/DiceFate",
     },
   ];
 
