@@ -6,42 +6,7 @@ export default function Blogs() {
   const blogPosts = [
     {
       id: 1,
-      title: "Common Smart Contract Vulnerabilities and How to Prevent Them",
-      excerpt:
-        "Explore the most common security vulnerabilities found in smart contracts and learn best practices to prevent them.",
-      date: "February 20, 2026",
-      readTime: "8 min read",
-      category: "Security",
-    },
-    {
-      id: 2,
-      title: "Gas Optimization Techniques for Ethereum Smart Contracts",
-      excerpt:
-        "Learn how to optimize your smart contracts for gas efficiency without sacrificing security.",
-      date: "February 15, 2026",
-      readTime: "10 min read",
-      category: "Optimization",
-    },
-    {
-      id: 3,
-      title: "Understanding the CERC20 Standard and Its Implications",
-      excerpt:
-        "Deep dive into the CERC20 token standard and what developers need to know about implementation.",
-      date: "February 10, 2026",
-      readTime: "7 min read",
-      category: "Standards",
-    },
-    {
-      id: 4,
-      title: "Access Control Patterns: Ensuring Authorized Function Calls",
-      excerpt:
-        "A comprehensive guide to implementing robust access control in your smart contracts.",
-      date: "February 5, 2026",
-      readTime: "9 min read",
-      category: "Best Practices",
-    },
-    {
-      id: 5,
+      slug: "importance-of-external-audits-web3",
       title: "The Importance of External Audits in Web3 Development",
       excerpt:
         "Why external security audits are critical for protocol success and investor confidence.",
@@ -50,12 +15,23 @@ export default function Blogs() {
       category: "Auditing",
     },
     {
-      id: 6,
-      title: "Reentrancy Attacks: Understanding and Defending Against Them",
+      id: 2,
+      slug: "working-with-a-good-auditor",
+      title: "What It Means to Work with a Good Auditor",
       excerpt:
-        "Learn how reentrancy attacks work and the multiple patterns to defend against them.",
-      date: "January 25, 2026",
-      readTime: "11 min read",
+        "Understanding the qualities, practices, and benefits of partnering with a professional security auditor for your Web3 project.",
+      date: "March 1, 2026",
+      readTime: "8 min read",
+      category: "Best Practices",
+    },
+    {
+      id: 3,
+      slug: "gambling-dapp-security-guide",
+      title: "Key Steps for Gambling dApp Security",
+      excerpt:
+        "Essential security measures and best practices for building and auditing gambling decentralized applications.",
+      date: "March 5, 2026",
+      readTime: "10 min read",
       category: "Security",
     },
   ];
@@ -130,7 +106,7 @@ export default function Blogs() {
               <div className="flex items-center justify-between pt-4 border-t border-gray-800">
                 <time className="text-sm text-gray-500">{post.date}</time>
                 <Link
-                  href={`/blogs/${post.id}`}
+                  href={`/blogs/${post.slug}`}
                   className="text-blue-400 font-semibold hover:text-blue-300 transition-colors"
                 >
                   Read More →
