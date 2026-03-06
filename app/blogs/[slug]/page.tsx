@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import ExternalAuditsArticle from "./articles/ExternalAuditsArticle";
 import WorkingWithAuditorArticle from "./articles/WorkingWithAuditorArticle";
 import GamblingDappSecurityArticle from "./articles/GamblingDappSecurityArticle";
@@ -11,6 +12,7 @@ const blogData: Record<
     date: string;
     readTime: string;
     category: string;
+    description: string;
     component: React.ComponentType;
   }
 > = {
@@ -19,6 +21,8 @@ const blogData: Record<
     date: "January 30, 2026",
     readTime: "6 min read",
     category: "Auditing",
+    description:
+      "Why external security audits are critical for protocol success and investor confidence in Web3 development.",
     component: ExternalAuditsArticle,
   },
   "working-with-a-good-auditor": {
@@ -26,6 +30,8 @@ const blogData: Record<
     date: "March 1, 2026",
     readTime: "8 min read",
     category: "Best Practices",
+    description:
+      "Understanding the qualities, practices, and benefits of partnering with a professional security auditor for your Web3 project.",
     component: WorkingWithAuditorArticle,
   },
   "gambling-dapp-security-guide": {
@@ -33,9 +39,62 @@ const blogData: Record<
     date: "March 5, 2026",
     readTime: "10 min read",
     category: "Security",
+    description:
+      "Essential security measures and best practices for building and auditing gambling decentralized applications.",
     component: GamblingDappSecurityArticle,
   },
 };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const blog = blogData[slug];
+
+  if (!blog) {
+    return {
+      title: "Article Not Found | Alex Cipher",
+      description: "The article you're looking for could not be found.",
+    };
+  }
+
+  const url = `https://alexcipher.xyz/blogs/${slug}`;
+
+  return {
+    title: `${blog.title} | Alex Cipher`,
+    description: blog.description,
+    keywords: `${blog.category}, smart contract, audit, security, Web3, ${blog.title.toLowerCase()}`,
+    authors: [{ name: "Alex Cipher" }],
+    openGraph: {
+      type: "article",
+      url,
+      title: blog.title,
+      description: blog.description,
+      authors: ["Alex Cipher"],
+      publishedTime: blog.date,
+      tags: [blog.category, "Smart Contract", "Security", "Web3"],
+      images: [
+        {
+          url: "https://alexcipher.xyz/og-image.jpg",
+          width: 1200,
+          height: 630,
+          alt: blog.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: blog.title,
+      description: blog.description,
+      creator: "@alexcipher",
+    },
+    alternates: {
+      canonical: url,
+    },
+  };
+}
 
 export default async function BlogPost({
   params,
