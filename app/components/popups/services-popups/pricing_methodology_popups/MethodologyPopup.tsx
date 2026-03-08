@@ -108,9 +108,9 @@ export default function MethodologyPopup({
                     <span className="text-cyan-400">1.</span> Initial Review
                   </h4>
                   <p className="text-sm text-gray-400 ml-6">
-                    We begin with a comprehensive code walkthrough,
-                    understanding architecture, business logic, and identifying
-                    critical areas.
+                    I begin with a comprehensive code walkthrough, understanding
+                    architecture, business logic, and identifying critical
+                    areas.
                   </p>
                 </div>
 

@@ -139,7 +139,7 @@ export default function AuditReadinessPopup({
                 improving your chances of a successful audit outcome.
               </p>
 
-              <p>Our audit readiness program includes:</p>
+              <p>My audit readiness program includes:</p>
 
               <ul className="space-y-2 ml-4">
                 <li className="flex items-start">
@@ -180,7 +180,7 @@ export default function AuditReadinessPopup({
               </ul>
 
               <p className="text-gray-400 pt-2">
-                Our team works closely with you to strengthen your contracts and
+                I work closely with you to strengthen your contracts and
                 maximize your probability of passing high-quality security
                 reviews with flying colors.
               </p>

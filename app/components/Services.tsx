@@ -17,12 +17,12 @@ export default function Services() {
     {
       title: "Smart Contract Auditing",
       description:
-        "We'll have our lead auditor conduct a thorough review, double-checking every line to boost your smart contract's security.",
+        "I'll conduct a thorough review, double-checking every line to boost your smart contract's security.",
     },
     {
       title: "Audit Readiness & Competition Prep",
       description:
-        "Get your protocol audit-ready for bug bounties and audit contests. We help identify and resolve vulnerabilities before submission, maximizing your chances of success.",
+        "Get your protocol audit-ready for bug bounties and audit contests. I help identify and resolve vulnerabilities before submission, maximizing your chances of success.",
     },
     {
       title: "Protocol Security Strategy & Incident Response",

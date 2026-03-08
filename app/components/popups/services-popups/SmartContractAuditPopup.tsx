@@ -138,7 +138,7 @@ export default function SmartContractAuditPopup({
                 vulnerabilities, inefficiencies, and potential exploits.
               </p>
 
-              <p>Our audit includes:</p>
+              <p>My audit includes:</p>
 
               <ul className="space-y-2 ml-4">
                 <li className="flex items-start">
@@ -181,7 +181,7 @@ export default function SmartContractAuditPopup({
               <p className="text-gray-400 pt-2">
                 Whether you're launching a DeFi protocol (lending, staking,
                 swapping), gambling dApp, token, or any other smart contract
-                project, our auditing services ensure your contracts are secure,
+                project, my auditing services ensure your contracts are secure,
                 efficient, and ready for production.
               </p>
             </div>

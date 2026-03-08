@@ -103,7 +103,7 @@ export default function AffiliatesPage() {
                   Sign Up
                 </h3>
                 <p className="text-gray-400">
-                  Fill out the form below to join our affiliate program. We'll
+                  Fill out the form below to join my affiliate program. I'll
                   review your application and get back to you within 48 hours.
                 </p>
               </div>
@@ -204,7 +204,7 @@ export default function AffiliatesPage() {
         <div className="bg-gradient-to-br from-gray-900 to-gray-950 border border-gray-800 rounded-lg p-8">
           <h2 className="text-3xl font-bold text-white mb-2">Apply to Join</h2>
           <p className="text-gray-400 mb-8">
-            Fill out the form below and we'll get back to you within 48 hours.
+            Fill out the form below and I'll get back to you within 48 hours.
           </p>
 
           {state.succeeded ? (
@@ -228,8 +228,8 @@ export default function AffiliatesPage() {
                 Application Received!
               </h3>
               <p className="text-gray-400 mb-6">
-                Thank you for applying to our affiliate program. We'll review
-                your application and get back to you within 48 hours.
+                Thank you for applying to my affiliate program. I'll review your
+                application and get back to you within 48 hours.
               </p>
               <button
                 onClick={() => window.location.reload()}
@@ -438,8 +438,8 @@ export default function AffiliatesPage() {
                 What promotional materials do you provide?
               </h3>
               <p className="text-gray-400">
-                We provide banner images, social media templates, pre-written
-                content suggestions, and case studies you can share. We'll also
+                I provide banner images, social media templates, pre-written
+                content suggestions, and case studies you can share. I'll also
                 work with you on custom resources if needed.
               </p>
             </div>
@@ -449,7 +449,7 @@ export default function AffiliatesPage() {
                 How long does the cookie last?
               </h3>
               <p className="text-gray-400">
-                Our tracking is lifetime-based. Once someone clicks your
+                My tracking is lifetime-based. Once someone clicks your
                 affiliate link, they're attributed to you forever, even if they
                 return months later or book multiple services.
               </p>
