@@ -104,9 +104,7 @@ export default function PricingPopup({
               <>
                 <div className="space-y-4">
                   <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
-                    <h4 className="font-semibold text-white mb-2">
-                      Starter
-                    </h4>
+                    <h4 className="font-semibold text-white mb-2">Starter</h4>
                     <p className="text-2xl font-bold text-cyan-400 mb-2">
                       $2K–$5K
                     </p>
@@ -118,16 +116,13 @@ export default function PricingPopup({
                   </div>
 
                   <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
-                    <h4 className="font-semibold text-white mb-2">
-                      Standard
-                    </h4>
+                    <h4 className="font-semibold text-white mb-2">Standard</h4>
                     <p className="text-2xl font-bold text-cyan-400 mb-2">
                       $5K–$15K
                     </p>
                     <p className="text-sm text-gray-400">
-                      For codebases of 1–3K LOC with moderate complexity.
-                      Covers the full audit scope, report, and remediation
-                      advice.
+                      For codebases of 1–3K LOC with moderate complexity. Covers
+                      the full audit scope, report, and remediation advice.
                     </p>
                   </div>
 
@@ -135,9 +130,7 @@ export default function PricingPopup({
                     <div className="absolute top-2 right-2 bg-cyan-500 text-white text-xs px-2 py-1 rounded-full font-semibold">
                       FULL SCOPE
                     </div>
-                    <h4 className="font-semibold text-white mb-2">
-                      Premium
-                    </h4>
+                    <h4 className="font-semibold text-white mb-2">Premium</h4>
                     <p className="text-2xl font-bold text-cyan-400 mb-2">
                       $15K+
                     </p>
