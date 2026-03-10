@@ -92,17 +92,17 @@ const methodology = [
 
 const pricingPlans = [
   {
-    name: "Audit Readiness Review",
-    price: "€1 per LOC",
+    name: "Pre-Bug Bounty Prep",
+    price: "$500–$2K",
     description:
-      "Comprehensive pre-audit review based on in-scope lines of code (excluding comments and empty lines).",
+      "Flat rate based on repo size and effort (e.g., monorepo setup, NatSpec comments, basic tooling). Bundle free with a Smart Contract Audit.",
   },
 ];
 
 const pricingNotes = [
   "Includes pre-audit vulnerability scanning, bug bounty preparation, contest optimization, code review with fixes, and audit timing consultation.",
   "Primary goal: maximize your success in audit competitions and bug bounty programs by fixing issues before submission.",
-  "LOC (Lines of Code) excludes comments, blank lines, and out-of-scope files. Final count is confirmed during scoping.",
+  "Bundle this service free with a Smart Contract Audit for added value.",
 ];
 
 const seoKeywords = [
@@ -128,7 +128,7 @@ const faqItems = [
   {
     question: "How is pre-audit review pricing calculated?",
     answer:
-      "Pricing is €1 per in-scope LOC, excluding comments and blank lines. Final scope and LOC are confirmed during the scoping phase.",
+      "Pricing is a flat $500–$2K based on repo size and effort. Final rate is confirmed during the scoping phase.",
   },
 ];
 

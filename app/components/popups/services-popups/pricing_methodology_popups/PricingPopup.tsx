@@ -105,31 +105,46 @@ export default function PricingPopup({
                 <div className="space-y-4">
                   <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
                     <h4 className="font-semibold text-white mb-2">
-                      Standard Rate
+                      Starter
                     </h4>
                     <p className="text-2xl font-bold text-cyan-400 mb-2">
-                      €2 per LOC
+                      $2K–$5K
                     </p>
                     <p className="text-sm text-gray-400">
-                      Pricing based on in-scope lines of code (excluding
-                      comments and empty lines). Includes comprehensive security
-                      review, detailed report, and post-audit support.
+                      For protocols under 1K LOC with simple DeFi or gambling
+                      logic. Includes full review, report, and post-audit
+                      support.
+                    </p>
+                  </div>
+
+                  <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
+                    <h4 className="font-semibold text-white mb-2">
+                      Standard
+                    </h4>
+                    <p className="text-2xl font-bold text-cyan-400 mb-2">
+                      $5K–$15K
+                    </p>
+                    <p className="text-sm text-gray-400">
+                      For codebases of 1–3K LOC with moderate complexity.
+                      Covers the full audit scope, report, and remediation
+                      advice.
                     </p>
                   </div>
 
                   <div className="bg-gray-800/50 border border-cyan-700/50 rounded-lg p-4 relative overflow-hidden">
                     <div className="absolute top-2 right-2 bg-cyan-500 text-white text-xs px-2 py-1 rounded-full font-semibold">
-                      DISCOUNT
+                      FULL SCOPE
                     </div>
                     <h4 className="font-semibold text-white mb-2">
-                      Repeat Client Rate
+                      Premium
                     </h4>
                     <p className="text-2xl font-bold text-cyan-400 mb-2">
-                      €1.80 per LOC
+                      $15K+
                     </p>
                     <p className="text-sm text-gray-400">
-                      Get 10% off for returning clients. Same comprehensive
-                      service with loyalty pricing for continued partnership.
+                      For complex, multi-contract systems. Full-depth engagement
+                      covering testing, comprehensive report, and remediation
+                      guidance.
                     </p>
                   </div>
                 </div>
@@ -142,9 +157,8 @@ export default function PricingPopup({
                     ratings, and remediation recommendations.
                   </p>
                   <p className="text-xs text-gray-500">
-                    * LOC (Lines of Code) count excludes comments, blank lines,
-                    and out-of-scope files. Final count determined during
-                    scoping phase.
+                    * Fixed tiers scope full deliverables — no per-LOC
+                    surprises. Final tier is confirmed during scoping.
                   </p>
                 </div>
               </>
@@ -155,16 +169,15 @@ export default function PricingPopup({
                 <div className="space-y-4">
                   <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
                     <h4 className="font-semibold text-white mb-2">
-                      Audit Readiness Review
+                      Pre-Bug Bounty Prep
                     </h4>
                     <p className="text-2xl font-bold text-cyan-400 mb-2">
-                      €1 per LOC
+                      $500–$2K
                     </p>
                     <p className="text-sm text-gray-400">
-                      Comprehensive pre-audit review to identify and resolve
-                      vulnerabilities before official audit submission. Pricing
-                      based on in-scope lines of code (excluding comments and
-                      empty lines).
+                      Flat rate based on repo size and effort (e.g., monorepo
+                      setup, NatSpec comments, basic tooling). Bundle free with
+                      a Smart Contract Audit.
                     </p>
                   </div>
                 </div>
@@ -182,9 +195,8 @@ export default function PricingPopup({
                     bug bounty programs by fixing issues before submission.
                   </p>
                   <p className="text-xs text-gray-500">
-                    * LOC (Lines of Code) count excludes comments, blank lines,
-                    and out-of-scope files. Final count determined during
-                    scoping phase.
+                    * Bundle this service free with a Smart Contract Audit for
+                    added value.
                   </p>
                 </div>
               </>
@@ -196,10 +208,10 @@ export default function PricingPopup({
                 <div className="space-y-4">
                   <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
                     <h4 className="font-semibold text-white mb-2">
-                      Security Strategy Report
+                      Pre-Incident Security Strategy
                     </h4>
                     <p className="text-2xl font-bold text-cyan-400 mb-2">
-                      €2,000
+                      €1,000
                     </p>
                     <p className="text-sm text-gray-400">
                       Comprehensive analysis of past audits, full security
@@ -214,7 +226,7 @@ export default function PricingPopup({
                       Post-Incident Response Strategy
                     </h4>
                     <p className="text-2xl font-bold text-cyan-400 mb-2">
-                      €2,000
+                      €1,500
                     </p>
                     <p className="text-sm text-gray-400">
                       Complete incident response plan detailing step-by-step
@@ -231,13 +243,12 @@ export default function PricingPopup({
                       Complete Strategy Package
                     </h4>
                     <p className="text-2xl font-bold text-cyan-400 mb-2">
-                      €3,000
+                      €2,500
                     </p>
                     <p className="text-sm text-gray-400">
-                      Both comprehensive reports: security strategy and
-                      post-incident response. Includes full analysis of past
-                      audits, strategic roadmap, incident response planning, and
-                      a detailed consultation call.
+                      Both reports: pre-incident security strategy and
+                      post-incident response. Full analysis, strategic roadmap,
+                      incident response planning, and a consultation call.
                     </p>
                   </div>
                 </div>

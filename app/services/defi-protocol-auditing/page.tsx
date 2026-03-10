@@ -96,23 +96,29 @@ const methodology = [
 
 const pricingPlans = [
   {
-    name: "Standard Rate",
-    price: "€2 per LOC",
+    name: "Starter",
+    price: "$2K–$5K",
     description:
-      "Pricing based on in-scope lines of code (excluding comments and empty lines). Includes full audit review, report, and post-audit support.",
+      "For protocols under 1K LOC with simpler DeFi logic. Includes full audit review, report, and post-audit support.",
   },
   {
-    name: "Repeat Client Rate",
-    price: "€1.80 per LOC",
+    name: "Standard",
+    price: "$5K–$15K",
     description:
-      "Returning clients receive 10% off with the same comprehensive service depth and support.",
-    badge: "DISCOUNT",
+      "For codebases of 1–3K LOC with moderate complexity. Covers the full audit scope, report, and remediation advice.",
+  },
+  {
+    name: "Premium",
+    price: "$15K+",
+    description:
+      "For complex, multi-contract systems. Full-depth engagement covering testing, comprehensive report, and remediation guidance.",
+    badge: "FULL SCOPE",
   },
 ];
 
 const pricingNotes = [
   "All audits include static analysis, dynamic testing, vulnerability assessment, comprehensive reporting, and remediation recommendations.",
-  "LOC (Lines of Code) excludes comments, blank lines, and out-of-scope files. Final count is confirmed during scoping.",
+  "Fixed tiers scope full deliverables — no per-LOC surprises. Final tier is confirmed during scoping.",
 ];
 
 const seoKeywords = [
@@ -138,7 +144,7 @@ const faqItems = [
   {
     question: "How much does a DeFi smart contract audit cost?",
     answer:
-      "Pricing is per in-scope LOC. Standard rate is €2 per LOC, with a repeat-client rate of €1.80 per LOC after scoping confirms the final code size.",
+      "Pricing uses fixed tiers by complexity: Starter ($2K–$5K for <1K LOC simple protocols), Standard ($5K–$15K for 1–3K LOC), and Premium ($15K+ for complex multi-contract systems). Final tier is confirmed during scoping.",
   },
 ];
 

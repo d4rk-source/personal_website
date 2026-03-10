@@ -97,22 +97,22 @@ const methodology = [
 
 const pricingPlans = [
   {
-    name: "Security Strategy Report",
-    price: "€2,000",
+    name: "Pre-Incident Security Strategy",
+    price: "€1,000",
     description:
       "Comprehensive analysis of past audits and full security roadmap with a consultation call.",
   },
   {
     name: "Post-Incident Response Strategy",
-    price: "€2,000",
+    price: "€1,500",
     description:
       "Complete incident response plan with procedures, communication protocols, and recovery strategy guidance.",
   },
   {
     name: "Complete Strategy Package",
-    price: "€3,000",
+    price: "€2,500",
     description:
-      "Both reports together: security strategy plus incident response planning with one consolidated engagement.",
+      "Both reports together: pre-incident security strategy plus post-incident response planning with one consolidated engagement.",
     badge: "BEST VALUE",
   },
 ];
