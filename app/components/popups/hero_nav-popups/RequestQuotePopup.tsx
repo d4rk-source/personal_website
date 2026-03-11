@@ -107,8 +107,14 @@ export default function RequestQuotePopup({
       />
 
       {/* Modal */}
-      <div className="fixed inset-x-0 bottom-0 top-[65px] md:top-[97px] flex items-center justify-center z-[95] p-4 pt-8 md:pt-16 overflow-y-auto">
-        <div className="modal relative bg-gradient-to-br from-gray-900 to-gray-950 rounded-lg border border-gray-800 max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl my-auto">
+      <div
+        className="fixed inset-x-0 bottom-0 top-[65px] md:top-[97px] flex items-center md:items-start justify-center z-[95] p-4 pt-8 md:pt-4 overflow-hidden"
+        onClick={handleClose}
+      >
+        <div
+          className="modal relative bg-gradient-to-br from-gray-900 to-gray-950 rounded-lg border border-gray-800 max-w-2xl w-full max-h-[90vh] md:max-h-[calc(100dvh-121px)] overflow-y-auto shadow-2xl my-auto md:my-0"
+          onClick={(e) => e.stopPropagation()}
+        >
           {/* Close Button */}
           <button
             onClick={handleClose}

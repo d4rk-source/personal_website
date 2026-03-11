@@ -64,8 +64,17 @@ export default function MethodologyPopup({
         }
       `}</style>
 
+      {/* Click-away layer */}
+      <div
+        className="fixed inset-x-0 bottom-0 top-[65px] md:top-[89px] z-[96]"
+        onClick={handleClose}
+      />
+
       {/* Side Panel */}
-      <div className="methodology-panel fixed right-0 bottom-0 top-[65px] md:top-[97px] z-[95] w-full max-w-md bg-gradient-to-br from-gray-900 to-gray-950 border-l border-gray-800 shadow-2xl overflow-y-auto">
+      <div
+        className="methodology-panel fixed right-0 bottom-0 top-[65px] md:top-[89px] z-[97] w-full max-w-md bg-gradient-to-br from-gray-900 to-gray-950 border-l border-gray-800 shadow-2xl overflow-y-auto"
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* Close Button */}
         <button
           onClick={handleClose}

@@ -92,13 +92,19 @@ export default function SecurityConsultationsPopup({
 
       {/* Backdrop */}
       <div
-        className="backdrop fixed inset-x-0 bottom-0 top-[65px] md:top-[97px] bg-black bg-opacity-70 z-[90]"
+        className="backdrop fixed inset-x-0 bottom-0 top-[65px] md:top-[89px] bg-black bg-opacity-70 z-[90]"
         onClick={handleClose}
       />
 
       {/* Modal */}
-      <div className="fixed inset-x-0 bottom-0 top-[65px] md:top-[97px] flex items-center justify-center z-[95] p-4 pt-8 md:pt-16 overflow-y-auto">
-        <div className="modal relative bg-gradient-to-br from-gray-900 to-gray-950 rounded-lg border border-gray-800 max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl my-auto">
+      <div
+        className="fixed inset-x-0 bottom-0 top-[65px] md:top-[89px] flex items-center justify-center z-[95] p-4 pt-8 md:pt-16 overflow-y-auto"
+        onClick={handleClose}
+      >
+        <div
+          className="modal relative bg-gradient-to-br from-gray-900 to-gray-950 rounded-lg border border-gray-800 max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl my-auto"
+          onClick={(e) => e.stopPropagation()}
+        >
           {/* Close Button */}
           <button
             onClick={handleClose}
@@ -133,10 +139,9 @@ export default function SecurityConsultationsPopup({
             {/* Description */}
             <div className="mb-8 space-y-4 text-gray-300">
               <p>
-                This isn't just a quick consultation—it's a comprehensive
-                security partnership. I dive deep into your protocol, thoroughly
-                analyze all past audit reports, and do my homework to provide
-                actionable, strategic guidance tailored to your specific needs.
+                This is a focused security strategy engagement. I review your
+                protocol and past audits to give practical, high-impact
+                recommendations.
               </p>
 
               <p>What you get:</p>
@@ -145,51 +150,29 @@ export default function SecurityConsultationsPopup({
                 <li className="flex items-start">
                   <span className="text-cyan-400 mr-3 mt-1">✓</span>
                   <span>
-                    <strong>Comprehensive Past Audit Analysis</strong> - I
-                    review all your previous audit reports to understand your
-                    protocol's security history and recurring patterns
+                    <strong>Past Audit Analysis</strong> - Key findings,
+                    recurring issues, and risk trends from prior reports
                   </span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-cyan-400 mr-3 mt-1">✓</span>
                   <span>
-                    <strong>Full Security Roadmap</strong> - Strategic timing
-                    for audit competitions, bug bounty program recommendations,
-                    audit frequency planning, and comprehensive security
-                    milestones
+                    <strong>Security Roadmap</strong> - Audit timing, bounty
+                    planning, and prioritized hardening milestones
                   </span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-cyan-400 mr-3 mt-1">✓</span>
                   <span>
-                    <strong>Optional Post-Incident Response Strategy</strong> -
-                    Step-by-step incident response planning, communication
-                    protocols, and recovery procedures
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-cyan-400 mr-3 mt-1">✓</span>
-                  <span>
-                    <strong>Detailed Written Reports</strong> - One or two
-                    comprehensive strategy documents depending on your package
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-cyan-400 mr-3 mt-1">✓</span>
-                  <span>
-                    <strong>Consultation Call Included</strong> - Get on a call
-                    with me to walk through recommendations, ask questions, and
-                    receive ongoing support
+                    <strong>Post-Incident Response Strategy</strong> - Clear
+                    response steps, communication flow, and recovery priorities
                   </span>
                 </li>
               </ul>
 
               <p className="text-gray-400 pt-2">
-                Choose between a security-focused strategy, a post-incident
-                response plan, or both. Every package includes my full
-                commitment to understanding your protocol and providing the
-                strategic security guidance you need to protect your users and
-                assets.
+                Choose security strategy, incident response, or both. Each
+                package includes a written plan and a consultation call.
               </p>
             </div>
 
