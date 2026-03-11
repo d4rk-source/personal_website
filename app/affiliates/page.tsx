@@ -1,62 +1,31 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
 import { useForm, ValidationError } from "@formspree/react";
+import Navigation from "@/app/components/Navigation";
 
 export default function AffiliatesPage() {
   const [state, handleSubmit] = useForm("xlgwqakv");
-  const [isApplicationSectionVisible, setIsApplicationSectionVisible] =
-    useState(true);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-950 to-black">
-      {/* Navigation */}
-      <nav className="border-b border-gray-800 bg-black/50 backdrop-blur-sm sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link
-            href="/"
-            className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent hover:from-cyan-300 hover:to-blue-400 transition-all"
-          >
-            Alex Cipher
-          </Link>
-          <Link
-            href="/"
-            className="text-gray-400 hover:text-white transition-colors flex items-center gap-2"
-          >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M10 19l-7-7m0 0l7-7m-7 7h18"
-              />
-            </svg>
-            Back to Home
-          </Link>
-        </div>
-      </nav>
+      <Navigation redirectToHomeForSections />
 
       {/* Hero Section */}
-      <section className="px-4 py-20 max-w-5xl mx-auto">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+      <section className="px-4 py-10 md:py-20 max-w-5xl mx-auto">
+        <div className="text-center mb-10 md:mb-16">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-5 md:mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
             Affiliate Program
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg md:text-2xl text-gray-300 max-w-3xl mx-auto">
             Earn 20% commission on every successful referral. Help secure Web3
             while building passive income.
           </p>
         </div>
 
         {/* Key Benefits */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
-          <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+        <div className="grid md:grid-cols-3 gap-5 md:gap-8 mb-10 md:mb-16">
+          <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-5 md:p-6">
             <div className="text-4xl font-bold text-cyan-400 mb-2">20%</div>
             <h3 className="text-lg font-semibold text-white mb-2">
               Commission Rate
@@ -67,7 +36,7 @@ export default function AffiliatesPage() {
             </p>
           </div>
 
-          <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+          <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-5 md:p-6">
             <div className="text-4xl font-bold text-cyan-400 mb-2">$1K+</div>
             <h3 className="text-lg font-semibold text-white mb-2">
               Average Payout
@@ -78,7 +47,7 @@ export default function AffiliatesPage() {
             </p>
           </div>
 
-          <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-6">
+          <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-5 md:p-6">
             <div className="text-4xl font-bold text-cyan-400 mb-2">∞</div>
             <h3 className="text-lg font-semibold text-white mb-2">
               Lifetime Tracking
@@ -91,7 +60,7 @@ export default function AffiliatesPage() {
         </div>
 
         {/* How It Works */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-8 mb-16">
+        <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-5 sm:p-6 md:p-8 mb-10 md:mb-16">
           <h2 className="text-3xl font-bold text-white mb-8">How It Works</h2>
           <div className="space-y-6">
             <div className="flex gap-4">
@@ -157,7 +126,7 @@ export default function AffiliatesPage() {
         </div>
 
         {/* Who Should Join */}
-        <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-8 mb-16">
+        <div className="bg-gray-900/50 border border-gray-800 rounded-lg p-5 sm:p-6 md:p-8 mb-10 md:mb-16">
           <h2 className="text-3xl font-bold text-white mb-6">
             Who Should Join?
           </h2>
@@ -201,7 +170,7 @@ export default function AffiliatesPage() {
         </div>
 
         {/* Application Form */}
-        <div className="bg-gradient-to-br from-gray-900 to-gray-950 border border-gray-800 rounded-lg p-8">
+        <div className="bg-gradient-to-br from-gray-900 to-gray-950 border border-gray-800 rounded-lg p-5 sm:p-6 md:p-8">
           <h2 className="text-3xl font-bold text-white mb-2">Apply to Join</h2>
           <p className="text-gray-400 mb-8">
             Fill out the form below and I'll get back to you within 48 hours.
@@ -397,7 +366,7 @@ export default function AffiliatesPage() {
         </div>
 
         {/* FAQ Section */}
-        <div className="mt-16 bg-gray-900/50 border border-gray-800 rounded-lg p-8">
+        <div className="mt-10 md:mt-16 bg-gray-900/50 border border-gray-800 rounded-lg p-5 sm:p-6 md:p-8">
           <h2 className="text-3xl font-bold text-white mb-6">
             Frequently Asked Questions
           </h2>
@@ -458,7 +427,7 @@ export default function AffiliatesPage() {
         </div>
 
         {/* CTA */}
-        <div className="mt-16 text-center">
+        <div className="mt-10 md:mt-16 text-center">
           <p className="text-gray-400 mb-4">
             Questions? Reach out to us at{" "}
             <a

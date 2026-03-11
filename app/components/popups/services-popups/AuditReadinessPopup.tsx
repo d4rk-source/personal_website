@@ -92,17 +92,17 @@ export default function AuditReadinessPopup({
 
       {/* Backdrop */}
       <div
-        className="backdrop fixed inset-0 bg-black bg-opacity-70 z-40"
+        className="backdrop fixed inset-x-0 bottom-0 top-[65px] md:top-[97px] bg-black bg-opacity-70 z-[90]"
         onClick={handleClose}
       />
 
       {/* Modal */}
-      <div className="fixed inset-0 flex items-center justify-center z-50 p-4 pt-24 overflow-y-auto">
+      <div className="fixed inset-x-0 bottom-0 top-[65px] md:top-[97px] flex items-center justify-center z-[95] p-4 pt-8 md:pt-16 overflow-y-auto">
         <div className="modal relative bg-gradient-to-br from-gray-900 to-gray-950 rounded-lg border border-gray-800 max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl my-auto">
           {/* Close Button */}
           <button
             onClick={handleClose}
-            className="absolute top-6 right-6 text-gray-400 hover:text-white transition-colors"
+            className="absolute top-4 md:top-6 right-6 text-gray-400 hover:text-white transition-colors"
             aria-label="Close popup"
           >
             <svg
@@ -121,7 +121,7 @@ export default function AuditReadinessPopup({
           </button>
 
           {/* Content */}
-          <div className="p-8 md:p-12">
+          <div className="p-5 sm:p-6 md:p-12">
             {/* Header */}
             <div className="mb-8">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">

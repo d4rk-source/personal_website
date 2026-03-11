@@ -24,12 +24,28 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+html {
+  overflow-x: hidden;
 }
 
 .logo-wrap {
   display: inline-flex;
   align-items: baseline;
   gap: 0.6rem;
+}
+
+@media (max-width: 640px) {
+  .logo-wrap {
+    gap: 0.4rem;
+  }
+
+  .logo-anim,
+  .logo-name {
+    font-size: 1.15rem;
+  }
 }
 
 .logo-anim {

@@ -33,17 +33,17 @@ export default function PastWork() {
   return (
     <section
       id="past-work"
-      className="px-4 py-20 max-w-7xl mx-auto border-t border-gray-800 scroll-mt-20"
+      className="px-4 py-12 md:py-20 max-w-7xl mx-auto border-t border-gray-800 scroll-mt-20"
     >
-      <h2 className="text-3xl md:text-4xl font-bold mb-16">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 md:mb-16">
         Related Past Work
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8">
         {pastWork.map((work) => (
           <div
             key={work.title}
-            className="bg-gradient-to-br from-gray-900 to-gray-950 p-8 rounded-lg border border-gray-800 hover:border-gray-700 transition-colors"
+            className="bg-gradient-to-br from-gray-900 to-gray-950 p-5 sm:p-6 md:p-8 rounded-lg border border-gray-800 hover:border-gray-700 transition-colors"
           >
             <div className="text-4xl mb-4">{work.icon}</div>
             <h3 className="text-xl font-bold mb-4">{work.title}</h3>

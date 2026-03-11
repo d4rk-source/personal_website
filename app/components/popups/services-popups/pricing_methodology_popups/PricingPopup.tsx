@@ -64,11 +64,11 @@ export default function PricingPopup({
       `}</style>
 
       {/* Side Panel */}
-      <div className="pricing-panel fixed left-0 top-0 bottom-0 z-50 w-full max-w-md bg-gradient-to-br from-gray-900 to-gray-950 border-r border-gray-800 shadow-2xl overflow-y-auto">
+      <div className="pricing-panel fixed left-0 bottom-0 top-[65px] md:top-[97px] z-[95] w-full max-w-md bg-gradient-to-br from-gray-900 to-gray-950 border-r border-gray-800 shadow-2xl overflow-y-auto">
         {/* Close Button */}
         <button
           onClick={handleClose}
-          className="absolute top-6 right-6 text-gray-400 hover:text-white transition-colors"
+          className="absolute top-4 md:top-6 right-6 text-gray-400 hover:text-white transition-colors"
           aria-label="Close pricing"
         >
           <svg
@@ -87,7 +87,7 @@ export default function PricingPopup({
         </button>
 
         {/* Content */}
-        <div className="p-8 pt-20">
+        <div className="p-5 sm:p-6 md:p-8 pt-16 md:pt-20">
           <div className="mb-6">
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
               Pricing

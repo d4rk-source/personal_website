@@ -1,59 +1,30 @@
 "use client";
 
-import Link from "next/link";
 import { useForm, ValidationError } from "@formspree/react";
 import Footer from "@/app/components/Footer";
+import Navigation from "@/app/components/Navigation";
 
 export default function ContactPage() {
   const [state, handleSubmit] = useForm("xzdjpazr");
 
   return (
     <>
-      {/* Navigation */}
-      <nav className="border-b border-gray-800 bg-black/50 backdrop-blur-sm sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link
-            href="/"
-            className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent hover:from-cyan-300 hover:to-blue-400 transition-all"
-          >
-            Alex Cipher
-          </Link>
-          <Link
-            href="/"
-            className="text-gray-400 hover:text-white transition-colors flex items-center gap-2"
-          >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M10 19l-7-7m0 0l7-7m-7 7h18"
-              />
-            </svg>
-            Back to Home
-          </Link>
-        </div>
-      </nav>
-      <main className="min-h-screen bg-black text-white pt-20">
-        <div className="px-4 py-20 max-w-3xl mx-auto">
+      <Navigation redirectToHomeForSections />
+      <main className="min-h-screen bg-black text-white">
+        <div className="px-4 py-10 md:py-20 max-w-3xl mx-auto">
           {/* Header */}
-          <div className="mb-16 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+          <div className="mb-10 md:mb-16 text-center">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
               Get in Touch
             </h1>
-            <p className="text-gray-400 text-lg">
+            <p className="text-gray-400 text-base sm:text-lg">
               Have questions about my services or want to discuss your security
               needs? Reach out and I'll get back to you as soon as possible.
             </p>
           </div>
 
           {/* Contact Form */}
-          <div className="bg-gradient-to-br from-gray-900 to-gray-950 border border-gray-800 rounded-lg p-8 md:p-12">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-950 border border-gray-800 rounded-lg p-5 sm:p-6 md:p-12">
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Name */}
               <div>

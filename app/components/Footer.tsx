@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import Logo from "./Logo";
 import SmartContractAuditPopup from "./popups/services-popups/SmartContractAuditPopup";
 import AuditReadinessPopup from "./popups/services-popups/AuditReadinessPopup";
@@ -21,9 +22,9 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-gray-800 bg-gray-950 mt-20">
-      <div className="px-4 py-16 max-w-7xl mx-auto">
+      <div className="px-4 py-12 md:py-16 max-w-7xl mx-auto">
         {/* Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mb-10 md:mb-12">
           {/* About */}
           <div>
             <div className="flex items-center mb-4">
@@ -71,9 +72,12 @@ export default function Footer() {
             <h3 className="font-semibold text-lg mb-4">Resources</h3>
             <ul className="space-y-2 text-gray-400 text-sm">
               <li>
-                <a href="/blogs" className="hover:text-white transition-colors">
+                <Link
+                  href="/blogs"
+                  className="hover:text-white transition-colors"
+                >
                   Blog
-                </a>
+                </Link>
               </li>
               <li>
                 <a
@@ -89,20 +93,20 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a
+                <Link
                   href="/affiliates"
                   className="hover:text-white transition-colors"
                 >
                   Affiliate Program
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/contact"
                   className="hover:text-white transition-colors"
                 >
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -144,7 +148,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between text-gray-400 text-sm">
+        <div className="border-t border-gray-800 pt-6 md:pt-8 flex flex-col md:flex-row items-center justify-between text-gray-400 text-sm text-center md:text-left gap-3 md:gap-0">
           <p>&copy; 2026 Alex Cipher. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
             <a href="#" className="hover:text-white transition-colors">

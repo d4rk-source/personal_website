@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Navigation from "../components/Navigation";
 
 export default function Blogs() {
   const blogPosts = [
@@ -38,44 +39,15 @@ export default function Blogs() {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      {/* Navigation */}
-      <nav className="border-b border-gray-800 bg-black/50 backdrop-blur-sm sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link
-            href="/"
-            className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent hover:from-cyan-300 hover:to-blue-400 transition-all"
-          >
-            Alex Cipher
-          </Link>
-          <Link
-            href="/"
-            className="text-gray-400 hover:text-white transition-colors flex items-center gap-2"
-          >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M10 19l-7-7m0 0l7-7m-7 7h18"
-              />
-            </svg>
-            Back to Home
-          </Link>
-        </div>
-      </nav>
+      <Navigation redirectToHomeForSections />
 
       {/* Header */}
-      <section className="px-4 py-20 md:py-32 max-w-7xl mx-auto">
-        <div className="mb-16">
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight mb-8">
+      <section className="px-4 py-12 md:py-24 max-w-7xl mx-auto">
+        <div className="mb-10 md:mb-14">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight tracking-tight mb-6 md:mb-8">
             Security Insights & Web3 Knowledge
           </h1>
-          <p className="text-lg md:text-xl text-gray-300 max-w-3xl">
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl">
             Explore articles on smart contract security, best practices, and
             insights from real-world audits.
           </p>
@@ -83,12 +55,12 @@ export default function Blogs() {
       </section>
 
       {/* Blog Grid */}
-      <section className="px-4 pb-20 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <section className="px-4 pb-14 md:pb-20 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
           {blogPosts.map((post) => (
             <article
               key={post.id}
-              className="bg-gradient-to-br from-gray-900 to-gray-950 p-8 rounded-lg border border-gray-800 hover:border-gray-700 transition-all hover:shadow-lg hover:shadow-blue-500/10"
+              className="bg-gradient-to-br from-gray-900 to-gray-950 p-5 sm:p-6 md:p-8 rounded-lg border border-gray-800 hover:border-gray-700 transition-all hover:shadow-lg hover:shadow-blue-500/10"
             >
               <div className="mb-4 flex items-center gap-2">
                 <span className="text-sm bg-cyan-500/20 text-cyan-300 px-3 py-1 rounded-full">

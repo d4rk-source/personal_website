@@ -10,8 +10,8 @@ export default function EmailSignupCard() {
   if (isDismissed) return null;
 
   return (
-    <div className="fixed bottom-6 right-6 z-30 w-[320px] max-w-[calc(100vw-3rem)]">
-      <div className="bg-gradient-to-br from-gray-900 to-gray-950 border border-gray-800 rounded-2xl p-5 shadow-2xl">
+    <div className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:bottom-6 z-30 w-auto sm:w-[320px]">
+      <div className="bg-gradient-to-br from-gray-900 to-gray-950 border border-gray-800 rounded-2xl p-4 sm:p-5 shadow-2xl">
         <div className="flex items-start justify-between gap-4">
           <div>
             <h3 className="text-lg font-semibold text-white">

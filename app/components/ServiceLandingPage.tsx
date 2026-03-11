@@ -73,29 +73,31 @@ export default function ServiceLandingPage({
           redirectToHomeForSections
         />
 
-        <main className="px-4 py-16 md:py-20 max-w-7xl mx-auto space-y-16">
+        <main className="px-4 py-10 md:py-20 max-w-7xl mx-auto space-y-10 md:space-y-16">
           <section className="max-w-4xl">
             <p className="text-sm uppercase tracking-[0.2em] text-cyan-400 mb-4">
               {eyebrow}
             </p>
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight mb-5 md:mb-6">
               {title}
             </h1>
-            <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-8">
+            <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed mb-6 md:mb-8">
               {description}
             </p>
-            <p className="text-gray-400 leading-relaxed mb-8">{summary}</p>
+            <p className="text-gray-400 leading-relaxed mb-6 md:mb-8">
+              {summary}
+            </p>
 
             <div className="flex flex-col md:flex-row gap-4 mb-6">
               <button
                 onClick={() => setIsQuotePopupOpen(true)}
-                className="bg-white text-black px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors w-full md:w-auto"
+                className="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-lg font-semibold text-base md:text-lg hover:bg-gray-100 transition-colors w-full md:w-auto"
               >
                 Request a Quote
               </button>
               <button
                 onClick={() => router.push("/?scrollTo=services")}
-                className="border border-gray-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-900 transition-colors w-full md:w-auto"
+                className="border border-gray-500 text-white px-6 py-3 md:px-8 md:py-4 rounded-lg font-semibold text-base md:text-lg hover:bg-gray-900 transition-colors w-full md:w-auto"
               >
                 View All Services
               </button>
@@ -104,7 +106,7 @@ export default function ServiceLandingPage({
             <p className="text-gray-400 text-sm">I respond within 24 hours</p>
           </section>
 
-          <section className="border border-gray-800 rounded-xl bg-gradient-to-br from-gray-900 to-gray-950 p-8 md:p-10">
+          <section className="border border-gray-800 rounded-xl bg-gradient-to-br from-gray-900 to-gray-950 p-5 sm:p-6 md:p-10">
             <h2 className="text-2xl md:text-3xl font-bold mb-6">
               Best fit for
             </h2>
@@ -143,11 +145,11 @@ export default function ServiceLandingPage({
             <h2 className="text-3xl md:text-4xl font-bold mb-8">
               What&apos;s included
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               {deliverables.map((item) => (
                 <div
                   key={item.title}
-                  className="bg-gray-900/60 border border-gray-800 rounded-lg p-6"
+                  className="bg-gray-900/60 border border-gray-800 rounded-lg p-5 md:p-6"
                 >
                   <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
                   <p className="text-gray-400">{item.description}</p>
@@ -162,7 +164,7 @@ export default function ServiceLandingPage({
               {methodology.map((item, index) => (
                 <div
                   key={item.title}
-                  className="bg-gray-900/60 border border-gray-800 rounded-lg p-6"
+                  className="bg-gray-900/60 border border-gray-800 rounded-lg p-5 md:p-6"
                 >
                   <h3 className="text-xl font-semibold mb-2">
                     <span className="text-cyan-400 mr-2">{index + 1}.</span>
@@ -176,11 +178,11 @@ export default function ServiceLandingPage({
 
           <section>
             <h2 className="text-3xl md:text-4xl font-bold mb-8">Pricing</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
               {pricingPlans.map((plan) => (
                 <div
                   key={plan.name}
-                  className="relative bg-gray-900/60 border border-gray-800 rounded-lg p-6"
+                  className="relative bg-gray-900/60 border border-gray-800 rounded-lg p-5 md:p-6"
                 >
                   {plan.badge ? (
                     <span className="absolute top-4 right-4 bg-cyan-500 text-white text-xs px-2 py-1 rounded-full font-semibold">
@@ -196,7 +198,7 @@ export default function ServiceLandingPage({
               ))}
             </div>
 
-            <div className="mt-6 border border-gray-800 rounded-lg p-6 bg-gray-950/60 space-y-3">
+            <div className="mt-6 border border-gray-800 rounded-lg p-5 md:p-6 bg-gray-950/60 space-y-3">
               {pricingNotes.map((note) => (
                 <p key={note} className="text-gray-400 text-sm">
                   {note}
@@ -205,7 +207,7 @@ export default function ServiceLandingPage({
             </div>
           </section>
 
-          <section className="border border-gray-800 rounded-xl bg-gradient-to-r from-cyan-900/20 to-blue-900/20 p-8 md:p-10 text-center">
+          <section className="border border-gray-800 rounded-xl bg-gradient-to-r from-cyan-900/20 to-blue-900/20 p-5 sm:p-6 md:p-10 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Ready to secure your protocol?
             </h2>
@@ -215,7 +217,7 @@ export default function ServiceLandingPage({
             </p>
             <button
               onClick={() => setIsQuotePopupOpen(true)}
-              className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-cyan-400 hover:to-blue-400 transition-colors"
+              className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-6 py-3 md:px-8 md:py-4 rounded-lg font-semibold text-base md:text-lg hover:from-cyan-400 hover:to-blue-400 transition-colors"
             >
               Book This Service
             </button>
@@ -230,7 +232,7 @@ export default function ServiceLandingPage({
                 {faqItems.map((item) => (
                   <article
                     key={item.question}
-                    className="bg-gray-900/60 border border-gray-800 rounded-lg p-6"
+                    className="bg-gray-900/60 border border-gray-800 rounded-lg p-5 md:p-6"
                   >
                     <h3 className="text-xl font-semibold mb-3">
                       {item.question}

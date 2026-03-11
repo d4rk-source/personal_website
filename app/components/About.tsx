@@ -25,14 +25,16 @@ export default function About() {
   return (
     <section
       id="about"
-      className="px-4 py-20 max-w-7xl mx-auto border-t border-gray-800 scroll-mt-20"
+      className="px-4 py-12 md:py-20 max-w-7xl mx-auto border-t border-gray-800 scroll-mt-20"
     >
-      <h2 className="text-3xl md:text-4xl font-bold mb-16">About Me</h2>
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 md:mb-16">
+        About Me
+      </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
         {/* Image */}
         <div className="flex justify-center md:justify-start">
-          <div className="w-80 h-[28rem] sm:w-96 sm:h-[32rem] md:w-[28rem] md:h-[36rem] flex items-end justify-center">
+          <div className="w-64 h-80 sm:w-80 sm:h-[28rem] md:w-[28rem] md:h-[36rem] flex items-end justify-center">
             <img
               src="/profile.jpg"
               alt="Alex Cipher"
@@ -48,15 +50,15 @@ export default function About() {
         </div>
 
         {/* Text Content */}
-        <div className="space-y-6">
-          <p className="text-lg text-gray-300 leading-relaxed">
+        <div className="space-y-5 md:space-y-6">
+          <p className="text-base md:text-lg text-gray-300 leading-relaxed">
             Hi! I'm Alex Cipher, a blockchain security expert with 1+ years of
             experience in smart contract auditing and Web3 security. I've
             dedicated my career to helping projects build secure, reliable, and
             investor-ready protocols.
           </p>
 
-          <p className="text-lg text-gray-300 leading-relaxed">
+          <p className="text-base md:text-lg text-gray-300 leading-relaxed">
             My expertise spans across EVM-compatible blockchains including
             Ethereum, Polygon, and many others. I specialize in DeFi protocols
             (lending, DEX, staking) and crypto gambling dApps, identifying
@@ -64,7 +66,7 @@ export default function About() {
             flaws, and gas optimizations that protect digital assets.
           </p>
 
-          <p className="text-lg text-gray-300 leading-relaxed">
+          <p className="text-base md:text-lg text-gray-300 leading-relaxed">
             Beyond auditing, I'm passionate about mentoring developers,
             publishing security research, and staying at the forefront of Web3
             security trends. When I'm not reviewing code, you can find me
@@ -72,7 +74,7 @@ export default function About() {
           </p>
 
           <div className="pt-6 space-y-4">
-            <h3 className="text-xl font-semibold">Key Skills</h3>
+            <h3 className="text-lg md:text-xl font-semibold">Key Skills</h3>
             <div className="grid grid-cols-2 gap-4">
               {skills.map((skill) => (
                 <div
