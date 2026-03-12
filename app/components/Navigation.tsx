@@ -3,7 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import Logo from "./Logo";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import RequestQuotePopup from "./popups/hero_nav-popups/RequestQuotePopup";
 
 interface NavigationProps {
   onScrollToSection?: (sectionId: string) => void;
@@ -19,7 +20,9 @@ export default function Navigation({
   const MOBILE_MENU_ANIMATION_MS = 220;
   const router = useRouter();
   const pathname = usePathname();
+  const searchParams = useSearchParams();
   const closeMenuTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [isQuotePopupOpen, setIsQuotePopupOpen] = useState(false);
   const [isMobileMenuMounted, setIsMobileMenuMounted] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -41,6 +44,17 @@ export default function Navigation({
       clearCloseMenuTimer();
     };
   }, []);
+
+  useEffect(() => {
+    if (searchParams.get("requestQuote") !== "1") return;
+    setIsQuotePopupOpen(true);
+
+    const nextParams = new URLSearchParams(searchParams.toString());
+    nextParams.delete("requestQuote");
+    const nextQuery = nextParams.toString();
+    const nextUrl = `${window.location.pathname}${nextQuery ? `?${nextQuery}` : ""}${window.location.hash}`;
+    window.history.replaceState({}, "", nextUrl);
+  }, [searchParams]);
 
   const openMobileMenu = () => {
     clearCloseMenuTimer();
@@ -101,7 +115,7 @@ export default function Navigation({
       onRequestQuote();
       return;
     }
-    router.push("/contact");
+    setIsQuotePopupOpen(true);
   };
 
   const handleLogoClick = () => {
@@ -255,6 +269,10 @@ export default function Navigation({
         ) : null}
       </nav>
       <div className="h-[65px] md:h-[97px]" aria-hidden="true" />
+      <RequestQuotePopup
+        isOpen={isQuotePopupOpen}
+        onClose={() => setIsQuotePopupOpen(false)}
+      />
     </>
   );
 }

@@ -412,7 +412,7 @@ export default function GamblingDappSecurityArticle() {
           challenges these applications face.
         </p>
         <a
-          href="/contact"
+          href="?requestQuote=1"
           className="inline-block bg-gradient-to-r from-cyan-500 to-blue-500 px-6 py-3 rounded-lg font-semibold hover:from-cyan-400 hover:to-blue-400 transition-all"
         >
           Request Security Audit
