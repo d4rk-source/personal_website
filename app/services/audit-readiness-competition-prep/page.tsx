@@ -74,14 +74,9 @@ const methodology = [
       "Review documentation quality, test coverage, and code organization against auditor expectations.",
   },
   {
-    title: "Priority Issue List",
+    title: "Findings Report Generation",
     description:
-      "Rank findings by impact so your team knows exactly what to fix before formal submission.",
-  },
-  {
-    title: "Competition Strategy",
-    description:
-      "Hardening guidance for contests, reward-structure alignment, and timeline optimization.",
+      "Generate a concise report of vulnerabilities found (if any), with severity and clear remediation notes.",
   },
   {
     title: "Fix Verification",
@@ -103,15 +98,6 @@ const pricingNotes = [
   "Includes pre-audit vulnerability scanning, bug bounty preparation, contest optimization, code review with fixes, and audit timing consultation.",
   "Primary goal: maximize your success in audit competitions and bug bounty programs by fixing issues before submission.",
   "Bundle this service free with a Smart Contract Audit for added value.",
-];
-
-const seoKeywords = [
-  "smart contract audit readiness",
-  "pre-audit smart contract review",
-  "audit competition prep",
-  "bug bounty prep for protocols",
-  "web3 audit preparation service",
-  "security hardening before audit",
 ];
 
 const faqItems = [
@@ -180,7 +166,6 @@ export default function AuditReadinessCompetitionPrepPage() {
       methodology={methodology}
       pricingPlans={pricingPlans}
       pricingNotes={pricingNotes}
-      seoKeywords={seoKeywords}
       faqItems={faqItems}
       jsonLd={jsonLd}
     />

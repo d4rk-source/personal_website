@@ -34,7 +34,6 @@ interface ServiceLandingPageProps {
   methodology: ServiceItem[];
   pricingPlans: PricingPlan[];
   pricingNotes: string[];
-  seoKeywords?: string[];
   faqItems?: FaqItem[];
   jsonLd?: Record<string, unknown>;
 }
@@ -50,7 +49,6 @@ export default function ServiceLandingPage({
   methodology,
   pricingPlans,
   pricingNotes,
-  seoKeywords = [],
   faqItems = [],
   jsonLd,
 }: ServiceLandingPageProps) {
@@ -122,24 +120,6 @@ export default function ServiceLandingPage({
               ))}
             </div>
           </section>
-
-          {seoKeywords.length > 0 ? (
-            <section>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Popular search intents
-              </h2>
-              <div className="flex flex-wrap gap-3">
-                {seoKeywords.map((keyword) => (
-                  <span
-                    key={keyword}
-                    className="px-4 py-2 rounded-full border border-gray-700 bg-gray-900/70 text-sm text-gray-300"
-                  >
-                    {keyword}
-                  </span>
-                ))}
-              </div>
-            </section>
-          ) : null}
 
           <section>
             <h2 className="text-3xl md:text-4xl font-bold mb-8">

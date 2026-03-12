@@ -200,29 +200,18 @@ export default function MethodologyPopup({
 
                 <div>
                   <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
-                    <span className="text-cyan-400">3.</span> Priority Issue
-                    List
+                    <span className="text-cyan-400">3.</span> Findings Report
+                    Generation
                   </h4>
                   <p className="text-sm text-gray-400 ml-6">
-                    Ranked findings with impact assessment so you know exactly
-                    what to fix before your official audit begins.
+                    Generate a concise report of vulnerabilities found (if any),
+                    with severity and clear remediation notes.
                   </p>
                 </div>
 
                 <div>
                   <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
-                    <span className="text-cyan-400">4.</span> Competition
-                    Strategy
-                  </h4>
-                  <p className="text-sm text-gray-400 ml-6">
-                    Strategic hardening for audit contests, reward structure
-                    advice, and timing optimization for maximum success.
-                  </p>
-                </div>
-
-                <div>
-                  <h4 className="font-semibold text-white mb-2 flex items-center gap-2">
-                    <span className="text-cyan-400">5.</span> Fix Verification
+                    <span className="text-cyan-400">4.</span> Fix Verification
                   </h4>
                   <p className="text-sm text-gray-400 ml-6">
                     Validate that your implemented fixes are complete and don't

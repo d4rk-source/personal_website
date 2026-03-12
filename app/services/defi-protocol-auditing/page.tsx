@@ -121,15 +121,6 @@ const pricingNotes = [
   "Fixed tiers scope full deliverables — no per-LOC surprises. Final tier is confirmed during scoping.",
 ];
 
-const seoKeywords = [
-  "defi protocol audit",
-  "lending protocol smart contract audit",
-  "staking smart contract audit",
-  "dex smart contract security audit",
-  "vault and liquidity pool contract audit",
-  "EVM DeFi security review",
-];
-
 const faqItems = [
   {
     question: "What is included in a DeFi protocol audit?",
@@ -196,7 +187,6 @@ export default function DefiProtocolAuditingPage() {
       methodology={methodology}
       pricingPlans={pricingPlans}
       pricingNotes={pricingNotes}
-      seoKeywords={seoKeywords}
       faqItems={faqItems}
       jsonLd={jsonLd}
     />

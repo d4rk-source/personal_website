@@ -81,7 +81,7 @@ const methodology = [
   {
     title: "Incident Response Planning",
     description:
-      "Optional development of emergency procedures, communication flows, key contacts, and recovery paths.",
+      "Development of emergency procedures, communication flows, key contacts, and recovery paths.",
   },
   {
     title: "Report Delivery",
@@ -120,15 +120,6 @@ const pricingPlans = [
 const pricingNotes = [
   "All packages include in-depth protocol research, review of past audit reports, tailored written deliverables, and a consultation call.",
   "Deliverables are tailored to your protocol's architecture, risk profile, and operational constraints.",
-];
-
-const seoKeywords = [
-  "web3 security strategy service",
-  "defi security roadmap consulting",
-  "smart contract incident response plan",
-  "post-hack response strategy crypto",
-  "protocol risk assessment consulting",
-  "security planning after audit",
 ];
 
 const faqItems = [
@@ -197,7 +188,6 @@ export default function ProtocolSecurityIncidentResponsePage() {
       methodology={methodology}
       pricingPlans={pricingPlans}
       pricingNotes={pricingNotes}
-      seoKeywords={seoKeywords}
       faqItems={faqItems}
       jsonLd={jsonLd}
     />

@@ -121,15 +121,6 @@ const pricingNotes = [
   "Fixed tiers scope full deliverables — no per-LOC surprises. Final tier is confirmed during scoping.",
 ];
 
-const seoKeywords = [
-  "gambling dapp audit",
-  "crypto casino smart contract audit",
-  "sports betting smart contract audit",
-  "provably fair smart contract audit",
-  "on-chain casino security audit",
-  "randomness and payout contract audit",
-];
-
 const faqItems = [
   {
     question: "What does a gambling dApp audit focus on?",
@@ -196,7 +187,6 @@ export default function GamblingDappAuditingPage() {
       methodology={methodology}
       pricingPlans={pricingPlans}
       pricingNotes={pricingNotes}
-      seoKeywords={seoKeywords}
       faqItems={faqItems}
       jsonLd={jsonLd}
     />
