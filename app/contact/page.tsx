@@ -152,10 +152,10 @@ export default function ContactPage() {
               <p className="text-gray-400 text-sm mb-4">
                 Prefer email? Reach out directly at{" "}
                 <a
-                  href="mailto:hello@alexcipher.com"
+                  href="mailto:hello@alexcipher.xyz"
                   className="text-cyan-400 hover:text-cyan-300"
                 >
-                  hello@alexcipher.com
+                  hello@alexcipher.xyz
                 </a>
               </p>
             </div>

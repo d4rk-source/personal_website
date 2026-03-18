@@ -431,10 +431,10 @@ export default function AffiliatesPage() {
           <p className="text-gray-400 mb-4">
             Questions? Reach out to us at{" "}
             <a
-              href="mailto:affiliates@alexcipher.com"
+              href="mailto:affiliates@alexcipher.xyz"
               className="text-cyan-400 hover:text-cyan-300 transition-colors"
             >
-              affiliates@alexcipher.com
+              affiliates@alexcipher.xyz
             </a>
           </p>
           <Link
