@@ -7,7 +7,7 @@ export default function Audits() {
       date: "February 2026",
       status: "Completed",
       issues_found: 1,
-      report_path: "/reports/BulkSender_Pentest_Report.pdf",
+      report_path: "/reports/BulkSender_Audit_Report.pdf",
     },
   ];
 
