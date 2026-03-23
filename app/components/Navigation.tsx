@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { Suspense } from "react";
 import Logo from "./Logo";
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
@@ -12,7 +13,7 @@ interface NavigationProps {
   redirectToHomeForSections?: boolean;
 }
 
-export default function Navigation({
+function NavigationContent({
   onScrollToSection,
   onRequestQuote,
   redirectToHomeForSections = false,
@@ -274,5 +275,13 @@ export default function Navigation({
         onClose={() => setIsQuotePopupOpen(false)}
       />
     </>
+  );
+}
+
+export default function Navigation(props: NavigationProps) {
+  return (
+    <Suspense fallback={null}>
+      <NavigationContent {...props} />
+    </Suspense>
   );
 }
