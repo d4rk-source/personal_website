@@ -1,11 +1,15 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { useForm, ValidationError } from "@formspree/react";
 
 export default function EmailSignupCard() {
   const [isDismissed, setIsDismissed] = useState(false);
   const [state, handleSubmit] = useForm("mdalqkkr");
+  const pathname = usePathname();
+
+  if (pathname === "/security-tips-newsletter") return null;
 
   if (isDismissed) return null;
 
