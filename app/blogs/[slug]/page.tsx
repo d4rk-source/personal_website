@@ -11,6 +11,7 @@ const blogData: Record<
   {
     title: string;
     date: string;
+    publishedAt: string;
     readTime: string;
     category: string;
     description: string;
@@ -20,6 +21,7 @@ const blogData: Record<
   "importance-of-external-audits-web3": {
     title: "The Importance of External Audits in Web3 Development",
     date: "January 30, 2026",
+    publishedAt: "2026-01-30T00:00:00.000Z",
     readTime: "6 min read",
     category: "Auditing",
     description:
@@ -29,6 +31,7 @@ const blogData: Record<
   "working-with-a-good-auditor": {
     title: "What It Means to Work with a Good Auditor",
     date: "March 1, 2026",
+    publishedAt: "2026-03-01T00:00:00.000Z",
     readTime: "8 min read",
     category: "Best Practices",
     description:
@@ -38,6 +41,7 @@ const blogData: Record<
   "gambling-dapp-security-guide": {
     title: "Key Steps for Gambling dApp Security",
     date: "March 5, 2026",
+    publishedAt: "2026-03-05T00:00:00.000Z",
     readTime: "10 min read",
     category: "Security",
     description:
@@ -74,7 +78,7 @@ export async function generateMetadata({
       title: blog.title,
       description: blog.description,
       authors: ["Alex Cipher"],
-      publishedTime: blog.date,
+      publishedTime: blog.publishedAt,
       tags: [blog.category, "Smart Contract", "Security", "Web3"],
       images: [
         {

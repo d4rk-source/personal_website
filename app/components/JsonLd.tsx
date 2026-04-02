@@ -50,31 +50,6 @@ export default function JsonLd() {
     },
   };
 
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://alexcipher.xyz",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Blogs",
-        item: "https://alexcipher.xyz/blogs",
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Contact",
-        item: "https://alexcipher.xyz/contact",
-      },
-    ],
-  };
-
   return (
     <>
       <script
@@ -93,12 +68,6 @@ export default function JsonLd() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(websiteSchema),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema),
         }}
       />
     </>
