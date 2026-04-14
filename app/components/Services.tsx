@@ -39,7 +39,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="px-4 py-12 md:py-20 max-w-7xl mx-auto border-t border-gray-800 scroll-mt-20"
+      className="relative px-4 py-12 md:py-20 max-w-7xl mx-auto border-t border-gray-800 scroll-mt-20"
     >
       <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 md:mb-16">
         My Services
@@ -79,6 +79,17 @@ export default function Services() {
             )}
           </div>
         ))}
+      </div>
+
+      <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6">
+        <a
+          href="https://github.com/d4rk-source/My_services_showcase"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm text-gray-500 hover:text-gray-400 transition-colors"
+        >
+          Want to see how my services help your dApp? →
+        </a>
       </div>
 
       <SmartContractAuditPopup
