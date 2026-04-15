@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { blogPosts } from "./blogs/blogPosts";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://alexcipher.xyz";
@@ -60,26 +61,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  const blogPages: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/blogs/importance-of-external-audits-web3`,
-      lastModified: new Date("2026-01-30"),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/blogs/working-with-a-good-auditor`,
-      lastModified: new Date("2026-03-01"),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/blogs/gambling-dapp-security-guide`,
-      lastModified: new Date("2026-03-05"),
-      changeFrequency: "monthly",
-      priority: 0.85,
-    },
-  ];
+  const blogPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+    url: `${baseUrl}/blogs/${post.slug}`,
+    lastModified: new Date(post.publishedAt),
+    changeFrequency: "monthly",
+    priority: 0.85,
+  }));
 
   return [...staticPages, ...blogPages];
 }

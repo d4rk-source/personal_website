@@ -2,41 +2,9 @@
 
 import Link from "next/link";
 import Navigation from "../components/Navigation";
+import { blogPosts } from "./blogPosts";
 
 export default function Blogs() {
-  const blogPosts = [
-    {
-      id: 1,
-      slug: "importance-of-external-audits-web3",
-      title: "The Importance of External Audits in Web3 Development",
-      excerpt:
-        "Why external security audits are critical for protocol success and investor confidence.",
-      date: "January 30, 2026",
-      readTime: "6 min read",
-      category: "Auditing",
-    },
-    {
-      id: 2,
-      slug: "working-with-a-good-auditor",
-      title: "What It Means to Work with a Good Auditor",
-      excerpt:
-        "Understanding the qualities, practices, and benefits of partnering with a professional security auditor for your Web3 project.",
-      date: "March 1, 2026",
-      readTime: "8 min read",
-      category: "Best Practices",
-    },
-    {
-      id: 3,
-      slug: "gambling-dapp-security-guide",
-      title: "Key Steps for Gambling dApp Security",
-      excerpt:
-        "Essential security measures and best practices for building and auditing gambling decentralized applications.",
-      date: "March 5, 2026",
-      readTime: "10 min read",
-      category: "Security",
-    },
-  ];
-
   return (
     <div className="min-h-screen bg-black text-white">
       <Navigation redirectToHomeForSections />
@@ -59,7 +27,7 @@ export default function Blogs() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
           {blogPosts.map((post) => (
             <article
-              key={post.id}
+              key={post.slug}
               className="bg-gradient-to-br from-gray-900 to-gray-950 p-5 sm:p-6 md:p-8 rounded-lg border border-gray-800 hover:border-gray-700 transition-all hover:shadow-lg hover:shadow-blue-500/10"
             >
               <div className="mb-4 flex items-center gap-2">

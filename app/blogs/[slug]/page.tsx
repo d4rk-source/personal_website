@@ -5,8 +5,23 @@ import Navigation from "@/app/components/Navigation";
 import ExternalAuditsArticle from "./articles/ExternalAuditsArticle";
 import WorkingWithAuditorArticle from "./articles/WorkingWithAuditorArticle";
 import GamblingDappSecurityArticle from "./articles/GamblingDappSecurityArticle";
+import { blogPosts } from "../blogPosts";
 
-const blogData: Record<
+const articleComponents: Record<string, React.ComponentType> = {
+  "importance-of-external-audits-web3": ExternalAuditsArticle,
+  "working-with-a-good-auditor": WorkingWithAuditorArticle,
+  "gambling-dapp-security-guide": GamblingDappSecurityArticle,
+};
+
+const blogData = Object.fromEntries(
+  blogPosts.map((post) => [
+    post.slug,
+    {
+      ...post,
+      component: articleComponents[post.slug],
+    },
+  ]),
+) as Record<
   string,
   {
     title: string;
@@ -17,38 +32,7 @@ const blogData: Record<
     description: string;
     component: React.ComponentType;
   }
-> = {
-  "importance-of-external-audits-web3": {
-    title: "The Importance of External Audits in Web3 Development",
-    date: "January 30, 2026",
-    publishedAt: "2026-01-30T00:00:00.000Z",
-    readTime: "6 min read",
-    category: "Auditing",
-    description:
-      "Why external security audits are critical for protocol success and investor confidence in Web3 development.",
-    component: ExternalAuditsArticle,
-  },
-  "working-with-a-good-auditor": {
-    title: "What It Means to Work with a Good Auditor",
-    date: "March 1, 2026",
-    publishedAt: "2026-03-01T00:00:00.000Z",
-    readTime: "8 min read",
-    category: "Best Practices",
-    description:
-      "Understanding the qualities, practices, and benefits of partnering with a professional security auditor for your Web3 project.",
-    component: WorkingWithAuditorArticle,
-  },
-  "gambling-dapp-security-guide": {
-    title: "Key Steps for Gambling dApp Security",
-    date: "March 5, 2026",
-    publishedAt: "2026-03-05T00:00:00.000Z",
-    readTime: "10 min read",
-    category: "Security",
-    description:
-      "Essential security measures and best practices for building and auditing gambling decentralized applications.",
-    component: GamblingDappSecurityArticle,
-  },
-};
+>;
 
 export async function generateMetadata({
   params,
@@ -159,9 +143,5 @@ export default async function BlogPost({
 }
 
 export async function generateStaticParams() {
-  return [
-    { slug: "importance-of-external-audits-web3" },
-    { slug: "working-with-a-good-auditor" },
-    { slug: "gambling-dapp-security-guide" },
-  ];
+  return blogPosts.map((post) => ({ slug: post.slug }));
 }
