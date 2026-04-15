@@ -2,31 +2,23 @@ import type { Metadata } from "next";
 import ServiceLandingPage from "@/app/components/ServiceLandingPage";
 
 export const metadata: Metadata = {
-  title: "Audit Readiness & Competition Prep | Alex Cipher",
+  title: "Pre-Audit Smart Contract Review Service | Alex Cipher",
   description:
-    "Audit readiness service for smart contracts before formal audits, contests, and bug bounties. Identify and fix vulnerabilities early to improve outcomes and reduce rework.",
+    "Pre-audit smart contract review service before formal audits, contests, and bug bounties. Reduce avoidable findings, improve submission quality, and increase audit contest success odds.",
   keywords:
-    "audit readiness service, smart contract audit readiness, pre audit smart contract review, audit competition prep, bug bounty prep for smart contracts, web3 pre-audit security review",
+    "pre audit smart contract review service, smart contract audit readiness service, audit contest prep for defi protocol, code4rena preparation service, bug bounty readiness smart contracts, web3 pre-audit security review checklist",
   openGraph: {
     type: "website",
     url: "https://alexcipher.xyz/services/audit-readiness-competition-prep",
-    title: "Audit Readiness & Competition Prep | Alex Cipher",
+    title: "Pre-Audit Smart Contract Review Service | Alex Cipher",
     description:
-      "Pre-audit vulnerability reduction and contest-focused hardening for Web3 protocols.",
-    images: [
-      {
-        url: "https://alexcipher.xyz/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Audit Readiness and Competition Preparation",
-      },
-    ],
+      "Pre-audit vulnerability reduction and contest-focused hardening for Web3 protocols and DeFi teams.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Audit Readiness & Competition Prep | Alex Cipher",
+    title: "Pre-Audit Smart Contract Review Service | Alex Cipher",
     description:
-      "Prepare your protocol for stronger audit and bug bounty outcomes.",
+      "Prepare your protocol for stronger audit contest and bug bounty outcomes.",
   },
   alternates: {
     canonical:
@@ -102,19 +94,19 @@ const pricingNotes = [
 
 const faqItems = [
   {
-    question: "What is smart contract audit readiness?",
+    question: "What is a pre-audit smart contract review service?",
     answer:
       "Smart contract audit readiness is a pre-audit security review that finds and prioritizes vulnerabilities before your official audit or contest begins.",
   },
   {
-    question: "How does audit competition prep help?",
+    question: "How does audit contest prep for a DeFi protocol help?",
     answer:
       "Competition prep focuses your team on high-impact fixes, improves overall code quality, and reduces avoidable findings that can hurt final audit outcomes.",
   },
   {
-    question: "How is pre-audit review pricing calculated?",
+    question: "Do you offer Code4rena preparation service support?",
     answer:
-      "Pricing is a flat $500–$2K based on repo size and effort. Final rate is confirmed during the scoping phase.",
+      "Yes. This service supports contest-focused hardening workflows similar to Code4rena preparation, including vulnerability cleanup, quality checks, and prioritized remediation before submission.",
   },
 ];
 
@@ -152,10 +144,27 @@ export default function AuditReadinessCompetitionPrepPage() {
   return (
     <ServiceLandingPage
       eyebrow="Service"
-      title="Audit Readiness & Competition Prep"
-      description="Prepare your protocol for competitive audits and bug bounties with fewer surprises and stronger first-pass outcomes."
+      title="Pre-Audit Smart Contract Review & Competition Prep"
+      description="Prepare your protocol for competitive audits and bug bounties with fewer surprises, fewer avoidable findings, and stronger first-pass outcomes."
       summary="This service identifies and eliminates vulnerabilities before official audit submission, helping improve your chances of a successful security review."
       preselectedService="Audit Readiness & Competition Prep"
+      comparisonItems={[
+        {
+          title: "Best fit",
+          description:
+            "Teams that want a pre-audit smart contract review service before a formal audit, Code4rena-style contest, or bug bounty launch.",
+        },
+        {
+          title: "Typical timeline",
+          description:
+            "This is usually the fastest engagement because the goal is to remove avoidable issues and improve submission quality before the main review starts.",
+        },
+        {
+          title: "Service cost drivers",
+          description:
+            "Pricing is mostly shaped by repo size, cleanup effort, documentation quality, and how much hands-on remediation guidance the team wants.",
+        },
+      ]}
       idealFor={[
         "Teams planning to enter audit contests and wanting stronger first-round signal",
         "Protocols preparing a public bug bounty and aiming to reduce avoidable findings",

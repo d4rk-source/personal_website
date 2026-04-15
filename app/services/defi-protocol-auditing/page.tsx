@@ -2,31 +2,26 @@ import type { Metadata } from "next";
 import ServiceLandingPage from "@/app/components/ServiceLandingPage";
 
 export const metadata: Metadata = {
-  title: "DeFi Protocol Smart Contract Audits | Alex Cipher",
+  title:
+    "DeFi Protocol Audit Service for Lending, Staking, and DEXs | Alex Cipher",
   description:
-    "DeFi protocol audit service for lending, staking, DEX, vault, and liquidity contracts. Reduce exploit risk with end-to-end EVM smart contract security auditing.",
+    "Pre-launch DeFi protocol audit service for lending, staking, DEX, vault, and liquidity contracts. Get a practical security review, clear remediation guidance, and stronger launch readiness.",
   keywords:
-    "defi protocol audit, lending protocol smart contract audit, staking smart contract audit, dex smart contract security audit, vault strategy contract audit, liquidity pool contract audit, EVM security review",
+    "defi protocol audit service, pre launch defi audit, lending protocol audit checklist, staking contract security review, dex smart contract audit cost, vault strategy contract audit, liquidity pool smart contract review, EVM security review service",
   openGraph: {
     type: "website",
     url: "https://alexcipher.xyz/services/defi-protocol-auditing",
-    title: "DeFi Protocol Smart Contract Audits | Alex Cipher",
+    title:
+      "DeFi Protocol Audit Service for Lending, Staking, and DEXs | Alex Cipher",
     description:
-      "Comprehensive DeFi smart contract audits for lending, staking, swaps, and vault systems.",
-    images: [
-      {
-        url: "https://alexcipher.xyz/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "DeFi Smart Contract Auditing",
-      },
-    ],
+      "Pre-launch DeFi security audits for lending, staking, DEX, and vault systems with practical remediation guidance.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "DeFi Protocol Smart Contract Audits | Alex Cipher",
+    title:
+      "DeFi Protocol Audit Service for Lending, Staking, and DEXs | Alex Cipher",
     description:
-      "Secure your lending, staking, DEX, and vault contracts before deployment.",
+      "Secure lending, staking, DEX, and vault contracts before launch with a focused DeFi audit service.",
   },
   alternates: {
     canonical: "https://alexcipher.xyz/services/defi-protocol-auditing",
@@ -123,17 +118,18 @@ const pricingNotes = [
 
 const faqItems = [
   {
-    question: "What is included in a DeFi protocol audit?",
+    question: "What is included in a pre-launch DeFi protocol audit service?",
     answer:
       "A DeFi protocol audit includes static analysis, dynamic testing, manual review of accounting and privilege logic, exploit validation in test environments, and a detailed remediation report.",
   },
   {
-    question: "Do you audit lending, staking, and DEX contracts?",
+    question:
+      "Do you provide lending, staking, and DEX contract security reviews?",
     answer:
       "Yes. This service is designed for lending markets, staking systems, DEX logic, vault strategies, and liquidity mechanisms running on EVM chains.",
   },
   {
-    question: "How much does a DeFi smart contract audit cost?",
+    question: "How much does a DEX smart contract audit cost?",
     answer:
       "Pricing uses fixed tiers by complexity: Starter ($2K–$5K for <1K LOC simple protocols), Standard ($5K–$15K for 1–3K LOC), and Premium ($15K+ for complex multi-contract systems). Final tier is confirmed during scoping.",
   },
@@ -173,10 +169,27 @@ export default function DefiProtocolAuditingPage() {
   return (
     <ServiceLandingPage
       eyebrow="Service"
-      title="Smart Contract Auditing for DeFi Protocols"
-      description="Harden your lending, staking, DEX, and vault infrastructure before attackers do. This service targets complex value-moving systems where small bugs can become large losses."
+      title="DeFi Protocol Audit Service for Lending, Staking, and DEX Contracts"
+      description="Harden your lending, staking, DEX, and vault infrastructure before attackers do. This pre-launch DeFi audit service focuses on real exploit paths in high-value systems."
       summary="Whether you're launching a DeFi protocol for lending, staking, or swapping, this audit process helps ensure your contracts are secure, efficient, and ready for production."
       preselectedService="Smart Contract Auditing"
+      comparisonItems={[
+        {
+          title: "Best fit",
+          description:
+            "Teams launching lending markets, staking systems, DEXs, vaults, or liquidity-heavy contracts that need a focused DeFi protocol audit service.",
+        },
+        {
+          title: "Typical timeline",
+          description:
+            "Smaller scopes can move quickly, while multi-contract systems with cross-protocol dependencies usually need a longer audit window and more review cycles.",
+        },
+        {
+          title: "Service cost drivers",
+          description:
+            "Cost depends on contract count, accounting complexity, privilege model design, and how much remediation support you need after findings are delivered.",
+        },
+      ]}
       idealFor={[
         "Lending markets, staking systems, and DEXs with high TVL or rapid growth plans",
         "Teams introducing upgrades, integrations, or new modules with cross-contract dependencies",

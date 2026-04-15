@@ -12,20 +12,11 @@ export const metadata: Metadata = {
     title: "Security Tips Newsletter | Smart Contract Security Insights",
     description:
       "Get practical smart contract security tips, audit lessons, and Web3 risk prevention insights in your inbox.",
-    images: [
-      {
-        url: "https://alexcipher.xyz/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Security Tips Newsletter",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Security Tips Newsletter",
     description: "Monthly security tips and audit lessons for Web3 builders.",
-    images: ["https://alexcipher.xyz/og-image.jpg"],
   },
   alternates: {
     canonical: "https://alexcipher.xyz/security-tips-newsletter",

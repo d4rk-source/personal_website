@@ -12,14 +12,6 @@ export const metadata: Metadata = {
     title: "Contact | Alex Cipher",
     description:
       "Request a smart contract security audit or security consultation",
-    images: [
-      {
-        url: "https://alexcipher.xyz/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Contact Alex Cipher",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",

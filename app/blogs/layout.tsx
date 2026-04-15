@@ -11,14 +11,6 @@ export const metadata: Metadata = {
     url: "https://alexcipher.xyz/blogs",
     title: "Blog | Alex Cipher",
     description: "Smart contract security articles and Web3 auditing insights",
-    images: [
-      {
-        url: "https://alexcipher.xyz/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Alex Cipher Blog",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",

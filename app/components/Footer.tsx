@@ -1,25 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import Logo from "./Logo";
-import SmartContractAuditPopup from "./popups/services-popups/SmartContractAuditPopup";
-import AuditReadinessPopup from "./popups/services-popups/AuditReadinessPopup";
-import SecurityConsultationsPopup from "./popups/services-popups/SecurityConsultationsPopup";
-import RequestQuotePopup from "./popups/hero_nav-popups/RequestQuotePopup";
 
 export default function Footer() {
-  const [isAuditPopupOpen, setIsAuditPopupOpen] = useState(false);
-  const [isReadinessPopupOpen, setIsReadinessPopupOpen] = useState(false);
-  const [isSecurityPopupOpen, setIsSecurityPopupOpen] = useState(false);
-  const [isQuotePopupOpen, setIsQuotePopupOpen] = useState(false);
-  const [selectedService, setSelectedService] = useState<string>();
-
-  const handleBookNow = (serviceTitle: string) => {
-    setSelectedService(serviceTitle);
-    setIsQuotePopupOpen(true);
-  };
-
   return (
     <footer className="border-t border-gray-800 bg-gray-950 mt-20">
       <div className="px-4 py-12 md:py-16 max-w-7xl mx-auto">
@@ -41,28 +25,36 @@ export default function Footer() {
             <h3 className="font-semibold text-lg mb-4">Services</h3>
             <ul className="space-y-2 text-gray-400 text-sm">
               <li>
-                <button
-                  onClick={() => setIsAuditPopupOpen(true)}
-                  className="hover:text-white transition-colors text-left"
+                <Link
+                  href="/services/defi-protocol-auditing"
+                  className="hover:text-white transition-colors"
                 >
-                  Smart Contract Auditing
-                </button>
+                  DeFi Protocol Auditing
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => setIsReadinessPopupOpen(true)}
-                  className="hover:text-white transition-colors text-left"
+                <Link
+                  href="/services/gambling-dapp-auditing"
+                  className="hover:text-white transition-colors"
+                >
+                  Gambling dApp Auditing
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/audit-readiness-competition-prep"
+                  className="hover:text-white transition-colors"
                 >
                   Audit Readiness & Competition Prep
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => setIsSecurityPopupOpen(true)}
-                  className="hover:text-white transition-colors text-left"
+                <Link
+                  href="/services/protocol-security-incident-response"
+                  className="hover:text-white transition-colors"
                 >
                   Protocol Security Strategy & Incident Response
-                </button>
+                </Link>
               </li>
             </ul>
           </div>
@@ -160,30 +152,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
-      {/* Popups */}
-      <SmartContractAuditPopup
-        isOpen={isAuditPopupOpen}
-        onClose={() => setIsAuditPopupOpen(false)}
-        onBookNow={() => handleBookNow("Smart Contract Auditing")}
-      />
-      <AuditReadinessPopup
-        isOpen={isReadinessPopupOpen}
-        onClose={() => setIsReadinessPopupOpen(false)}
-        onBookNow={() => handleBookNow("Audit Readiness & Competition Prep")}
-      />
-      <SecurityConsultationsPopup
-        isOpen={isSecurityPopupOpen}
-        onClose={() => setIsSecurityPopupOpen(false)}
-        onBookNow={() =>
-          handleBookNow("Protocol Security Strategy & Incident Response")
-        }
-      />
-      <RequestQuotePopup
-        isOpen={isQuotePopupOpen}
-        onClose={() => setIsQuotePopupOpen(false)}
-        preselectedService={selectedService}
-      />
     </footer>
   );
 }

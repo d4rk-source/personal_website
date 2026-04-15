@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function WorkingWithAuditorArticle() {
   return (
     <>
@@ -299,6 +301,40 @@ export default function WorkingWithAuditorArticle() {
         >
           Start a Conversation
         </a>
+      </div>
+
+      <div className="bg-gray-900/60 border border-gray-800 rounded-lg p-6 mt-10">
+        <h3 className="text-xl font-semibold mb-3">Related services</h3>
+        <p className="text-gray-300 mb-4">
+          If you want a practical next step, explore the service page that best
+          matches your current stage.
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <Link
+            href="/services/defi-protocol-auditing"
+            className="inline-flex items-center justify-center rounded-lg border border-gray-700 px-4 py-3 text-sm font-semibold text-gray-200 transition-colors hover:border-cyan-500 hover:text-white"
+          >
+            DeFi Protocol Audit Service
+          </Link>
+          <Link
+            href="/services/gambling-dapp-auditing"
+            className="inline-flex items-center justify-center rounded-lg border border-gray-700 px-4 py-3 text-sm font-semibold text-gray-200 transition-colors hover:border-cyan-500 hover:text-white"
+          >
+            Gambling dApp Audit Service
+          </Link>
+          <Link
+            href="/services/audit-readiness-competition-prep"
+            className="inline-flex items-center justify-center rounded-lg border border-gray-700 px-4 py-3 text-sm font-semibold text-gray-200 transition-colors hover:border-cyan-500 hover:text-white"
+          >
+            Pre-Audit Review & Contest Prep
+          </Link>
+          <Link
+            href="/services/protocol-security-incident-response"
+            className="inline-flex items-center justify-center rounded-lg border border-gray-700 px-4 py-3 text-sm font-semibold text-gray-200 transition-colors hover:border-cyan-500 hover:text-white"
+          >
+            Incident Response & Strategy
+          </Link>
+        </div>
       </div>
     </>
   );

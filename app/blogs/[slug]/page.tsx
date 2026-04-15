@@ -80,14 +80,6 @@ export async function generateMetadata({
       authors: ["Alex Cipher"],
       publishedTime: blog.publishedAt,
       tags: [blog.category, "Smart Contract", "Security", "Web3"],
-      images: [
-        {
-          url: "https://alexcipher.xyz/og-image.jpg",
-          width: 1200,
-          height: 630,
-          alt: blog.title,
-        },
-      ],
     },
     twitter: {
       card: "summary_large_image",

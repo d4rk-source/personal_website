@@ -6,8 +6,8 @@ export default function JsonLd() {
     url: "https://alexcipher.xyz",
     description:
       "Smart contract security audits and DeFi security consulting for EVM protocols",
-    image: "https://alexcipher.xyz/og-image.jpg",
-    sameAs: ["https://twitter.com/alexcipher", "https://github.com/alexcipher"],
+    image: "https://alexcipher.xyz/profile.jpg",
+    sameAs: ["https://x.com/_Alex_Cipher", "https://github.com/d4rk-source"],
     contactPoint: {
       "@type": "ContactPoint",
       url: "https://alexcipher.xyz/contact",
@@ -28,7 +28,7 @@ export default function JsonLd() {
     description:
       "Comprehensive smart contract audits for EVM-based protocols, DeFi platforms, and gambling dApps",
     url: "https://alexcipher.xyz",
-    image: "https://alexcipher.xyz/og-image.jpg",
+    image: "https://alexcipher.xyz/profile.jpg",
     areaServed: ["US", "GB", "DE", "CA", "AU", "SG", "HK", "JP", "Global"],
     priceRange: "$$",
     serviceType: "Security Audit Service",
@@ -40,14 +40,6 @@ export default function JsonLd() {
     url: "https://alexcipher.xyz",
     name: "Alex Cipher",
     description: "EVM Security Auditor | Smart Contract Audits & DeFi Security",
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: "https://alexcipher.xyz/search?q={search_term_string}",
-      },
-      "query-input": "required name=search_term_string",
-    },
   };
 
   return (

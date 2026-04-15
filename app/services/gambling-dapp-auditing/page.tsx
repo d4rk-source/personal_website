@@ -2,31 +2,25 @@ import type { Metadata } from "next";
 import ServiceLandingPage from "@/app/components/ServiceLandingPage";
 
 export const metadata: Metadata = {
-  title: "Gambling dApp Smart Contract Audits | Alex Cipher",
+  title: "Provably Fair Smart Contract Audit for Crypto Casinos | Alex Cipher",
   description:
-    "Gambling dApp audit service for crypto casinos, betting protocols, and on-chain games. Secure bankroll logic, payout flows, randomness integrations, and user funds with comprehensive EVM smart contract auditing.",
+    "Provably fair smart contract audit service for crypto casinos, betting protocols, and on-chain games. Secure bankroll logic, payout flows, Chainlink VRF integrations, and user funds before launch.",
   keywords:
-    "gambling dapp audit, crypto casino smart contract audit, sports betting smart contract security audit, provably fair contract audit, on-chain casino audit, web3 gambling security review, EVM security audit",
+    "provably fair smart contract audit, crypto casino bankroll security audit, betting protocol payout logic audit, chainlink vrf gambling audit, on-chain casino smart contract review, web3 gambling security audit service, sports betting smart contract security review",
   openGraph: {
     type: "website",
     url: "https://alexcipher.xyz/services/gambling-dapp-auditing",
-    title: "Gambling dApp Smart Contract Audits | Alex Cipher",
+    title:
+      "Provably Fair Smart Contract Audit for Crypto Casinos | Alex Cipher",
     description:
-      "Comprehensive smart contract security audits for crypto gambling products.",
-    images: [
-      {
-        url: "https://alexcipher.xyz/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Gambling dApp Smart Contract Auditing",
-      },
-    ],
+      "Security audits for crypto gambling products with a focus on provably fair logic, payouts, and bankroll safety.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Gambling dApp Smart Contract Audits | Alex Cipher",
+    title:
+      "Provably Fair Smart Contract Audit for Crypto Casinos | Alex Cipher",
     description:
-      "Protect bankroll, payout, and game logic before mainnet launch.",
+      "Protect bankroll, payout, and randomness logic before mainnet launch.",
   },
   alternates: {
     canonical: "https://alexcipher.xyz/services/gambling-dapp-auditing",
@@ -123,19 +117,19 @@ const pricingNotes = [
 
 const faqItems = [
   {
-    question: "What does a gambling dApp audit focus on?",
+    question: "What does a provably fair smart contract audit focus on?",
     answer:
       "A gambling dApp audit focuses on bankroll safety, payout correctness, game fairness logic, randomness integration, and privileged-role abuse risks. The goal is to prevent exploit paths that can drain funds or manipulate outcomes.",
   },
   {
-    question: "How is a crypto casino smart contract audit priced?",
+    question: "How is a crypto casino bankroll security audit priced?",
     answer:
       "Pricing uses fixed tiers by complexity: Starter ($2K–$5K for <1K LOC), Standard ($5K–$15K for 1–3K LOC), and Premium ($15K+ for complex systems). Final tier is confirmed during the scoping phase.",
   },
   {
-    question: "Do you support remediation after the audit?",
+    question: "Do you audit Chainlink VRF and payout logic in gambling dApps?",
     answer:
-      "Yes. Post-audit support includes fix guidance, clarification on findings, and follow-up help to confirm remediation quality before deployment.",
+      "Yes. Reviews include randomness integrations such as Chainlink VRF, payout and settlement paths, and exploitability under adversarial transaction conditions. Post-audit support includes fix verification before deployment.",
   },
 ];
 
@@ -173,10 +167,27 @@ export default function GamblingDappAuditingPage() {
   return (
     <ServiceLandingPage
       eyebrow="Service"
-      title="Smart Contract Auditing for Gambling dApps"
-      description="Ship your gambling product with stronger security guarantees. This service is designed for payout-heavy systems where exploit resistance, fairness, and bankroll protection are mission critical."
+      title="Provably Fair Smart Contract Audits for Gambling dApps"
+      description="Ship your gambling product with stronger security guarantees. This audit service is designed for payout-heavy systems where fairness, bankroll protection, and exploit resistance are mission critical."
       summary="Smart contract auditing is a comprehensive security review process that meticulously examines your blockchain code for vulnerabilities, inefficiencies, and potential exploits."
       preselectedService="Smart Contract Auditing"
+      comparisonItems={[
+        {
+          title: "Best fit",
+          description:
+            "Crypto casinos, betting protocols, and on-chain games that need a provably fair smart contract audit with bankroll and payout review.",
+        },
+        {
+          title: "Typical timeline",
+          description:
+            "Projects with tight payout logic can often be scoped quickly, but randomness, settlement, and treasury complexity usually extend review time.",
+        },
+        {
+          title: "Service cost drivers",
+          description:
+            "Pricing is driven by bankroll exposure, VRF or commit-reveal design, transaction flow complexity, and the number of high-value edge cases to validate.",
+        },
+      ]}
       idealFor={[
         "On-chain casinos, prediction products, and betting protocols handling frequent user payouts",
         "Teams integrating randomness, settlement engines, treasury controls, and referral systems",

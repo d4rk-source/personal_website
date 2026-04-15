@@ -11,14 +11,6 @@ export const metadata: Metadata = {
     url: "https://alexcipher.xyz/affiliates",
     title: "Affiliate Program | Alex Cipher",
     description: "Join our affiliate program and earn commissions on referrals",
-    images: [
-      {
-        url: "https://alexcipher.xyz/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Alex Cipher Affiliate Program",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
