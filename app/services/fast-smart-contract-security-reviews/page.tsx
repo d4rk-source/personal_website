@@ -79,22 +79,22 @@ const methodology = [
 
 const pricingPlans = [
   {
-    name: "Quick Review",
-    price: "$100–$150",
+    name: "Quick Security Review",
+    price: "$50",
     description:
-      "For small smart contracts (under 500 LOC). Focused review, findings report, and remediation guidance.",
+      "Fast analysis to identify critical vulnerabilities before deployment.",
   },
   {
-    name: "Standard Review",
-    price: "$150–$250",
+    name: "Deep Security Review",
+    price: "$150",
     description:
-      "For medium codebases (500–2K LOC). Complete code review, vulnerabilities identified, detailed report with fixes.",
+      "More thorough review of contract logic, access control, and edge cases.",
   },
   {
-    name: "Comprehensive Review",
-    price: "$250–$300",
+    name: "Full Audit Review",
+    price: "$300",
     description:
-      "For larger, complex contracts (2K+ LOC). Full-scope review, testing, comprehensive findings report, and follow-up support.",
+      "Comprehensive multi-contract analysis with structured reporting.",
     badge: "POPULAR",
   },
 ];
@@ -124,7 +124,7 @@ const faqItems = [
   {
     question: "How much does a smart contract security review cost?",
     answer:
-      "Pricing depends on codebase size: Quick Review ($100–$150 for under 500 LOC), Standard ($150–$250 for 500–2K LOC), and Comprehensive ($250–$300 for 2K+ LOC). Exact pricing confirmed during consultation.",
+      "Pricing depends on scope: Quick Security Review ($50), Deep Security Review ($150), and Full Audit Review ($300). Exact pricing confirmed during consultation.",
   },
   {
     question: "When do I pay?",

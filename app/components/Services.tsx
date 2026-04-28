@@ -29,9 +29,7 @@ export default function Services() {
             Fast Smart Contract Security Reviews
           </h3>
           <p className="text-gray-400 mb-2">
-            <span className="font-semibold text-cyan-400">
-              Starting at $100
-            </span>
+            <span className="font-semibold text-cyan-400">Starting at $50</span>
           </p>
           <p className="text-gray-400 mb-6">
             Quick, practical security reviews designed for teams ready to

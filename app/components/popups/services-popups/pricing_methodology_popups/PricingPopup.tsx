@@ -114,27 +114,25 @@ export default function PricingPopup({
                 <div className="space-y-4">
                   <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
                     <h4 className="font-semibold text-white mb-2">
-                      Quick Review
+                      Quick Security Review
                     </h4>
-                    <p className="text-2xl font-bold text-cyan-400 mb-2">
-                      $100–$150
-                    </p>
+                    <p className="text-2xl font-bold text-cyan-400 mb-2">$50</p>
                     <p className="text-sm text-gray-400">
-                      For small smart contracts (under 500 LOC). Focused review,
-                      findings report, and remediation guidance.
+                      Fast analysis to identify critical vulnerabilities before
+                      deployment.
                     </p>
                   </div>
 
                   <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
                     <h4 className="font-semibold text-white mb-2">
-                      Standard Review
+                      Deep Security Review
                     </h4>
                     <p className="text-2xl font-bold text-cyan-400 mb-2">
-                      $150–$250
+                      $150
                     </p>
                     <p className="text-sm text-gray-400">
-                      For medium codebases (500–2K LOC). Complete code review,
-                      vulnerabilities identified, detailed report with fixes.
+                      More thorough review of contract logic, access control,
+                      and edge cases.
                     </p>
                   </div>
 
@@ -143,15 +141,14 @@ export default function PricingPopup({
                       POPULAR
                     </div>
                     <h4 className="font-semibold text-white mb-2">
-                      Comprehensive Review
+                      Full Audit Review
                     </h4>
                     <p className="text-2xl font-bold text-cyan-400 mb-2">
-                      $250–$300
+                      $300
                     </p>
                     <p className="text-sm text-gray-400">
-                      For larger, complex contracts (2K+ LOC). Full-scope
-                      review, testing, comprehensive findings report, and
-                      follow-up support.
+                      Comprehensive multi-contract analysis with structured
+                      reporting.
                     </p>
                   </div>
                 </div>
