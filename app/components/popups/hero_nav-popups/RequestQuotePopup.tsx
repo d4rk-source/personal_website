@@ -258,55 +258,20 @@ export default function RequestQuotePopup({
                         <input
                           type="checkbox"
                           name="services"
-                          value="Smart Contract Auditing"
+                          value="Fast Smart Contract Security Reviews"
                           checked={checkedServices.includes(
-                            "Smart Contract Auditing",
-                          )}
-                          onChange={(e) =>
-                            handleServiceChange(e, "Smart Contract Auditing")
-                          }
-                          className="mt-1"
-                          disabled={state.submitting}
-                        />
-                        <span>Smart Contract Auditing</span>
-                      </label>
-                      <label className="flex items-start gap-3 text-gray-200">
-                        <input
-                          type="checkbox"
-                          name="services"
-                          value="Audit Readiness & Competition Prep"
-                          checked={checkedServices.includes(
-                            "Audit Readiness & Competition Prep",
+                            "Fast Smart Contract Security Reviews",
                           )}
                           onChange={(e) =>
                             handleServiceChange(
                               e,
-                              "Audit Readiness & Competition Prep",
+                              "Fast Smart Contract Security Reviews",
                             )
                           }
                           className="mt-1"
                           disabled={state.submitting}
                         />
-                        <span>Audit Readiness &amp; Competition Prep</span>
-                      </label>
-                      <label className="flex items-start gap-3 text-gray-200">
-                        <input
-                          type="checkbox"
-                          name="services"
-                          value="Smart Contract Security Consultations"
-                          checked={checkedServices.includes(
-                            "Smart Contract Security Consultations",
-                          )}
-                          onChange={(e) =>
-                            handleServiceChange(
-                              e,
-                              "Smart Contract Security Consultations",
-                            )
-                          }
-                          className="mt-1"
-                          disabled={state.submitting}
-                        />
-                        <span>Smart Contract Security Consultations</span>
+                        <span>Fast Smart Contract Security Reviews</span>
                       </label>
                     </div>
                   </div>

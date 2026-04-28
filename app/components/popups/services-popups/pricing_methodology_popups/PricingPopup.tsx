@@ -109,6 +109,72 @@ export default function PricingPopup({
               {serviceType}
             </p>
 
+            {serviceType === "Fast Smart Contract Security Reviews" && (
+              <>
+                <div className="space-y-4">
+                  <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
+                    <h4 className="font-semibold text-white mb-2">
+                      Quick Review
+                    </h4>
+                    <p className="text-2xl font-bold text-cyan-400 mb-2">
+                      $100–$150
+                    </p>
+                    <p className="text-sm text-gray-400">
+                      For small smart contracts (under 500 LOC). Focused review,
+                      findings report, and remediation guidance.
+                    </p>
+                  </div>
+
+                  <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
+                    <h4 className="font-semibold text-white mb-2">
+                      Standard Review
+                    </h4>
+                    <p className="text-2xl font-bold text-cyan-400 mb-2">
+                      $150–$250
+                    </p>
+                    <p className="text-sm text-gray-400">
+                      For medium codebases (500–2K LOC). Complete code review,
+                      vulnerabilities identified, detailed report with fixes.
+                    </p>
+                  </div>
+
+                  <div className="bg-gray-800/50 border border-cyan-700/50 rounded-lg p-4 relative overflow-hidden">
+                    <div className="absolute top-2 right-2 bg-cyan-500 text-white text-xs px-2 py-1 rounded-full font-semibold">
+                      POPULAR
+                    </div>
+                    <h4 className="font-semibold text-white mb-2">
+                      Comprehensive Review
+                    </h4>
+                    <p className="text-2xl font-bold text-cyan-400 mb-2">
+                      $250–$300
+                    </p>
+                    <p className="text-sm text-gray-400">
+                      For larger, complex contracts (2K+ LOC). Full-scope
+                      review, testing, comprehensive findings report, and
+                      follow-up support.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="pt-4 border-t border-gray-700 space-y-3">
+                  <p className="text-sm text-gray-400">
+                    <strong className="text-gray-300">What's included:</strong>{" "}
+                    Code review, vulnerability testing, detailed findings
+                    report, and follow-up support on questions or
+                    clarifications.
+                  </p>
+                  <p className="text-sm text-cyan-300 bg-gray-800/30 rounded p-2">
+                    <strong>Payment:</strong> 100% after report delivery. Zero
+                    payment risk—no money due until work is done.
+                  </p>
+                  <p className="text-xs text-gray-500">
+                    * Exact pricing confirmed during initial consultation based
+                    on codebase size and complexity.
+                  </p>
+                </div>
+              </>
+            )}
+
             {serviceType === "Smart Contract Auditing" && (
               <>
                 <div className="space-y-4">

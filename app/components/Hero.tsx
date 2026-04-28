@@ -11,21 +11,21 @@ export default function Hero({ onScrollToSection, onRequestQuote }: HeroProps) {
       {/* Main Headline */}
       <div className="mb-10 md:mb-16">
         <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight tracking-tight mb-6 md:mb-8 max-w-4xl">
-          Defending Web3 with{" "}
+          Fast Smart Contract{" "}
           <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-            Smart Contract Audits
+            Security Reviews
           </span>
           <br />
-          Web3 Security Consultations & Pre-Audit Prep
+          Get Security Right. Affordably.
         </h1>
       </div>
 
       {/* Description */}
       <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mb-8 md:mb-12 leading-relaxed">
-        Secure your DeFi protocols and crypto gambling dApps with proven smart
-        contract audits from an experienced EVM bug bounty hunter. I've
-        fortified high-stakes DeFi and gambling projects for clients worldwide —
-        making them resilient, investor-ready, and fully secure.
+        Launch with confidence. I provide quick, practical smart contract
+        security reviews designed to catch real vulnerabilities before they
+        become expensive problems. Ideal for teams building DeFi protocols,
+        gambling dApps, tokens, and Web3 projects ready to move fast.
       </p>
 
       {/* CTA Buttons */}
