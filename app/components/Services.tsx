@@ -47,17 +47,6 @@ export default function Services() {
         </div>
       </div>
 
-      <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6">
-        <a
-          href="https://github.com/d4rk-source/My_services_showcase"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-sm text-gray-500 hover:text-gray-400 transition-colors"
-        >
-          See real audit examples →
-        </a>
-      </div>
-
       <SecurityReviewPopup
         isOpen={isSecurityReviewPopupOpen}
         onClose={() => setIsSecurityReviewPopupOpen(false)}
