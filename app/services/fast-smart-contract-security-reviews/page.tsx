@@ -4,9 +4,9 @@ import ServiceLandingPage from "@/app/components/ServiceLandingPage";
 export const metadata: Metadata = {
   title: "Fast Smart Contract Security Reviews | Alex Cipher",
   description:
-    "Quick, practical smart contract security reviews for DeFi protocols, gambling dApps, and Web3 projects. Catch vulnerabilities before launch at entry-level pricing.",
+    "Quick, practical smart contract security reviews for gambling dApps, GameFi mechanics, prediction markets, casinos, and sportsbooks. Catch vulnerabilities before launch at entry-level pricing.",
   keywords:
-    "smart contract security review, fast smart contract audit, DeFi security review, contract security review cost, EVM security review, Web3 contract audit, blockchain security review",
+    "smart contract security review, fast smart contract audit, gambling dApp security, GameFi security, contract security review cost, EVM security review, Web3 contract audit, blockchain security review",
   openGraph: {
     type: "website",
     url: "https://alexcipher.xyz/services/fast-smart-contract-security-reviews",
@@ -119,7 +119,7 @@ const faqItems = [
   {
     question: "What types of contracts do you review?",
     answer:
-      "DeFi protocols (lending, staking, swaps), gambling dApps, tokens, governance systems, and any other Web3 smart contracts deployed on EVM networks.",
+      "Gambling dApps and GameFi mechanics (prediction markets, casinos, sportsbooks, gaming tokens), governance systems, and any other Web3 smart contracts deployed on EVM networks.",
   },
   {
     question: "How much does a smart contract security review cost?",
@@ -180,7 +180,7 @@ export default function FastSmartContractSecurityReviewsPage() {
         {
           title: "Best fit",
           description:
-            "Teams ready to launch DeFi protocols, gambling dApps, tokens, or any Web3 project where security matters but you need fast turnaround and affordable pricing.",
+            "Teams ready to launch gambling dApps, GameFi mechanics, prediction markets, casinos, sportsbooks, or any gaming Web3 project where security matters but you need fast turnaround and affordable pricing.",
         },
         {
           title: "Typical timeline",
@@ -194,9 +194,9 @@ export default function FastSmartContractSecurityReviewsPage() {
         },
       ]}
       idealFor={[
-        "DeFi protocols (lending, staking, swaps) launching soon",
-        "Gambling dApps and gaming contracts needing security validation",
-        "Token launches and new Web3 projects ready to secure their codebase",
+        "Gambling dApps (prediction markets, casinos, sportsbooks) launching soon",
+        "GameFi mechanics and gaming tokens needing security validation",
+        "Gaming Web3 projects ready to secure their codebase before launch",
         "Teams wanting affordable security review without enterprise audit complexity",
         "Projects preparing for bug bounties, competitions, or early user launch",
       ]}

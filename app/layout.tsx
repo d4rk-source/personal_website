@@ -16,11 +16,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title:
-    "Alex Cipher | EVM Security Auditor | Smart Contract Audits & DeFi Security",
+    "Alex Cipher | EVM Security Auditor | Smart Contract Security Reviews for Gambling dApps & GameFi",
   description:
-    "Smart contract security audits for EVM protocols. Specialized in DeFi and gambling dApp security. Experienced bug bounty hunter providing comprehensive security consultations for Web3 projects.",
+    "Smart contract security reviews for gambling dApps (prediction markets, casinos, sportsbooks) and GameFi mechanics. Specialized in Web3 gaming security. Experienced bug bounty hunter providing comprehensive security consultations.",
   keywords:
-    "smart contract audit, EVM security, DeFi security, Web3 auditor, solidity audit, security consultant, blockchain auditor",
+    "smart contract audit, EVM security, gambling dApp security, GameFi security, Web3 auditor, solidity audit, security consultant, blockchain auditor",
   authors: [{ name: "Alex Cipher" }],
   creator: "Alex Cipher",
   publisher: "Alex Cipher",
@@ -33,14 +33,15 @@ export const metadata: Metadata = {
     url: "https://alexcipher.xyz",
     title: "Alex Cipher | EVM Security Auditor",
     description:
-      "Smart contract security audits for EVM protocols. Specialized in DeFi and gambling dApp security.",
+      "Smart contract security reviews for gambling dApps and GameFi mechanics. Fast, practical reviews for Web3 gaming projects.",
     siteName: "Alex Cipher",
   },
 
   twitter: {
     card: "summary_large_image",
     title: "Alex Cipher | EVM Security Auditor",
-    description: "Smart contract security audits for DeFi and Web3 projects",
+    description:
+      "Smart contract security reviews for gambling dApps and GameFi",
     creator: "@alexcipher",
   },
 

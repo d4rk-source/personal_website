@@ -1,7 +1,7 @@
 {
   "name": "Alex Cipher - EVM Security Auditor",
   "short_name": "Alex Cipher",
-  "description": "Smart contract security audits for EVM protocols. Specialized in DeFi and gambling dApp security.",
+  "description": "Smart contract security audits for EVM protocols. Specialized in gambling dApp and GameFi security.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description:
     "Subscribe to monthly smart contract security tips, real audit lessons, and practical Web3 risk prevention guidance.",
   keywords:
-    "security tips newsletter, smart contract security newsletter, web3 security tips, defi security insights, blockchain audit lessons",
+    "security tips newsletter, smart contract security newsletter, web3 security tips, gambling dApp security insights, GameFi security insights, blockchain audit lessons",
   openGraph: {
     type: "website",
     url: "https://alexcipher.xyz/security-tips-newsletter",

@@ -186,9 +186,10 @@ export default function SecurityReviewPopup({
               </div>
 
               <p className="text-gray-400 pt-4">
-                Perfect for DeFi protocols, gambling dApps, tokens, and any Web3
-                project where security matters but you're not ready for an
-                enterprise-level audit yet.
+                Perfect for gambling dApps, GameFi mechanics, prediction
+                markets, casinos, sportsbooks, and any gaming Web3 project where
+                security matters but you're not ready for an enterprise-level
+                audit yet.
               </p>
             </div>
 

@@ -24,8 +24,9 @@ export default function Hero({ onScrollToSection, onRequestQuote }: HeroProps) {
       <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mb-8 md:mb-12 leading-relaxed">
         Launch with confidence. I provide quick, practical smart contract
         security reviews designed to catch real vulnerabilities before they
-        become expensive problems. Ideal for teams building DeFi protocols,
-        gambling dApps, tokens, and Web3 projects ready to move fast.
+        become expensive problems. Ideal for teams building gambling dApps,
+        GameFi mechanics, prediction markets, casinos, sportsbooks, and Web3
+        gaming projects ready to move fast.
       </p>
 
       {/* CTA Buttons */}

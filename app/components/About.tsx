@@ -12,7 +12,7 @@ export default function About() {
     },
     {
       title: "Blockchain",
-      description: "EVM chains, DeFi & Gambling dApps",
+      description: "EVM chains, Gambling dApps & GameFi",
       color: "blue",
     },
     {
@@ -60,10 +60,11 @@ export default function About() {
 
           <p className="text-base md:text-lg text-gray-300 leading-relaxed">
             My expertise spans across EVM-compatible blockchains including
-            Ethereum, Polygon, and many others. I specialize in DeFi protocols
-            (lending, DEX, staking) and crypto gambling dApps, identifying
-            complex vulnerabilities, architectural weaknesses, business logic
-            flaws, and gas optimizations that protect digital assets.
+            Ethereum, Polygon, and many others. I specialize in gambling dApps
+            and GameFi mechanics (prediction markets, casinos, sportsbooks, and
+            gaming tokens), identifying complex vulnerabilities, architectural
+            weaknesses, business logic flaws, and gas optimizations that protect
+            digital assets.
           </p>
 
           <p className="text-base md:text-lg text-gray-300 leading-relaxed">

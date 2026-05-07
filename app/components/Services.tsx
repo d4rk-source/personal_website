@@ -32,11 +32,11 @@ export default function Services() {
             <span className="font-semibold text-cyan-400">Starting at $50</span>
           </p>
           <p className="text-gray-400 mb-6">
-            Quick, practical security reviews designed for teams ready to
-            launch. I'll catch real vulnerabilities in your code before they
-            become costly problems. Perfect for DeFi protocols, gambling dApps,
-            tokens, and any Web3 project that needs security done right—without
-            the enterprise audit price tag.
+            Quick, practical security reviews designed for gambling dApps and
+            GameFi mechanics. I'll catch real vulnerabilities before they become
+            costly problems. Perfect for prediction markets, casinos,
+            sportsbooks, and any smart contract gaming project that needs
+            security done right—without the enterprise audit price tag.
           </p>
           <button
             onClick={() => setIsSecurityReviewPopupOpen(true)}
