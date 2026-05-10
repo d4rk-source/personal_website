@@ -206,7 +206,8 @@ export default function PricingPopup({
                   </p>
                   <p className="text-sm text-cyan-300 bg-gray-800/30 rounded p-2">
                     <strong>Payment:</strong> 100% after report delivery. Zero
-                    payment risk—no money due until work is done.
+                    payment risk—no money due until work is done. Satisfaction
+                    guaranteed, or your money back if you are not satisfied.
                   </p>
                   <p className="text-xs text-gray-500">
                     * Exact pricing confirmed during initial consultation based

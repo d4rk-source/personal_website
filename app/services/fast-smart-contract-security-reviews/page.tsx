@@ -105,7 +105,7 @@ const pricingPlans = [
 
 const pricingNotes = [
   "Code review, vulnerability testing, detailed findings report, and follow-up support on questions or clarifications.",
-  "100% after report delivery. Zero payment risk—pay only when you have the complete security report.",
+  "100% after report delivery. Zero payment risk—pay only when you have the complete security report. Satisfaction guaranteed, or your money back if you are not satisfied.",
   "Exact pricing confirmed during initial consultation based on codebase size and complexity.",
 ];
 
@@ -133,7 +133,7 @@ const faqItems = [
   {
     question: "When do I pay?",
     answer:
-      "100% after I deliver the security report. Zero payment risk—no money due until you have the complete findings report in hand.",
+      "100% after I deliver the security report. Zero payment risk—no money due until you have the complete findings report in hand. Satisfaction guaranteed, or your money back if you are not satisfied.",
   },
   {
     question: "Do you provide follow-up support?",

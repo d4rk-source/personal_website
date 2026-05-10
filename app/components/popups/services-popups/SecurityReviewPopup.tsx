@@ -181,7 +181,8 @@ export default function SecurityReviewPopup({
                     Payment Terms:
                   </span>{" "}
                   You pay 100% after I send you the security report. Zero
-                  payment risk—no money due until the work is done.
+                  payment risk—no money due until the work is done. Satisfaction
+                  guaranteed, or your money back if you are not satisfied.
                 </p>
               </div>
 
