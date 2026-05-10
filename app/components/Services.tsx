@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SecurityReviewPopup from "./popups/services-popups/SecurityReviewPopup";
 import RequestQuotePopup from "./popups/hero_nav-popups/RequestQuotePopup";
 
@@ -42,20 +42,21 @@ export default function Services() {
             Fast Smart Contract Security Reviews
           </h3>
           <p className="text-gray-400 mb-2">
-            <span className="font-semibold text-cyan-400">
-              Starting at $250
+            <span className="font-semibold text-gray-400">
+              Starting at&nbsp;
             </span>
-          </p>
-          <p className="text-gray-400 mb-2">
             {isSaleActive ? (
               <span className="font-semibold">
                 <span className="text-gray-400 line-through mr-2">$250</span>
                 <span className="text-rose-500">$50</span>
               </span>
             ) : (
-              <span className="font-semibold text-cyan-400">Starting at $250</span>
+              <span className="font-semibold text-cyan-400">$250</span>
             )}
           </p>
+          <p className="text-gray-400 mb-6">
+            Quick, practical security reviews designed for gambling dApps and
+            GameFi mechanics. I'll catch real vulnerabilities before they become
             costly problems. Perfect for prediction markets, casinos,
             sportsbooks, and any smart contract gaming project that needs
             security done right—without the enterprise audit price tag.

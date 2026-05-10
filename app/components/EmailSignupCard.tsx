@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { useForm, ValidationError } from "@formspree/react";
 
@@ -8,14 +8,67 @@ export default function EmailSignupCard() {
   const [isDismissed, setIsDismissed] = useState(false);
   const [state, handleSubmit] = useForm("mdalqkkr");
   const pathname = usePathname();
+  const [showAfterDelay, setShowAfterDelay] = useState(false);
+
+  useEffect(() => {
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    const shouldConsider =
+      pathname !== "/security-tips-newsletter" && !isDismissed;
+    if (shouldConsider) {
+      timer = setTimeout(() => setShowAfterDelay(true), 3000);
+    } else {
+      setShowAfterDelay(false);
+    }
+    return () => {
+      if (timer) clearTimeout(timer);
+    };
+  }, [pathname, isDismissed]);
+
+  const [isClosing, setIsClosing] = useState(false);
+
+  useEffect(() => {
+    if (isClosing) {
+      const t = setTimeout(() => setIsDismissed(true), 400);
+      return () => clearTimeout(t);
+    }
+  }, [isClosing]);
 
   if (pathname === "/security-tips-newsletter") return null;
 
-  if (isDismissed) return null;
+  if (isDismissed || !showAfterDelay) return null;
 
   return (
     <div className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:bottom-6 z-30 w-auto sm:w-[360px]">
-      <div className="bg-gradient-to-br from-gray-900 to-gray-950 border border-gray-800 rounded-2xl p-4 sm:p-5 shadow-2xl">
+      <div
+        className="bg-gradient-to-br from-gray-900 to-gray-950 border border-gray-800 rounded-2xl p-4 sm:p-5 shadow-2xl"
+        style={{
+          animation: isClosing
+            ? "fadeOut 0.35s ease-in forwards"
+            : "fadeIn 0.35s ease-out forwards",
+        }}
+      >
+        <style jsx>{`
+          @keyframes fadeIn {
+            from {
+              opacity: 0;
+              transform: translateY(6px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+          @keyframes fadeOut {
+            from {
+              opacity: 1;
+              transform: translateY(0);
+            }
+            to {
+              opacity: 0;
+              transform: translateY(6px);
+            }
+          }
+        `}</style>
         <div className="flex items-start justify-between gap-4">
           <div>
             <h3 className="text-lg font-semibold text-white">
@@ -28,7 +81,7 @@ export default function EmailSignupCard() {
           </div>
           <button
             type="button"
-            onClick={() => setIsDismissed(true)}
+            onClick={() => setIsClosing(true)}
             className="text-gray-400 hover:text-white transition-colors"
             aria-label="Dismiss email signup"
           >

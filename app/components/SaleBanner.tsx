@@ -7,6 +7,7 @@ export default function SaleBanner() {
   const [isVisible, setIsVisible] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const [isClosed, setIsClosed] = useState(false);
+  const [showAfterDelay, setShowAfterDelay] = useState(false);
 
   useEffect(() => {
     const t = setInterval(() => setNow(new Date()), 1000);
@@ -30,6 +31,20 @@ export default function SaleBanner() {
     }
   }, [isClosing]);
 
+  useEffect(() => {
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    if (isVisible && !isClosed) {
+      // wait 1s before actually showing
+      timer = setTimeout(() => setShowAfterDelay(true), 1000);
+    } else {
+      setShowAfterDelay(false);
+    }
+
+    return () => {
+      if (timer) clearTimeout(timer);
+    };
+  }, [isVisible, isClosed]);
+
   const timeLeft = (() => {
     const end = new Date("2026-05-31T23:59:59.000Z").getTime();
     return Math.max(0, end - now.getTime());
@@ -44,7 +59,7 @@ export default function SaleBanner() {
     return `${days}d ${hours}h ${minutes}m ${seconds}s`;
   };
 
-  if (!isVisible || isClosed) return null;
+  if (!isVisible || isClosed || !showAfterDelay) return null;
 
   return (
     <div
