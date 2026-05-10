@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import SaleBanner from "@/app/components/SaleBanner";
 import ServiceLandingPage from "@/app/components/ServiceLandingPage";
 
 export const metadata: Metadata = {
@@ -91,6 +92,7 @@ const pricingPlans = [
     price: "$750",
     description:
       "More thorough review of contract logic, access control, and edge cases.",
+    badge: "POPULAR",
   },
   {
     name: "Full Audit Review",
@@ -98,7 +100,6 @@ const pricingPlans = [
     price: "$1500",
     description:
       "Comprehensive multi-contract analysis with structured reporting.",
-    badge: "POPULAR",
   },
 ];
 
@@ -173,7 +174,9 @@ const jsonLd = {
 
 export default function FastSmartContractSecurityReviewsPage() {
   return (
-    <ServiceLandingPage
+    <>
+      <SaleBanner />
+      <ServiceLandingPage
       eyebrow="Service"
       title="Fast Smart Contract Security Reviews"
       description="Launch safely. I provide quick, practical security reviews to catch real vulnerabilities in your smart contracts before they become expensive problems."
@@ -215,6 +218,7 @@ export default function FastSmartContractSecurityReviewsPage() {
         end: "2026-05-31T23:59:59.000Z",
         discount: 0.8,
       }}
-    />
+      />
+    </>
   );
 }

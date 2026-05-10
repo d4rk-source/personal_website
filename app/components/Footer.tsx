@@ -26,34 +26,10 @@ export default function Footer() {
             <ul className="space-y-2 text-gray-400 text-sm">
               <li>
                 <Link
-                  href="/services/defi-protocol-auditing"
+                  href="/services/fast-smart-contract-security-reviews"
                   className="hover:text-white transition-colors"
                 >
-                  DeFi Protocol Auditing
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/gambling-dapp-auditing"
-                  className="hover:text-white transition-colors"
-                >
-                  Gambling dApp Auditing
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/audit-readiness-competition-prep"
-                  className="hover:text-white transition-colors"
-                >
-                  Audit Readiness & Competition Prep
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/protocol-security-incident-response"
-                  className="hover:text-white transition-colors"
-                >
-                  Protocol Security Strategy & Incident Response
+                  Fast Smart Contract Security Reviews
                 </Link>
               </li>
             </ul>

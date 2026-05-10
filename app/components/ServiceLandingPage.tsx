@@ -266,7 +266,7 @@ export default function ServiceLandingPage({
                         <div className="text-2xl text-gray-400 line-through">
                           {plan.price}
                         </div>
-                        <div className="text-3xl font-bold text-cyan-400">
+                        <div className="text-3xl font-bold text-rose-500">
                           {format(salePrice)}
                         </div>
                       </div>
