@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 interface HeroProps {
   onScrollToSection: (sectionId: string) => void;
   onRequestQuote: () => void;
@@ -50,12 +52,18 @@ export default function Hero({
         </button>
       </div>
 
-      <p className="mb-12 text-sm md:text-base text-gray-400 underline decoration-gray-600 underline-offset-4">
-        Not sure? Book a call with me now <span aria-hidden="true">→</span>
-      </p>
-
-      {/* Tagline */}
-      <p className="text-gray-400 mb-12">I respond within 24 hours</p>
+      <div className="mb-12">
+        <Link
+          href="/contact"
+          className="inline-flex items-center gap-2 text-sm md:text-base text-gray-300 hover:text-cyan-300 transition-colors"
+        >
+          <span>Got questions?</span>
+          <span className="underline decoration-gray-600 underline-offset-4">
+            Contact me
+          </span>
+          <span aria-hidden="true">→</span>
+        </Link>
+      </div>
     </section>
   );
 }
