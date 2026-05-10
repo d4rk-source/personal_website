@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Navigation from "./components/Navigation";
 import Hero from "./components/Hero";
 import RequestQuotePopup from "./components/popups/hero_nav-popups/RequestQuotePopup";
+import ThreatModelPopup from "./components/popups/hero_nav-popups/ThreatModelPopup";
 import Services from "./components/Services";
 import Audits from "./components/Audits";
 import Vouches from "./components/Vouches";
@@ -13,6 +14,7 @@ import Footer from "./components/Footer";
 
 export default function Home() {
   const [isQuotePopupOpen, setIsQuotePopupOpen] = useState(false);
+  const [isThreatModelPopupOpen, setIsThreatModelPopupOpen] = useState(false);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -55,6 +57,7 @@ export default function Home() {
       <Hero
         onScrollToSection={scrollToSection}
         onRequestQuote={() => setIsQuotePopupOpen(true)}
+        onRequestThreatModel={() => setIsThreatModelPopupOpen(true)}
       />
       {/* <Vouches /> */}
       <Services />
@@ -65,6 +68,10 @@ export default function Home() {
       <RequestQuotePopup
         isOpen={isQuotePopupOpen}
         onClose={() => setIsQuotePopupOpen(false)}
+      />
+      <ThreatModelPopup
+        isOpen={isThreatModelPopupOpen}
+        onClose={() => setIsThreatModelPopupOpen(false)}
       />
     </div>
   );
