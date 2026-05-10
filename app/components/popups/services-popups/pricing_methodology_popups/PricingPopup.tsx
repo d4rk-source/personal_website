@@ -15,6 +15,7 @@ export default function PricingPopup({
 }: PricingPopupProps) {
   const [isClosing, setIsClosing] = useState(false);
   const [shouldRender, setShouldRender] = useState(false);
+  const [now, setNow] = useState<Date>(new Date());
 
   useEffect(() => {
     if (isOpen) {
@@ -29,6 +30,18 @@ export default function PricingPopup({
       return () => clearTimeout(timer);
     }
   }, [isOpen, shouldRender]);
+
+  useEffect(() => {
+    const t = setInterval(() => setNow(new Date()), 1000);
+    return () => clearInterval(t);
+  }, []);
+
+  const isSaleActive = (() => {
+    const start = new Date("2026-05-01T00:00:00.000Z").getTime();
+    const end = new Date("2026-05-31T23:59:59.000Z").getTime();
+    const current = now.getTime();
+    return current >= start && current <= end;
+  })();
 
   const handleClose = () => {
     onClose();
@@ -116,36 +129,67 @@ export default function PricingPopup({
                     <h4 className="font-semibold text-white mb-2">
                       Quick Security Review
                     </h4>
-                    <p className="text-2xl font-bold text-cyan-400 mb-2">$50</p>
+                    {isSaleActive ? (
+                      <div className="mb-2">
+                        <p className="text-lg text-gray-400 line-through mb-1">
+                          $250
+                        </p>
+                        <p className="text-2xl font-bold text-rose-500">$50</p>
+                      </div>
+                    ) : (
+                      <p className="text-2xl font-bold text-cyan-400 mb-2">
+                        $250
+                      </p>
+                    )}
                     <p className="text-sm text-gray-400">
                       Fast analysis to identify critical vulnerabilities before
                       deployment.
                     </p>
                   </div>
 
-                  <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
+                  <div
+                    className={`border rounded-lg p-4 relative overflow-hidden ${isSaleActive ? "bg-cyan-950/30 border-cyan-700/50" : "bg-gray-800/50 border-cyan-700/50"}`}
+                  >
+                    <div className="absolute top-2 right-2 bg-cyan-500 text-white text-xs px-2 py-1 rounded-full font-semibold">
+                      POPULAR
+                    </div>
                     <h4 className="font-semibold text-white mb-2">
                       Deep Security Review
                     </h4>
-                    <p className="text-2xl font-bold text-cyan-400 mb-2">
-                      $150
-                    </p>
+                    {isSaleActive ? (
+                      <div className="mb-2">
+                        <p className="text-lg text-gray-400 line-through mb-1">
+                          $750
+                        </p>
+                        <p className="text-2xl font-bold text-rose-500">$150</p>
+                      </div>
+                    ) : (
+                      <p className="text-2xl font-bold text-cyan-400 mb-2">
+                        $750
+                      </p>
+                    )}
                     <p className="text-sm text-gray-400">
                       More thorough review of contract logic, access control,
                       and edge cases.
                     </p>
                   </div>
 
-                  <div className="bg-gray-800/50 border border-cyan-700/50 rounded-lg p-4 relative overflow-hidden">
-                    <div className="absolute top-2 right-2 bg-cyan-500 text-white text-xs px-2 py-1 rounded-full font-semibold">
-                      POPULAR
-                    </div>
+                  <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
                     <h4 className="font-semibold text-white mb-2">
                       Full Audit Review
                     </h4>
-                    <p className="text-2xl font-bold text-cyan-400 mb-2">
-                      $300
-                    </p>
+                    {isSaleActive ? (
+                      <div className="mb-2">
+                        <p className="text-lg text-gray-400 line-through mb-1">
+                          $1500
+                        </p>
+                        <p className="text-2xl font-bold text-rose-500">$300</p>
+                      </div>
+                    ) : (
+                      <p className="text-2xl font-bold text-cyan-400 mb-2">
+                        $1500
+                      </p>
+                    )}
                     <p className="text-sm text-gray-400">
                       Comprehensive multi-contract analysis with structured
                       reporting.

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Navigation from "./Navigation";
 import Footer from "./Footer";
@@ -16,6 +16,15 @@ interface PricingPlan {
   price: string;
   description: string;
   badge?: string;
+}
+
+interface Sale {
+  name: string;
+  // ISO date strings for start and end
+  start: string;
+  end: string;
+  // fraction off (e.g. 0.8 means 80% off)
+  discount: number;
 }
 
 interface FaqItem {
@@ -37,6 +46,7 @@ interface ServiceLandingPageProps {
   pricingNotes: string[];
   faqItems?: FaqItem[];
   jsonLd?: Record<string, unknown>;
+  sale?: Sale;
 }
 
 export default function ServiceLandingPage({
@@ -53,9 +63,39 @@ export default function ServiceLandingPage({
   pricingNotes,
   faqItems = [],
   jsonLd,
+  sale,
 }: ServiceLandingPageProps) {
   const [isQuotePopupOpen, setIsQuotePopupOpen] = useState(false);
   const router = useRouter();
+  const [now, setNow] = useState<Date>(new Date());
+
+  useEffect(() => {
+    const t = setInterval(() => setNow(new Date()), 1000);
+    return () => clearInterval(t);
+  }, []);
+
+  const isSaleActive = (() => {
+    if (!sale) return false;
+    const start = new Date(sale.start).getTime();
+    const end = new Date(sale.end).getTime();
+    const current = now.getTime();
+    return current >= start && current <= end;
+  })();
+
+  const timeLeft = (() => {
+    if (!sale) return 0;
+    const end = new Date(sale.end).getTime();
+    return Math.max(0, end - now.getTime());
+  })();
+
+  const formatTimeLeft = (ms: number) => {
+    const total = Math.floor(ms / 1000);
+    const days = Math.floor(total / (24 * 3600));
+    const hours = Math.floor((total % (24 * 3600)) / 3600);
+    const minutes = Math.floor((total % 3600) / 60);
+    const seconds = total % 60;
+    return `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  };
 
   return (
     <>
@@ -181,24 +221,64 @@ export default function ServiceLandingPage({
 
           <section>
             <h2 className="text-3xl md:text-4xl font-bold mb-8">Pricing</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-              {pricingPlans.map((plan) => (
-                <div
-                  key={plan.name}
-                  className="relative bg-gray-900/60 border border-gray-800 rounded-lg p-5 md:p-6"
-                >
-                  {plan.badge ? (
-                    <span className="absolute top-4 right-4 bg-cyan-500 text-white text-xs px-2 py-1 rounded-full font-semibold">
-                      {plan.badge}
-                    </span>
-                  ) : null}
-                  <h3 className="text-xl font-semibold mb-2">{plan.name}</h3>
-                  <p className="text-3xl font-bold text-cyan-400 mb-3">
-                    {plan.price}
-                  </p>
-                  <p className="text-gray-400">{plan.description}</p>
+            {sale && isSaleActive ? (
+              <div className="mb-4 p-4 rounded-lg bg-gradient-to-r from-rose-500/20 to-rose-600/10 border border-rose-500 text-rose-100">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-3">
+                  <div className="text-left">
+                    <div className="text-sm uppercase tracking-wide font-semibold">
+                      <em>May</em> Security Be Affordable
+                    </div>
+                    <div className="mt-1 text-sm text-rose-100/90">
+                      Sale ends in:{" "}
+                      <span className="font-mono">
+                        {formatTimeLeft(timeLeft)}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="text-sm text-rose-100/90">
+                    {sale.discount * 100}% off
+                  </div>
                 </div>
-              ))}
+              </div>
+            ) : null}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+              {pricingPlans.map((plan) => {
+                // try to parse numeric price from string like "$250"
+                const numeric = Number(plan.price.replace(/[^0-9.]/g, ""));
+                const base = Number.isFinite(numeric) ? numeric : 0;
+                const saleMultiplier = sale ? 1 - sale.discount : 1;
+                const salePrice = Math.round(base * saleMultiplier);
+                const format = (v: number) => `$${v.toLocaleString()}`;
+
+                return (
+                  <div
+                    key={plan.name}
+                    className="relative bg-gray-900/60 border border-gray-800 rounded-lg p-5 md:p-6"
+                  >
+                    {plan.badge ? (
+                      <span className="absolute top-4 right-4 bg-cyan-500 text-white text-xs px-2 py-1 rounded-full font-semibold">
+                        {plan.badge}
+                      </span>
+                    ) : null}
+                    <h3 className="text-xl font-semibold mb-2">{plan.name}</h3>
+                    {sale && isSaleActive ? (
+                      <div className="mb-3">
+                        <div className="text-2xl text-gray-400 line-through">
+                          {plan.price}
+                        </div>
+                        <div className="text-3xl font-bold text-cyan-400">
+                          {format(salePrice)}
+                        </div>
+                      </div>
+                    ) : (
+                      <p className="text-3xl font-bold text-cyan-400 mb-3">
+                        {plan.price}
+                      </p>
+                    )}
+                    <p className="text-gray-400">{plan.description}</p>
+                  </div>
+                );
+              })}
             </div>
 
             <div className="mt-6 border border-gray-800 rounded-lg p-5 md:p-6 bg-gray-950/60 space-y-3">

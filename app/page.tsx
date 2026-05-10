@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Navigation from "./components/Navigation";
+import SaleBanner from "./components/SaleBanner";
 import Hero from "./components/Hero";
 import RequestQuotePopup from "./components/popups/hero_nav-popups/RequestQuotePopup";
 import ThreatModelPopup from "./components/popups/hero_nav-popups/ThreatModelPopup";
@@ -54,6 +55,7 @@ export default function Home() {
         onScrollToSection={scrollToSection}
         onRequestQuote={() => setIsQuotePopupOpen(true)}
       />
+      <SaleBanner />
       <Hero
         onScrollToSection={scrollToSection}
         onRequestQuote={() => setIsQuotePopupOpen(true)}

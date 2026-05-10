@@ -80,19 +80,22 @@ const methodology = [
 const pricingPlans = [
   {
     name: "Quick Security Review",
-    price: "$50",
+    // raised starting price (old $50 -> new $250 so 80% off gives $50)
+    price: "$250",
     description:
       "Fast analysis to identify critical vulnerabilities before deployment.",
   },
   {
     name: "Deep Security Review",
-    price: "$150",
+    // old $150 -> new $750
+    price: "$750",
     description:
       "More thorough review of contract logic, access control, and edge cases.",
   },
   {
     name: "Full Audit Review",
-    price: "$300",
+    // old $300 -> new $1500
+    price: "$1500",
     description:
       "Comprehensive multi-contract analysis with structured reporting.",
     badge: "POPULAR",
@@ -124,7 +127,7 @@ const faqItems = [
   {
     question: "How much does a smart contract security review cost?",
     answer:
-      "Pricing depends on scope: Quick Security Review ($50), Deep Security Review ($150), and Full Audit Review ($300). Exact pricing confirmed during consultation.",
+      "Pricing depends on scope: Quick Security Review ($250), Deep Security Review ($750), and Full Audit Review ($1500). Exact pricing confirmed during consultation. Current promotional pricing may apply.",
   },
   {
     question: "When do I pay?",
@@ -206,6 +209,12 @@ export default function FastSmartContractSecurityReviewsPage() {
       pricingNotes={pricingNotes}
       faqItems={faqItems}
       jsonLd={jsonLd}
+      sale={{
+        name: "May Security Be Affordable",
+        start: "2026-05-01T00:00:00.000Z",
+        end: "2026-05-31T23:59:59.000Z",
+        discount: 0.8,
+      }}
     />
   );
 }
