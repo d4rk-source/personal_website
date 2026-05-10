@@ -130,7 +130,7 @@ export default function ServiceLandingPage({
               {summary}
             </p>
 
-            <div className="flex flex-col md:flex-row gap-4 mb-6">
+            <div className="flex flex-col md:flex-row gap-4 md:gap-6 mb-8 md:mb-5">
               <button
                 onClick={() => setIsQuotePopupOpen(true)}
                 className="bg-white text-black px-6 py-3 md:px-8 md:py-4 rounded-lg font-semibold text-base md:text-lg hover:bg-gray-100 transition-colors w-full md:w-auto"
@@ -139,13 +139,11 @@ export default function ServiceLandingPage({
               </button>
               <button
                 onClick={() => router.push("/?scrollTo=services")}
-                className="border border-gray-500 text-white px-6 py-3 md:px-8 md:py-4 rounded-lg font-semibold text-base md:text-lg hover:bg-gray-900 transition-colors w-full md:w-auto"
+                className="border border-gray-500 bg-black text-white px-6 py-3 md:px-8 md:py-4 rounded-lg font-semibold text-base md:text-lg hover:bg-gray-900 transition-colors w-full md:w-auto"
               >
                 View All Services
               </button>
             </div>
-
-            <p className="text-gray-400 text-sm">I respond within 24 hours</p>
           </section>
 
           <section className="border border-gray-800 rounded-xl bg-gradient-to-br from-gray-900 to-gray-950 p-5 sm:p-6 md:p-10">
