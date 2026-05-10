@@ -3,7 +3,7 @@ export default function Audits() {
     {
       name: "BulkSender",
       pro_bono: true,
-      type: "Smart Contract Audit - high/crit only",
+      type: "Smart Contract Security Review",
       date: "February 2026",
       status: "Completed",
       issues_found: 1,
@@ -17,7 +17,7 @@ export default function Audits() {
       className="px-4 py-12 md:py-20 max-w-7xl mx-auto border-t border-gray-800 scroll-mt-20"
     >
       <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 md:mb-16">
-        My Past Audits
+        My Past Security Reviews
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">

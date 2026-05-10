@@ -29,7 +29,7 @@ function NavigationContent({
 
   const navItems = [
     { label: "Services", sectionId: "services" },
-    { label: "My Audits", sectionId: "audits" },
+    { label: "My Security Reviews", sectionId: "audits" },
     { label: "About", sectionId: "about" },
   ];
 
