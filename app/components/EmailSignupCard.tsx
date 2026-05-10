@@ -14,15 +14,16 @@ export default function EmailSignupCard() {
   if (isDismissed) return null;
 
   return (
-    <div className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:bottom-6 z-30 w-auto sm:w-[320px]">
+    <div className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:bottom-6 z-30 w-auto sm:w-[360px]">
       <div className="bg-gradient-to-br from-gray-900 to-gray-950 border border-gray-800 rounded-2xl p-4 sm:p-5 shadow-2xl">
         <div className="flex items-start justify-between gap-4">
           <div>
             <h3 className="text-lg font-semibold text-white">
-              Security insights in your inbox
+              Want a short guide to internally audit your smart contract?
             </h3>
             <p className="text-sm text-gray-400 mt-1">
-              Monthly tips, real audit lessons, and new research drops.
+              I'll send a concise, practical method you can run on your
+              codebase.
             </p>
           </div>
           <button
@@ -56,7 +57,7 @@ export default function EmailSignupCard() {
             type="email"
             name="email"
             placeholder="you@example.com"
-            className="w-full rounded-lg bg-gray-900 border border-gray-700 px-4 py-2 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+            className="w-full rounded-lg bg-gray-900 border border-gray-700 px-4 py-2 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-rose-500"
             disabled={state.submitting || state.succeeded}
             required
           />
@@ -64,18 +65,18 @@ export default function EmailSignupCard() {
             prefix="Email"
             field="email"
             errors={state.errors}
-            className="mt-2 block text-sm text-red-400"
+            className="mt-2 block text-sm text-rose-400"
           />
           <button
             type="submit"
-            className="mt-3 w-full rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 px-4 py-2 font-semibold text-white hover:from-cyan-400 hover:to-blue-400 transition-all"
+            className="mt-3 w-full rounded-lg bg-gradient-to-r from-rose-500 to-rose-600 px-4 py-2 font-semibold text-white hover:from-rose-400 hover:to-rose-500 transition-all"
             disabled={state.submitting || state.succeeded}
           >
             {state.submitting
               ? "Submitting..."
               : state.succeeded
-                ? "Thanks for subscribing"
-                : "Join the list"}
+                ? "Guide sent — check your inbox"
+                : "Send me the guide"}
           </button>
         </form>
       </div>

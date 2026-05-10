@@ -8,6 +8,19 @@ export default function Services() {
   const [isSecurityReviewPopupOpen, setIsSecurityReviewPopupOpen] =
     useState(false);
   const [isQuotePopupOpen, setIsQuotePopupOpen] = useState(false);
+  const [now, setNow] = useState<Date>(new Date());
+
+  useEffect(() => {
+    const t = setInterval(() => setNow(new Date()), 1000);
+    return () => clearInterval(t);
+  }, []);
+
+  const isSaleActive = (() => {
+    const start = new Date("2026-05-01T00:00:00.000Z").getTime();
+    const end = new Date("2026-05-31T23:59:59.000Z").getTime();
+    const current = now.getTime();
+    return current >= start && current <= end;
+  })();
 
   const handleBookNow = () => {
     setIsSecurityReviewPopupOpen(false);
@@ -33,9 +46,16 @@ export default function Services() {
               Starting at $250
             </span>
           </p>
-          <p className="text-gray-400 mb-6">
-            Quick, practical security reviews designed for gambling dApps and
-            GameFi mechanics. I'll catch real vulnerabilities before they become
+          <p className="text-gray-400 mb-2">
+            {isSaleActive ? (
+              <span className="font-semibold">
+                <span className="text-gray-400 line-through mr-2">$250</span>
+                <span className="text-rose-500">$50</span>
+              </span>
+            ) : (
+              <span className="font-semibold text-cyan-400">Starting at $250</span>
+            )}
+          </p>
             costly problems. Perfect for prediction markets, casinos,
             sportsbooks, and any smart contract gaming project that needs
             security done right—without the enterprise audit price tag.
