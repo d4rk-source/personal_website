@@ -177,47 +177,47 @@ export default function FastSmartContractSecurityReviewsPage() {
     <>
       <SaleBanner />
       <ServiceLandingPage
-      eyebrow="Service"
-      title="Fast Smart Contract Security Reviews"
-      description="Launch safely. I provide quick, practical security reviews to catch real vulnerabilities in your smart contracts before they become expensive problems."
-      summary="Get your smart contracts reviewed by an experienced security researcher. I'll identify vulnerabilities, provide clear recommendations, and help you launch with confidence—at entry-level pricing."
-      preselectedService="Fast Smart Contract Security Reviews"
-      comparisonItems={[
-        {
-          title: "Best fit",
-          description:
-            "Teams ready to launch gambling dApps, GameFi mechanics, prediction markets, casinos, sportsbooks, or any gaming Web3 project where security matters but you need fast turnaround and affordable pricing.",
-        },
-        {
-          title: "Typical timeline",
-          description:
-            "3–7 days depending on code size. Quick turnaround so you can fix issues and move toward launch without long delays.",
-        },
-        {
-          title: "What you get",
-          description:
-            "Practical findings focused on real security issues, clear remediation steps, and direct support to help you understand and address any vulnerabilities.",
-        },
-      ]}
-      idealFor={[
-        "Gambling dApps (prediction markets, casinos, sportsbooks) launching soon",
-        "GameFi mechanics and gaming tokens needing security validation",
-        "Gaming Web3 projects ready to secure their codebase before launch",
-        "Teams wanting affordable security review without enterprise audit complexity",
-        "Projects preparing for bug bounties, competitions, or early user launch",
-      ]}
-      deliverables={deliverables}
-      methodology={methodology}
-      pricingPlans={pricingPlans}
-      pricingNotes={pricingNotes}
-      faqItems={faqItems}
-      jsonLd={jsonLd}
-      sale={{
-        name: "May Security Be Affordable",
-        start: "2026-05-01T00:00:00.000Z",
-        end: "2026-05-31T23:59:59.000Z",
-        discount: 0.8,
-      }}
+        eyebrow="Service"
+        title="Fast Smart Contract Security Reviews"
+        description="Launch safely. I provide quick, practical security reviews to catch real vulnerabilities in your smart contracts before they become expensive problems."
+        summary="Get your smart contracts reviewed by an experienced security researcher. I'll identify vulnerabilities, provide clear recommendations, and help you launch with confidence—at entry-level pricing."
+        preselectedService="Fast Smart Contract Security Reviews"
+        comparisonItems={[
+          {
+            title: "Best fit",
+            description:
+              "Teams ready to launch gambling dApps, GameFi mechanics, prediction markets, casinos, sportsbooks, or any gaming Web3 project where security matters but you need fast turnaround and affordable pricing.",
+          },
+          {
+            title: "Typical timeline",
+            description:
+              "3–7 days depending on code size. Quick turnaround so you can fix issues and move toward launch without long delays.",
+          },
+          {
+            title: "What you get",
+            description:
+              "Practical findings focused on real security issues, clear remediation steps, and direct support to help you understand and address any vulnerabilities.",
+          },
+        ]}
+        idealFor={[
+          "Gambling dApps (prediction markets, casinos, sportsbooks) launching soon",
+          "GameFi mechanics and gaming tokens needing security validation",
+          "Gaming Web3 projects ready to secure their codebase before launch",
+          "Teams wanting affordable security review without enterprise audit complexity",
+          "Projects preparing for bug bounties, competitions, or early user launch",
+        ]}
+        deliverables={deliverables}
+        methodology={methodology}
+        pricingPlans={pricingPlans}
+        pricingNotes={pricingNotes}
+        faqItems={faqItems}
+        jsonLd={jsonLd}
+        sale={{
+          name: "May Security Be Affordable",
+          start: "2026-05-01T00:00:00.000Z",
+          end: "2026-05-31T23:59:59.000Z",
+          discount: 0.8,
+        }}
       />
     </>
   );

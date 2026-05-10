@@ -113,7 +113,9 @@ export default function ServiceLandingPage({
           redirectToHomeForSections
         />
 
-        <main className="px-4 py-10 md:py-20 max-w-7xl mx-auto space-y-10 md:space-y-16">
+        <main
+          className={`px-4 py-10 md:py-20 max-w-7xl mx-auto space-y-10 md:space-y-16 ${sale && isSaleActive ? "pt-24 md:pt-28" : ""}`}
+        >
           <section className="max-w-4xl">
             <p className="text-sm uppercase tracking-[0.2em] text-cyan-400 mb-4">
               {eyebrow}
